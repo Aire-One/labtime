@@ -1,0 +1,7 @@
+---
+targets:
+  - name: Home
+    url: https://aireone.xyz
+    interval: 2
+  - name: Gitea
+    url: https://gitea.aireone.xyz
