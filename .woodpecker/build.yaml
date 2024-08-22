@@ -1,0 +1,20 @@
+---
+when:
+  branch: main
+  path:
+    - Dockerfile
+    - .woodpecker/build.yaml
+
+variables:
+  - &buildx woodpeckerci/plugin-docker-buildx:4.2.0
+  - &buildx_settings
+    platforms: linux/amd64
+
+steps:
+  dryrun:
+    image: *buildx
+    settings:
+      <<: *buildx_settings
+      dry_run: true
+    when:
+      event: pull_request

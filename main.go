@@ -89,7 +89,8 @@ func Ping(url string) (int, time.Duration, error) {
 func main() {
 
 	// Load config
-	config, err := NewConfig("config.yaml")
+    // TODO: Use a flag to specify the config file
+	config, err := NewConfig("config/config.yaml")
 	if err != nil {
 		log.Fatalf("Error loading config: %s", err)
 	}
