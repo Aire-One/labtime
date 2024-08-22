@@ -1,3 +1,3 @@
 # labtime
 
-An uptime checker for my homelab ⏱️
+An uptime checker for my home lab ⏱️
