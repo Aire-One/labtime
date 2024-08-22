@@ -23,3 +23,9 @@ steps:
     commands:
       - /usr/local/bin/cspell-cli lint .
     depends_on: []
+
+  golangci-lint:
+    image: golangci/golangci-lint:v1.60.3
+    commands:
+      - golangci-lint run
+    depends_on: []
