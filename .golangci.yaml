@@ -1,0 +1,7 @@
+---
+run:
+  timeout: 5m
+  # this settings is for the CI pipeline because it fails with the default value
+  # we should have used the --timeout flag in the CI pipeline
+  # but to make the linter work locally, I need to have a config file
+  # so I pushed this config file until we have something to do here 
