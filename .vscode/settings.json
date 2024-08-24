@@ -1,0 +1,11 @@
+{
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      // "source.organizeImports": "always"
+    },
+    "editor.formatOnSave": true
+  },
+  "go.formatTool": "goimports",
+  "go.lintTool": "golangci-lint"
+  // "go.lintFlags": ["--fast"] // We only have the default linters and it seems they are not marked as fast, but it's fast enough for me
+}
