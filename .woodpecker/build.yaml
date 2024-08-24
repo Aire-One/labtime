@@ -18,3 +18,17 @@ steps:
       dry_run: true
     when:
       event: pull_request
+
+  publish:
+    image: *buildx
+    settings:
+      <<: *buildx_settings
+      registry: gitea.aireone.xyz
+      repo: gitea.aireone.xyz/${CI_REPO,,}
+      auto_tag: true
+      username:
+        from_secret: publish_username
+      password:
+        from_secret: publish_token
+    when:
+      event: tag

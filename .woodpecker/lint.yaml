@@ -27,5 +27,5 @@ steps:
   golangci-lint:
     image: golangci/golangci-lint:v1.60.3
     commands:
-      - golangci-lint run
+      - golangci-lint run --timeout 15m
     depends_on: []
