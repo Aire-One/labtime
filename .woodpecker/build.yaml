@@ -1,9 +1,6 @@
 ---
 when:
   branch: main
-  path:
-    - Dockerfile
-    - .woodpecker/build.yaml
 
 variables:
   - &buildx woodpeckerci/plugin-docker-buildx:4.2.0
