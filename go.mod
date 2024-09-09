@@ -1,6 +1,6 @@
 module aireone.xyz/labtime
 
-go 1.22.4
+go 1.23.1
 
 require (
 	github.com/go-co-op/gocron/v2 v2.11.0
