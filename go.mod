@@ -4,7 +4,7 @@ go 1.23.1
 
 require (
 	github.com/go-co-op/gocron/v2 v2.12.0
-	github.com/prometheus/client_golang v1.20.3
+	github.com/prometheus/client_golang v1.20.4
 	gopkg.in/yaml.v3 v3.0.1
 )
 
