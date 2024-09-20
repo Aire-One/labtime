@@ -14,7 +14,9 @@ steps:
       <<: *buildx_settings
       dry_run: true
     when:
-      event: pull_request
+      event:
+        - pull_request
+        - push
 
   publish:
     image: *buildx
