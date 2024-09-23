@@ -1,0 +1,9 @@
+---
+when:
+  event: pull_request
+
+steps:
+  golang:
+    image: golang:1.23.1
+    commands:
+      - go test -v ./...
