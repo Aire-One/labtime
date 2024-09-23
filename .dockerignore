@@ -1,0 +1,7 @@
+.vscode
+.woodpecker
+
+configs
+
+.*
+renovate.json
