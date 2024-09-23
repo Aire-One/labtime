@@ -1,7 +1,50 @@
 ---
-run:
-  timeout: 5m
-  # this settings is for the CI pipeline because it fails with the default value
-  # we should have used the --timeout flag in the CI pipeline
-  # but to make the linter work locally, I need to have a config file
-  # so I pushed this config file until we have something to do here 
+linters:
+  enable:
+    - asasalint
+    - bodyclose
+    - contextcheck
+    - copyloopvar
+    - depguard
+    - durationcheck
+    - errcheck 
+    - errname
+    - errorlint
+    - gocritic
+    - godot
+    - gofumpt
+    - goimports
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - prealloc
+    - predeclared
+    - promlinter
+    - reassign
+    - revive
+    - staticcheck
+    - tenv
+    - testableexamples
+    - thelper
+    - tparallel
+    - typecheck
+    - unconvert
+    - unused
+    - unparam
+    - usestdlibvars
+    - wastedassign
+linters-settings:
+  depguard:
+    rules:
+      main:
+        list-mode: lax
+        allow: [aireone.xyz/labtime] # It's mendatory to have at least one package in allow or deny list
+  errcheck:
+    check-type-assertions: true 
+    check-blank: true
