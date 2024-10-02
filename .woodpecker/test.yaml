@@ -4,6 +4,6 @@ when:
 
 steps:
   golang:
-    image: golang:1.23.1
+    image: golang:1.23.2
     commands:
       - go test -v ./...
