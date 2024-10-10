@@ -3,7 +3,7 @@ when:
   branch: main
 
 variables:
-  - &buildx woodpeckerci/plugin-docker-buildx:4.2.0
+  - &buildx woodpeckerci/plugin-docker-buildx:5.0.0
   - &buildx_settings
     platforms: linux/amd64
 
