@@ -4,7 +4,7 @@ when:
 
 steps:
   woodpecker:
-    image: woodpeckerci/woodpecker-cli:v2.7.2-alpine
+    image: woodpeckerci/woodpecker-cli:v2.7.3-alpine
     commands:
       - woodpecker-cli lint .woodpecker/*.yaml
     when:
