@@ -1,0 +1,20 @@
+// https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "Go",
+	// https://github.com/devcontainers/images/blob/main/src/go/.devcontainer/devcontainer.json
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"runArgs": [
+		"--userns=keep-id"
+	],
+	"containerEnv": {
+		"HOME": "/home/vscode"
+	}
+}
