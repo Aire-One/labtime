@@ -22,3 +22,7 @@ test:
 build:
 	@echo "Building binary"
 	go build -o build/$(BINARY_NAME) cmd/labtime/main.go
+
+.PHONY: dev
+dev:
+	go run cmd/labtime/main.go --config configs/example-config.yaml
