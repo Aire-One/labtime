@@ -5,12 +5,16 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - prometheus-data/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - ./prometheus-data/prometheus.yaml:/etc/prometheus/prometheus.yaml
     command:
-      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - --config.file=/etc/prometheus/prometheus.yaml
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - host.docker.internal:host-gateway
   grafana:
     image: grafana/grafana
+    depends_on:
+      - prometheus
     ports:
       - 3000:3000
+    volumes:
+      - ./grafana-provisioning:/etc/grafana/provisioning
