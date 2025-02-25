@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint test build
+all: lint cspell test build
 
 .PHONY: clean
 clean:
@@ -12,6 +12,10 @@ clean:
 lint:
 	@echo "Running golangci-lint"
 	golangci-lint run
+
+.PHONY: cspell
+cspell:
+	docker run -it --rm -v ./:/workdir ghcr.io/streetsidesoftware/cspell:8.17.1 lint /workdir
 
 .PHONY: test
 test:

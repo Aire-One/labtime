@@ -10,8 +10,8 @@
     "vscode": {
       "extensions": [
         "streetsidesoftware.code-spell-checker",
-        "ms-azuretools.vscode-docker",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "DavidAnson.vscode-markdownlint"
       ]
     }
   },
