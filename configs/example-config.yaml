@@ -6,3 +6,6 @@ targets:
   - name: Gitea
     url: https://gitea.aireone.xyz
     interval: 60
+tls_monitors:
+  - domain: aireone.xyz
+  - domain: gitea.aireone.xyz

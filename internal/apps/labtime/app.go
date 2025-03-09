@@ -62,6 +62,7 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 		return nil, errors.Wrap(err, "error creating scheduler")
 	}
 
+	// HTTP monitor
 	httpMonitor := prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Name: "labtime_response_time_duration",
 		Help: "The ping time.",
@@ -74,6 +75,24 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 			URL:                 t.URL,
 			Logger:              logger,
 			ResponseTimeMonitor: httpMonitor,
+		}, t.Interval); err != nil {
+			return nil, errors.Wrap(err, "error adding job")
+		}
+	}
+
+	// TLS monitor
+	tlsMonitor := prometheus.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "labtime_tls_cert_expire_time",
+		Help: "The duration (in second) until the TLS certificate expires.",
+	}, []string{"tls_monitor_name", "tls_domain_name"})
+	prometheus.MustRegister(tlsMonitor)
+
+	for _, t := range config.TLSMonitors {
+		if err := scheduler.AddJob(&monitors.TLSMonitor{
+			Label:              t.Name,
+			Domain:             t.Domain,
+			Logger:             logger,
+			ExpiresTimeMonitor: tlsMonitor,
 		}, t.Interval); err != nil {
 			return nil, errors.Wrap(err, "error adding job")
 		}

@@ -31,18 +31,18 @@ func (s *Scheduler) AddJob(m monitors.Monitor, interval int) error {
 	j, err := s.scheduler.NewJob(
 		gocron.DurationJob(time.Duration(interval)*time.Second),
 		gocron.NewTask(func() {
-			s.logger.Printf("Running job for HTTP monitor %s\n", m.ID())
+			s.logger.Printf("Running job for monitor %s\n", m.ID())
 			if err := m.Run(); err != nil {
-				s.logger.Printf("Error running job for HTTP monitor %s: %s\n", m.ID(), err)
+				s.logger.Printf("Error running job for monitor %s: %s\n", m.ID(), err)
 			}
-			s.logger.Printf("Job finished for HTTP monitor %s\n", m.ID())
+			s.logger.Printf("Job finished for monitor %s\n", m.ID())
 		}),
 	)
 	if err != nil {
 		return errors.Wrap(err, "error creating job")
 	}
 
-	s.logger.Printf("Job started for HTTP monitor %s with ID: %s\n", m.ID(), j.ID().String())
+	s.logger.Printf("Job started for monitor %s with ID: %s\n", m.ID(), j.ID().String())
 
 	return nil
 }
