@@ -11,6 +11,7 @@
     "autoconfigured",
     "buildx",
     "datasource",
+    "devcontainers",
     "distroless",
     "Gitea",
     "gocron",
