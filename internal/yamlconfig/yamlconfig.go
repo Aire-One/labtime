@@ -27,7 +27,7 @@ type YamlConfig struct {
 		// Domain name address of the target. The target should be accessible from the machine running the exporter.
 		// The domain should not contain the protocol (http:// or https://) and the port (:443 is mandatory to check the TLS certificate).
 		Domain string `yaml:"domain"`
-		// Interval to ping the target. Default is 36000 seconds (once a day).
+		// Interval to ping the target. Default is 60 seconds.
 		Interval int `yaml:"interval,omitempty"`
 	} `yaml:"tls_monitors"`
 }
@@ -59,7 +59,7 @@ func applyDefault(config *YamlConfig) {
 			config.TLSMonitors[i].Name = config.TLSMonitors[i].Domain
 		}
 		if config.TLSMonitors[i].Interval == 0 {
-			config.TLSMonitors[i].Interval = 36000
+			config.TLSMonitors[i].Interval = 60
 		}
 	}
 }
