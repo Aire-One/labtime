@@ -20,6 +20,16 @@ type YamlConfig struct {
 		// Interval to ping the target. Default is 5 seconds.
 		Interval int `yaml:"interval,omitempty"`
 	} `yaml:"targets"`
+	// List of TLS targets to monitor.
+	TLSMonitors []struct {
+		// Name of the target. Used to identify the target from Prometheus. Default is the domain name.
+		Name string `yaml:"name"`
+		// Domain name address of the target. The target should be accessible from the machine running the exporter.
+		// The domain should not contain the protocol (http:// or https://) and the port (:443 is mandatory to check the TLS certificate).
+		Domain string `yaml:"domain"`
+		// Interval to ping the target. Default is 60 seconds.
+		Interval int `yaml:"interval,omitempty"`
+	} `yaml:"tls_monitors"`
 }
 
 func NewYamlConfig(r io.Reader) (*YamlConfig, error) {
@@ -40,6 +50,16 @@ func applyDefault(config *YamlConfig) {
 	for i := range config.Targets {
 		if config.Targets[i].Interval == 0 {
 			config.Targets[i].Interval = 5
+		}
+	}
+
+	// Set default interval to 5 seconds if not provided
+	for i := range config.TLSMonitors {
+		if config.TLSMonitors[i].Name == "" {
+			config.TLSMonitors[i].Name = config.TLSMonitors[i].Domain
+		}
+		if config.TLSMonitors[i].Interval == 0 {
+			config.TLSMonitors[i].Interval = 60
 		}
 	}
 }
