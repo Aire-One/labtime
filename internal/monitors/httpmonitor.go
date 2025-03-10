@@ -2,7 +2,6 @@ package monitors
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -20,7 +19,7 @@ type HTTPMonitor struct {
 
 	Logger *log.Logger
 
-	ResponseTimeMonitor *prometheus.GaugeVec
+	SiteStatusCodeMonitor *prometheus.GaugeVec
 }
 
 func (h *HTTPMonitor) ID() string {
@@ -53,7 +52,7 @@ func newHTTPDurationMiddleware(duration *time.Duration, proxied http.RoundTrippe
 }
 
 type HTTPHealthCheckerData struct {
-	Duration time.Duration
+	StatusCode int
 }
 
 func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
@@ -73,16 +72,17 @@ func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		return nil, errors.Wrap(ErrInvalidStatusCode, fmt.Sprintf("got status code %d", resp.StatusCode))
-	}
-
 	return &HTTPHealthCheckerData{
-		Duration: duration,
+		StatusCode: resp.StatusCode,
 	}, nil
 }
 
 func (h *HTTPMonitor) pushToPrometheus(d *HTTPHealthCheckerData) {
-	h.Logger.Printf("Push metrics to Prometheus: Response time for %s: %v", h.Label, d.Duration.Seconds())
-	h.ResponseTimeMonitor.With(prometheus.Labels{"target_name": h.Label}).Set(d.Duration.Seconds())
+	h.Logger.Printf("HTTP health check for %s: status code %d", h.Label, d.StatusCode)
+	h.SiteStatusCodeMonitor.
+		With(prometheus.Labels{
+			"http_monitor_site_name": h.Label,
+			"http_site_url":          h.URL,
+		}).
+		Set(float64(d.StatusCode))
 }

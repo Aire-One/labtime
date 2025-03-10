@@ -64,17 +64,17 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 
 	// HTTP monitor
 	httpMonitor := prometheus.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "labtime_response_time_duration",
-		Help: "The ping time.",
-	}, []string{"target_name"})
+		Name: "labtime_http_site_status_code",
+		Help: "The status code of the site.",
+	}, []string{"http_monitor_site_name", "http_site_url"})
 	prometheus.MustRegister(httpMonitor)
 
 	for _, t := range config.Targets {
 		if err := scheduler.AddJob(&monitors.HTTPMonitor{
-			Label:               t.Name,
-			URL:                 t.URL,
-			Logger:              logger,
-			ResponseTimeMonitor: httpMonitor,
+			Label:                 t.Name,
+			URL:                   t.URL,
+			Logger:                logger,
+			SiteStatusCodeMonitor: httpMonitor,
 		}, t.Interval); err != nil {
 			return nil, errors.Wrap(err, "error adding job")
 		}
