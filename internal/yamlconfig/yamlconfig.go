@@ -11,15 +11,15 @@ var ErrYAMLDecode = errors.New("error decoding YAML file")
 
 type YamlConfig struct {
 	// List of targets to ping.
-	Targets []struct {
-		// Name of the target. Used to identify the target from Prometheus.
+	HTTPStatusCode []struct {
+		// Name of the target. Used to identify the target from Prometheus. Default is the URL.
 		Name string `yaml:"name"`
 		// URL of the target. The target should be accessible from the machine running the exporter.
 		// The URL should contain the protocol (http:// or https://) and the port if it's not the default one.
 		URL string `yaml:"url"`
-		// Interval to ping the target. Default is 5 seconds.
+		// Interval to ping the target. Default is 60 seconds.
 		Interval int `yaml:"interval,omitempty"`
-	} `yaml:"targets"`
+	} `yaml:"http_status_code"`
 	// List of TLS targets to monitor.
 	TLSMonitors []struct {
 		// Name of the target. Used to identify the target from Prometheus. Default is the domain name.
@@ -46,14 +46,15 @@ func NewYamlConfig(r io.Reader) (*YamlConfig, error) {
 }
 
 func applyDefault(config *YamlConfig) {
-	// Set default interval to 5 seconds if not provided
-	for i := range config.Targets {
-		if config.Targets[i].Interval == 0 {
-			config.Targets[i].Interval = 5
+	for i := range config.HTTPStatusCode {
+		if config.HTTPStatusCode[i].Name == "" {
+			config.HTTPStatusCode[i].Name = config.HTTPStatusCode[i].URL
+		}
+		if config.HTTPStatusCode[i].Interval == 0 {
+			config.HTTPStatusCode[i].Interval = 60
 		}
 	}
 
-	// Set default interval to 5 seconds if not provided
 	for i := range config.TLSMonitors {
 		if config.TLSMonitors[i].Name == "" {
 			config.TLSMonitors[i].Name = config.TLSMonitors[i].Domain

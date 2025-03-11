@@ -69,7 +69,7 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 	}, []string{"http_monitor_site_name", "http_site_url"})
 	prometheus.MustRegister(httpMonitor)
 
-	for _, t := range config.Targets {
+	for _, t := range config.HTTPStatusCode {
 		if err := scheduler.AddJob(&monitors.HTTPMonitor{
 			Label:                 t.Name,
 			URL:                   t.URL,
