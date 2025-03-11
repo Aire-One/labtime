@@ -1,11 +1,7 @@
 ---
-targets:
-  - name: Home
-    url: https://aireone.xyz
-    interval: 20
-  - name: Gitea
-    url: https://gitea.aireone.xyz
-    interval: 60
+http_status_code:
+  - url: https://aireone.xyz
+  - url: https://gitea.aireone.xyz
 tls_monitors:
   - domain: aireone.xyz
   - domain: gitea.aireone.xyz

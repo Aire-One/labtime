@@ -29,55 +29,94 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "transparent",
+            "mode": "fixed"
           },
           "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
+            "fillOpacity": 70,
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "lineWidth": 0,
+            "spanNulls": false
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "from": 100,
+                "result": {
+                  "color": "blue",
+                  "index": 0,
+                  "text": "Informational responses"
+                },
+                "to": 199
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 200,
+                "result": {
+                  "color": "green",
+                  "index": 1,
+                  "text": "Successful responses"
+                },
+                "to": 299
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 300,
+                "result": {
+                  "color": "yellow",
+                  "index": 2,
+                  "text": "Redirection messages"
+                },
+                "to": 399
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 400,
+                "result": {
+                  "color": "orange",
+                  "index": 3,
+                  "text": "Client error responses"
+                },
+                "to": 499
+              },
+              "type": "range"
+            },
+            {
+              "options": {
+                "from": 500,
+                "result": {
+                  "color": "red",
+                  "index": 4,
+                  "text": "Server error responses"
+                },
+                "to": 599
+              },
+              "type": "range"
+            }
+          ],
+          "max": 599,
+          "min": 100,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "purple",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
@@ -89,17 +128,15 @@
       },
       "id": 1,
       "options": {
+        "alignValue": "left",
         "legend": {
-          "calcs": [
-            "lastNotNull",
-            "max",
-            "mean",
-            "min"
-          ],
-          "displayMode": "table",
+          "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
+        "mergeValues": true,
+        "rowHeight": 0.9,
+        "showValue": "auto",
         "tooltip": {
           "hideZeros": false,
           "mode": "single",
@@ -115,17 +152,19 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "labtime_response_time_duration",
+          "expr": "labtime_http_site_status_code",
+          "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "{{target_name}}",
+          "interval": "60",
+          "legendFormat": "{{http_monitor_site_name}}",
           "range": true,
           "refId": "A",
           "useBackend": false
         }
       ],
-      "title": "Panel Title",
-      "type": "timeseries"
+      "title": "Sites Status Code",
+      "type": "state-timeline"
     },
     {
       "datasource": {
@@ -222,6 +261,6 @@
   "timezone": "browser",
   "title": "Labtime response time duration",
   "uid": "bee2pj9xmd43ka",
-  "version": 1,
+  "version": 10,
   "weekStart": ""
 }
