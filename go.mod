@@ -3,7 +3,7 @@ module aireone.xyz/labtime
 go 1.24.1
 
 require (
-	github.com/go-co-op/gocron/v2 v2.16.0
+	github.com/go-co-op/gocron/v2 v2.16.1
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.21.1
 	gopkg.in/yaml.v3 v3.0.1
