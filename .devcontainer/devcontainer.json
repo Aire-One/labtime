@@ -4,7 +4,7 @@
   // https://github.com/devcontainers/images/blob/main/src/go/.devcontainer/devcontainer.json
   "image": "mcr.microsoft.com/devcontainers/go:dev-1.24-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2.12.0": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2.12.2": {}
   },
   "customizations": {
     "vscode": {
