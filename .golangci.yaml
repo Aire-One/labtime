@@ -7,7 +7,7 @@ linters:
     - copyloopvar
     - depguard
     - durationcheck
-    - errcheck 
+    - errcheck
     - errname
     - errorlint
     - gocritic
@@ -29,7 +29,6 @@ linters:
     - reassign
     - revive
     - staticcheck
-    - tenv
     - testableexamples
     - thelper
     - tparallel
@@ -38,6 +37,7 @@ linters:
     - unused
     - unparam
     - usestdlibvars
+    - usetesting
     - wastedassign
 linters-settings:
   depguard:
@@ -46,5 +46,5 @@ linters-settings:
         list-mode: lax
         allow: [aireone.xyz/labtime] # It's mendatory to have at least one package in allow or deny list
   errcheck:
-    check-type-assertions: true 
+    check-type-assertions: true
     check-blank: true
