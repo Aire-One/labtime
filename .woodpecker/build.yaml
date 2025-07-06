@@ -22,8 +22,8 @@ steps:
     image: *buildx
     settings:
       <<: *buildx_settings
-      registry: gitea.aireone.xyz
-      repo: gitea.aireone.xyz/${CI_REPO,,}
+      registry: forgejo.aireone.xyz
+      repo: forgejo.aireone.xyz/${CI_REPO,,}
       auto_tag: true
       username:
         from_secret: publish_username

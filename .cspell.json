@@ -13,6 +13,7 @@
     "datasource",
     "devcontainers",
     "distroless",
+    "forgejo",
     "Gitea",
     "gocron",
     "golangci",
