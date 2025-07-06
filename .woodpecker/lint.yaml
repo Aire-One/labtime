@@ -6,7 +6,7 @@ steps:
   woodpecker:
     image: woodpeckerci/woodpecker-cli:v3.8.0-alpine
     commands:
-      - woodpecker-cli lint .woodpecker/*.yaml
+      - woodpecker-cli lint --plugins-privileged="woodpeckerci/plugin-docker-buildx" .woodpecker/*.yaml
     when:
       path: .woodpecker/**/*.yaml
     depends_on: []
