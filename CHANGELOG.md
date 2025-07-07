@@ -1,0 +1,127 @@
+# Changelog
+
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-07
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @Renovate Bot 🤖, @Renovate 🤖, @renovate-bot
+
+### Misc
+
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.2 [[#64](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/64)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.2 ([031bef8](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/031bef8842c4812c80def82cacfb7ef282ad1c68))
+- chore(release-helper): add config file [[#68](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/68)]
+- chore(release-helper): add config file ([e1c9d52](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/e1c9d528d1768f193e958c1dbce01121d003731a))
+- ci(release-helper): add release helper workflow [[#66](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/66)]
+- ci(release-helper): add release helper workflow ([8200168](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/82001684760a425178ffff920249086d0f474a26))
+- ci(build): update registry and repo to forgejo [[#65](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/65)]
+- ci(build): update registry and repo to forgejo ([416d02c](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/416d02cba429a982233b0f5c32753e5448c7cfa3))
+- chore(deps): update golang to v1.24.4 [[#58](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/58)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3 [[#42](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/42)]
+- ci(lint): add woodpeckerci/plugin-docker-buildx to privileged plugins ([c665bc6](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c665bc696e47fb7c3277add8bff3da8877777412))
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6 [[#62](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/62)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3 ([93cb6b1](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/93cb6b138efdb7dfb881bd90a86b430b2b5ff902))
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6 ([56e535b](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/56e535b1a792037f6a9646d9e46dbabc44e755a7))
+- chore(deps): update golang to v1.24.4 ([575f858](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/575f858e3891e3ae24226e62edc3162f8f464934))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9 [[#63](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/63)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9 ([deb8115](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/deb811590c49779de3640607f14e173308263b57))
+- chore(deps): update module github.com/prometheus/client_golang to v1.22.0 [[#59](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/59)]
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.2 [[#57](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/57)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.8 [[#54](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/54)]
+- chore(linter): replace tenv by usetesting #52 [[#60](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/60)]
+- chore(linter): replace tenv by usetesting #52 ([bc2941f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/bc2941f5664a915833bf49af7aef7bcf5e54a782))
+- chore(deps): update module github.com/prometheus/client_golang to v1.22.0 ([cbd99b4](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/cbd99b4eccddc2d069be5a6521a74fecfbef3eaf))
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.2 ([e6d1193](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/e6d1193f48034e03145923d9baa7c5f1e047cd0c))
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.8 ([5081e4c](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/5081e4c017a28155c45ca8f76994bdcdabe789c5))
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.1 [[#53](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/53)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.1 ([988d2fd](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/988d2fd18cd2e5b17a966ef86aba56de549394d9))
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.7 [[#51](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/51)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.7 ([6f1c775](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/6f1c7755af7dba940d833b2831713e4b527aa46c))
+- feat/http-monitor-status-code [[#50](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/50)]
+- chore(deps): update module github.com/prometheus/client_golang to v1.21.1 [[#48](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/48)]
+- chore(devcontainer): update Go image to version 1.24 [[#49](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/49)]
+- chore(deps): update module github.com/prometheus/client_golang to v1.21.1 ([678fd75](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/678fd75db45ef6a2c8b9615201135af4b22badaf))
+- chore(devcontainer): update Go image to version 1.24 ([439d04c](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/439d04ce9d7f531b064d7b5fd626f0c97acc19b1))
+- chore(yamlconfig): update HTTPMonitor config ([bd5c4d2](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/bd5c4d2433617e9574866e2abb9cdb21b96dbc94))
+- feat(monitors): make HTTPMonitor track status code ([589869d](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/589869d79f7e7a409a3dc65d20fe03455341619f))
+- chore(deps): update golang to v1.24.1 [[#46](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/46)]
+- add TLS certificate monitoring [[#47](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/47)]
+- chore(deps): update golang to v1.24.1 ([9b9136b](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/9b9136bda5ebaf828153dd7f8db8db3c19ecdf82))
+- fix(yamlconfig): lower TLSMonitor default interval ([0209056](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/0209056af2c13ceb65e826526719bfbda61ceb97))
+- feat(monitors): add TLS certificate monitoring ([579c4f6](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/579c4f6baac8bcbced9e19b664b2d5d9ca012fc6))
+- chore(renovate): make all Go updates at once ([8284108](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/8284108d07051e76d7b88532a56281bfbad1fccf))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.17.5 [[#41](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/41)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.6 [[#35](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/35)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.0 [[#34](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/34)]
+- chore/demo-prom-grafana-stack-update [[#45](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/45)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.64.6 ([87378b8](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/87378b8194b4a4f791f1f876fdf35704026d8659))
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.0 ([e1e1b1f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/e1e1b1fa9193da54cda40e618b7376283aa97454))
+- chore(demo): less aggressive Labtime config ([c899e29](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c899e2990dfc72f85af2977342e8db19a1d4d882))
+- doc(demo): update demo README ([cf8e55b](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/cf8e55b8020518d250ad6f26dbe7f95fdb225e32))
+- chore: enable DiD and configure demo stack ([c997bca](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c997bca955f7751d3e0ebdfcf51e9e6be0ef0f4e))
+- chore(devcontainer): add editorconfig extension ([58c5b20](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/58c5b207e97f0b0179ab0fc4b1f3be1ae868d3ca))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.17.5 ([3c8e894](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/3c8e894b1a86663f8e2dd6ff52f6ef656685691f))
+- chore(make): add dev command ([62d9357](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/62d935769547bb05581d067536515b37b96d2460))
+- chore(devcontainer): initial support for devcontainer ([7d8507e](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/7d8507e4c7cb2928e3e84a0b3df233b710863094))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.17.1 [[#38](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/38)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.1.0 [[#39](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/39)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.8.2 [[#36](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/36)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.8.2 ([1750c1e](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/1750c1e506d2108d6f601c2900fbf2a4d5f2434d))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.17.1 ([5d7eaf5](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/5d7eaf5f57436cd0053a7801b9ad82c67fdbcf8b))
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.1.0 ([9cc1f70](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/9cc1f70de1a57a4c2677327d0a59b9bc3b25308b))
+- chore(deps): update golang docker tag to v1.23.3 [[#31](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/31)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.62.0 [[#32](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/32)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.16.0 [[#30](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/30)]
+- ci(release-helper): disable workflow for now [[#33](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/33)]
+- ci(release-helper): disable workflow for now ([bf2a6ed](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/bf2a6ed23566f291357eede0107e74a5982a7b6e))
+- chore(deps): update golangci/golangci-lint docker tag to v1.62.0 ([3ffdae6](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/3ffdae66c9fa9d980cd7653af2b93b089bdcb9f9))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.16.0 ([c5d671b](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c5d671b0858859e1931c229d113f2ce286018edc))
+- chore(deps): update golang docker tag to v1.23.3 ([199c059](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/199c05908115a91e2ccd1969fa25ecca488cb692))
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.3 [[#29](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/29)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.3 ([a0e0181](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a0e01818903d1319d3b964e2b11d46474e741cbe))
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.2 [[#26](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/26)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.2 ([4895eee](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/4895eeebc3c064098cc6ceedd009d19f790e16f7))
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.3 [[#25](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/25)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.3 ([e44d7b7](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/e44d7b783d960e3a4055f62ddd55b934fb6b5953))
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.5 [[#24](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/24)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.15.4 [[#23](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/23)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5 [[#22](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/22)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.15.4 ([baacdd6](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/baacdd6185de931c9816a4c0a4707f28bd004dac))
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.5 ([0b12a50](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/0b12a5079b30ef634d689cf2f5beec56a8543844))
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5 ([ee2bbef](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ee2bbef84b39b795a39452f0f9d836a57f19f8cb))
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.14.4 [[#21](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/21)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v8.14.4 ([8138a91](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/8138a91e536ba1c7b11a9493d496788fdbbe7f5c))
+- chore(deps): update dependency go to v1.23.2 [[#19](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/19)]
+- chore(deps): update dependency go to v1.23.2 ([61fd120](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/61fd1206b90a7c7e47d61bf9a14cd2c3e7ebbaa4))
+- chore(deps): update golang docker tag to v1.23.2 [[#20](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/20)]
+- chore(deps): update golang docker tag to v1.23.2 ([5e432ff](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/5e432ffa5c396871458c7be751eb6a1b76f0f854))
+- ci: add release-helper pipeline [[#18](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/18)]
+- ci: add release-helper pipeline ([f1bc898](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/f1bc898a2626f138f18ea714efa58d89b72f0f63))
+- refactor: complete rewrite [[#17](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/17)]
+- chore: update editorconfig ([d6f6274](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/d6f6274a643a4a1a873f6fa93260269ba22d210d))
+- feat: add Makefile ([176926f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/176926f864f2e16ab333289ea76dbf15d03d7dd3))
+- feat: initialize tests ([f085f66](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/f085f66d6621b9451f5a1cf2fd97a9008484937f))
+- fix: docker build ([17160e3](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/17160e38cffb3dd21ffbec0cdc58154442dc2457))
+- refactor: complete rewrite ([bcedc52](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/bcedc52d7cc2939c437b0c5d5e9b14c504ded9e8))
+- ci(build): dryrun should be performed on push event [[#16](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/16)]
+- ci(build): dryrun should be performed on push event ([a96da41](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a96da415766a36fbd16f90db80e75f2bff10d92a))
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.1 [[#15](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/15)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.1 ([c8e1e85](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c8e1e85733b2ed8268a80b6d72356badd904ec1d))
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.4 [[#14](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/14)]
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.4 ([7d4b3a3](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/7d4b3a36a341de834c17d77d4246c9611a980b79))
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.0 [[#13](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/13)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.12.0 ([6b861fe](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/6b861fe9b3eac4190f6e0554d9f57a795b009359))
+- chore(deps): update golangci/golangci-lint docker tag to v1.61.0 [[#12](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/12)]
+- chore(deps): update dependency go to v1.23.1 [[#9](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/9)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.1 [[#11](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/11)]
+- chore(deps): update golangci/golangci-lint docker tag to v1.61.0 ([a501055](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a501055cc9307c4b7cd7125c83bdc6334f1dd1c3))
+- chore(deps): update dependency go to v1.23.1 ([164b963](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/164b963c78aaad0954cdc45268b962ff5dc1a799))
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v2.7.1 ([02d14c1](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/02d14c14268ad22e05537dc74bbb224b638647e0))
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.3 [[#10](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/10)]
+- chore(deps): update golang docker tag to v1.23.1 [[#5](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/5)]
+- chore(deps): update golang docker tag to v1.23.1 ([c2849fe](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c2849fe87876c7f42069e43a9c46a1b5c56b7d4d))
+- chore(deps): update module github.com/prometheus/client_golang to v1.20.3 ([0fd0631](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/0fd0631df984025eec9d77176a1094e6f200e49a))
+- ci(build): steps should be always be run on main [[#8](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/8)]
+- ci(build): steps should be always be run on main ([513d29a](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/513d29ae027432014f6810b94f9816564e5f17d6))
+- chore: allow renovate to update the go version [[#7](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/7)]
+- chore: allow renovate to update the go version ([7ce731a](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/7ce731ae411cc2ef3300875f9c8f6e115d5ab7b8))
