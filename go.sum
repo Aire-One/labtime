@@ -8,6 +8,8 @@ github.com/go-co-op/gocron/v2 v2.16.0 h1:uqUF6WFZ4enRU45pWFNcn1xpDLc+jBOTKhPQI16
 github.com/go-co-op/gocron/v2 v2.16.0/go.mod h1:opexeOFy5BplhsKdA7bzY9zeYih8I8/WNJ4arTIFPVc=
 github.com/go-co-op/gocron/v2 v2.16.1 h1:ux/5zxVRveCaCuTtNI3DiOk581KC1KpJbpJFYUEVYwo=
 github.com/go-co-op/gocron/v2 v2.16.1/go.mod h1:opexeOFy5BplhsKdA7bzY9zeYih8I8/WNJ4arTIFPVc=
+github.com/go-co-op/gocron/v2 v2.16.2 h1:r08P663ikXiulLT9XaabkLypL/W9MoCIbqgQoAutyX4=
+github.com/go-co-op/gocron/v2 v2.16.2/go.mod h1:4YTLGCCAH75A5RlQ6q+h+VacO7CgjkgP0EJ+BEOXRSI=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
