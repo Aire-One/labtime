@@ -8,6 +8,7 @@
 
 ### Misc
 
+- chore(renovate): add golangci-lint package rule for version bumping ([84dfd33](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/84dfd33d373344f82631a679ce963189d2a1ea8f))
 - chore(renovate): add golangci-lint package rule for version bumping ([190f0b1](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/190f0b11bef73be28001486259e02a02936274e9))
 - chore(renovate): add regex manager for golangci-lint versioning ([663781b](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/663781b4c903341fa2805ef51ca1361301aa6993))
 - chore(renovate): add regex manager for golangci-lint versioning ([9086418](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/908641827dada6eb2cfe30abb2e6eb285e3a115a))
