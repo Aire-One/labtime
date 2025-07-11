@@ -8,6 +8,13 @@
       ],
       "rangeStrategy": "bump",
       "groupName": "golang"
+    },
+    {
+      "matchPackageNames": [
+        "golangci-lint"
+      ],
+      "rangeStrategy": "bump",
+      "groupName": "golangci-lint"
     }
   ],
   "regexManagers": [
