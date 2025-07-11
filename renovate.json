@@ -4,8 +4,7 @@
     {
       "matchPackageNames": [
         "go",
-        "golang",
-        "mcr.microsoft.com/devcontainers/go"
+        "golang"
       ],
       "rangeStrategy": "bump",
       "groupName": "golang"
@@ -14,10 +13,10 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "^.devcontainers/devcontainers.json$"
+        ".devcontainer\\/devcontainer\\.json$"
       ],
       "matchStrings": [
-        "^\"golangciLintVersion\": \"(?<currentValue>.*?)\""
+        "\"golangciLintVersion\": \"(?<currentValue>.*?)\""
       ],
       "depNameTemplate": "github.com/golangci/golangci-lint",
       "datasourceTemplate": "go"
