@@ -8,6 +8,7 @@
 
 ### Misc
 
+- chore(renovate): add regex manager for golangci-lint versioning ([9086418](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/908641827dada6eb2cfe30abb2e6eb285e3a115a))
 - chore(devcontainer): move to debian base image [[#72](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/72)]
 - chore(devcontainer): move to debian base image ([32e3f44](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/32e3f44adf1817aad9475b2feef53ee5b172b7ce))
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.2 [[#64](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/64)]
