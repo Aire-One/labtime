@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-07
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-11
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### Misc
 
+- chore(devcontainer): move to debian base image [[#72](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/72)]
+- chore(devcontainer): move to debian base image ([32e3f44](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/32e3f44adf1817aad9475b2feef53ee5b172b7ce))
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.2 [[#64](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/64)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.2 ([031bef8](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/031bef8842c4812c80def82cacfb7ef282ad1c68))
 - chore(release-helper): add config file [[#68](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/68)]
