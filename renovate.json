@@ -11,7 +11,8 @@
     },
     {
       "matchPackageNames": [
-        ".*golangci-lint"
+        "golangci/golangci-lint",
+        "github.com/golangci/golangci-lint"
       ],
       "rangeStrategy": "bump",
       "groupName": "golangci-lint"
