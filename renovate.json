@@ -10,5 +10,17 @@
       "rangeStrategy": "bump",
       "groupName": "golang"
     }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^.devcontainers/devcontainers.json$"
+      ],
+      "matchStrings": [
+        "^\"golangciLintVersion\": \"(?<currentValue>.*?)\""
+      ],
+      "depNameTemplate": "github.com/golangci/golangci-lint",
+      "datasourceTemplate": "go"
+    }
   ]
 }
