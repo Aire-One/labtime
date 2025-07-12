@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-11
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-12
 
 ### ❤️ Thanks to all contributors! ❤️
 
