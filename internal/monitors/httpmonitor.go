@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"net/http"
-	"time"
 
 	aireoneHttp "aireone.xyz/labtime/internal/http"
 	"aireone.xyz/labtime/internal/yamlconfig"
@@ -90,20 +89,6 @@ func (h *HTTPMonitor) Run() error {
 	return nil
 }
 
-func newHTTPDurationMiddleware(duration *time.Duration, proxied http.RoundTripper) *aireoneHttp.RoundTripperMiddleware {
-	var t time.Time
-
-	return &aireoneHttp.RoundTripperMiddleware{
-		Proxied: proxied,
-		OnBefore: func(_ *http.Request) {
-			t = time.Now()
-		},
-		OnAfter: func(_ *http.Response) {
-			*duration = time.Since(t)
-		},
-	}
-}
-
 type HTTPHealthCheckerData struct {
 	StatusCode int
 }
@@ -115,9 +100,8 @@ func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
 	}
 	req := r.WithContext(context.TODO())
 
-	var duration time.Duration
 	client := &http.Client{
-		Transport: aireoneHttp.NewLoggerMiddleware(h.Logger, newHTTPDurationMiddleware(&duration, http.DefaultTransport)),
+		Transport: aireoneHttp.NewLoggerMiddleware(h.Logger, http.DefaultTransport),
 	}
 	resp, err := client.Do(req)
 	if err != nil {
