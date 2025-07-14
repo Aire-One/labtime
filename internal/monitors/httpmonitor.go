@@ -46,6 +46,9 @@ func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *promethe
 		URL:                   target.URL,
 		Logger:                logger,
 		SiteStatusCodeMonitor: collector,
+		Client: &http.Client{
+			Transport: aireoneHttp.NewLoggerMiddleware(logger, http.DefaultTransport),
+		},
 	}
 }
 
@@ -72,6 +75,8 @@ type HTTPMonitor struct {
 	Logger *log.Logger
 
 	SiteStatusCodeMonitor *prometheus.GaugeVec
+
+	Client *http.Client
 }
 
 func (h *HTTPMonitor) ID() string {
@@ -100,10 +105,7 @@ func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
 	}
 	req := r.WithContext(context.TODO())
 
-	client := &http.Client{
-		Transport: aireoneHttp.NewLoggerMiddleware(h.Logger, http.DefaultTransport),
-	}
-	resp, err := client.Do(req)
+	resp, err := h.Client.Do(req)
 	if err != nil {
 		return nil, err
 	}
