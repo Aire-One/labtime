@@ -83,8 +83,8 @@ func (h *HTTPMonitor) ID() string {
 	return h.Label
 }
 
-func (h *HTTPMonitor) Run() error {
-	d, err := h.httpHealthCheck()
+func (h *HTTPMonitor) Run(ctx context.Context) error {
+	d, err := h.httpHealthCheck(ctx)
 	if err != nil {
 		return errors.Wrap(err, "error running http health check")
 	}
@@ -98,12 +98,12 @@ type HTTPHealthCheckerData struct {
 	StatusCode int
 }
 
-func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
-	r, err := http.NewRequest(http.MethodHead, h.URL, http.NoBody)
+func (h *HTTPMonitor) httpHealthCheck(ctx context.Context) (*HTTPHealthCheckerData, error) {
+	req, err := http.NewRequest(http.MethodHead, h.URL, http.NoBody)
 	if err != nil {
 		return nil, errors.Wrap(err, "error creating http request")
 	}
-	req := r.WithContext(context.TODO())
+	req = req.WithContext(ctx)
 
 	resp, err := h.Client.Do(req)
 	if err != nil {

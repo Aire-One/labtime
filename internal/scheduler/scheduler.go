@@ -1,6 +1,7 @@
 package scheduler
 
 import (
+	"context"
 	"log"
 	"time"
 
@@ -30,9 +31,9 @@ func NewScheduler(logger *log.Logger) (*Scheduler, error) {
 func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 	cronJob, err := s.scheduler.NewJob(
 		gocron.DurationJob(time.Duration(interval)*time.Second),
-		gocron.NewTask(func() {
+		gocron.NewTask(func(ctx context.Context) {
 			s.logger.Printf("Running job for monitor %s\n", job.ID())
-			if err := job.Run(); err != nil {
+			if err := job.Run(ctx); err != nil {
 				s.logger.Printf("Error running job for monitor %s: %s\n", job.ID(), err)
 			}
 			s.logger.Printf("Job finished for monitor %s\n", job.ID())

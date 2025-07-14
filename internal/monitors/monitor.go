@@ -1,6 +1,7 @@
 package monitors
 
 import (
+	"context"
 	"log"
 
 	"aireone.xyz/labtime/internal/yamlconfig"
@@ -10,7 +11,7 @@ import (
 // Job defines the interface for all monitoring implementations.
 type Job interface {
 	ID() string
-	Run() error
+	Run(context.Context) error
 }
 
 // Target defines the interface for monitoring targets.

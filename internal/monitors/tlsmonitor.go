@@ -1,6 +1,7 @@
 package monitors
 
 import (
+	"context"
 	"crypto/tls"
 	"log"
 	"time"
@@ -77,7 +78,7 @@ func (t *TLSMonitor) ID() string {
 	return t.Label
 }
 
-func (t *TLSMonitor) Run() error {
+func (t *TLSMonitor) Run(_ context.Context) error {
 	d, err := t.tlsHandshake()
 	if err != nil {
 		return errors.Wrap(err, "error running tls handshake")
