@@ -7,11 +7,64 @@ import (
 	"time"
 
 	aireoneHttp "aireone.xyz/labtime/internal/http"
+	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var ErrInvalidStatusCode = errors.New("expected status code 200")
+// HTTPTarget represents an HTTP monitoring target.
+type HTTPTarget struct {
+	Name     string `yaml:"name"`
+	URL      string `yaml:"url"`
+	Interval int    `yaml:"interval,omitempty"`
+}
+
+// GetName implements the Target interface.
+func (h HTTPTarget) GetName() string {
+	return h.Name
+}
+
+// GetInterval implements the Target interface.
+func (h HTTPTarget) GetInterval() int {
+	return h.Interval
+}
+
+// HTTPMonitorFactory implements MonitorFactory for HTTP monitoring.
+type HTTPMonitorFactory struct{}
+
+// CreateCollector creates a Prometheus GaugeVec for HTTP monitoring.
+func (h HTTPMonitorFactory) CreateCollector() *prometheus.GaugeVec {
+	return prometheus.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "labtime_http_site_status_code",
+		Help: "The status code of the site.",
+	}, []string{"http_monitor_site_name", "http_site_url"})
+}
+
+// CreateMonitor creates an HTTP monitor instance.
+func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *prometheus.GaugeVec, logger *log.Logger) Job {
+	return &HTTPMonitor{
+		Label:                 target.Name,
+		URL:                   target.URL,
+		Logger:                logger,
+		SiteStatusCodeMonitor: collector,
+	}
+}
+
+// HTTPTargetProvider implements TargetProvider for HTTP targets.
+type HTTPTargetProvider struct{}
+
+// GetTargets extracts HTTP targets from the configuration.
+func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarget {
+	targets := make([]HTTPTarget, len(config.HTTPStatusCode))
+	for i, t := range config.HTTPStatusCode {
+		targets[i] = HTTPTarget{
+			Name:     t.Name,
+			URL:      t.URL,
+			Interval: t.Interval,
+		}
+	}
+	return targets
+}
 
 type HTTPMonitor struct {
 	Label string

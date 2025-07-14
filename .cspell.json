@@ -20,6 +20,7 @@
     "hadolint",
     "healthcheckers",
     "labtime",
+    "monitorconfig",
     "nonroot",
     "promhttp",
     "prommonitors",
