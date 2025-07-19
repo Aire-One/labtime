@@ -11,6 +11,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 )
 
+type TLSDialFunc func(network, addr string, config *tls.Config) (*tls.Conn, error)
+
 // TLSTarget represents a TLS monitoring target.
 type TLSTarget struct {
 	Name     string `yaml:"name"`
@@ -46,6 +48,7 @@ func (t TLSMonitorFactory) CreateMonitor(target TLSTarget, collector *prometheus
 		Domain:             target.Domain,
 		Logger:             logger,
 		ExpiresTimeMonitor: collector,
+		DialFunc:           tls.Dial,
 	}
 }
 
@@ -72,6 +75,8 @@ type TLSMonitor struct {
 	Logger *log.Logger
 
 	ExpiresTimeMonitor *prometheus.GaugeVec
+
+	DialFunc TLSDialFunc
 }
 
 func (t *TLSMonitor) ID() string {
@@ -94,7 +99,7 @@ type TLSHealthCheckerData struct {
 }
 
 func (t *TLSMonitor) tlsHandshake() (*TLSHealthCheckerData, error) {
-	conn, err := tls.Dial("tcp", t.Domain+":443", nil)
+	conn, err := t.DialFunc("tcp", t.Domain+":443", nil)
 	if err != nil {
 		return nil, err
 	}
