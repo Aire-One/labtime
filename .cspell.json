@@ -28,6 +28,7 @@
     "sigchan",
     "testutil",
     "woodpeckerci",
+    "Wrapf",
     "yamlconfig"
   ]
 }
