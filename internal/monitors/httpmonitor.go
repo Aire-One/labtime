@@ -68,6 +68,10 @@ func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarg
 	return targets
 }
 
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+
 type HTTPMonitor struct {
 	Label string
 	URL   string
@@ -76,7 +80,7 @@ type HTTPMonitor struct {
 
 	SiteStatusCodeMonitor *prometheus.GaugeVec
 
-	Client *http.Client
+	Client HTTPClient
 }
 
 func (h *HTTPMonitor) ID() string {

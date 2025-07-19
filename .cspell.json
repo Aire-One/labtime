@@ -26,6 +26,7 @@
     "prommonitors",
     "proxied",
     "sigchan",
+    "testutil",
     "woodpeckerci",
     "yamlconfig"
   ]
