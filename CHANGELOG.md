@@ -8,6 +8,10 @@
 
 ### Misc
 
+- chore(deps): update golangci-lint to v2 (major) [[#74](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/74)]
+- fix(httpmonitor): noctx lint failure ([41a9481](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/41a94818dee07272465788c819c861863749217c))
+- chore: run `golangci-lint migrate` ([2706c2f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/2706c2f495d6be16c27b479c01b51a8a3c071fd4))
+- chore(deps): update golangci-lint to v2 ([a56a8b2](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a56a8b22e792ba1ab658d78e5d539a9ef73ab55b))
 - refactor/app-monitor-setup [[#76](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/76)]
 - fix: cspell ([6812351](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/6812351d5893f5c3aba2ac162a275a5e0513bbde))
 - test(monitors): implement TLSMonitor tests ([3fcaace](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/3fcaace60e561938465df7a0cbad13d18c4efe0c))
