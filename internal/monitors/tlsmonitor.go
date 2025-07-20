@@ -1,13 +1,72 @@
 package monitors
 
 import (
+	"context"
 	"crypto/tls"
 	"log"
 	"time"
 
+	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 )
+
+type TLSDialFunc func(network, addr string, config *tls.Config) (*tls.Conn, error)
+
+// TLSTarget represents a TLS monitoring target.
+type TLSTarget struct {
+	Name     string `yaml:"name"`
+	Domain   string `yaml:"domain"`
+	Interval int    `yaml:"interval,omitempty"`
+}
+
+// GetName implements the Target interface.
+func (t TLSTarget) GetName() string {
+	return t.Name
+}
+
+// GetInterval implements the Target interface.
+func (t TLSTarget) GetInterval() int {
+	return t.Interval
+}
+
+// TLSMonitorFactory implements MonitorFactory for TLS monitoring.
+type TLSMonitorFactory struct{}
+
+// CreateCollector creates a Prometheus GaugeVec for TLS monitoring.
+func (t TLSMonitorFactory) CreateCollector() *prometheus.GaugeVec {
+	return prometheus.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "labtime_tls_cert_expire_time",
+		Help: "The duration (in second) until the TLS certificate expires.",
+	}, []string{"tls_monitor_name", "tls_domain_name"})
+}
+
+// CreateMonitor creates a TLS monitor instance.
+func (t TLSMonitorFactory) CreateMonitor(target TLSTarget, collector *prometheus.GaugeVec, logger *log.Logger) Job {
+	return &TLSMonitor{
+		Label:              target.Name,
+		Domain:             target.Domain,
+		Logger:             logger,
+		ExpiresTimeMonitor: collector,
+		DialFunc:           tls.Dial,
+	}
+}
+
+// TLSTargetProvider implements TargetProvider for TLS targets.
+type TLSTargetProvider struct{}
+
+// GetTargets extracts TLS targets from the configuration.
+func (t TLSTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []TLSTarget {
+	targets := make([]TLSTarget, len(config.TLSMonitors))
+	for i, monitor := range config.TLSMonitors {
+		targets[i] = TLSTarget{
+			Name:     monitor.Name,
+			Domain:   monitor.Domain,
+			Interval: monitor.Interval,
+		}
+	}
+	return targets
+}
 
 type TLSMonitor struct {
 	Label  string
@@ -16,13 +75,15 @@ type TLSMonitor struct {
 	Logger *log.Logger
 
 	ExpiresTimeMonitor *prometheus.GaugeVec
+
+	DialFunc TLSDialFunc
 }
 
 func (t *TLSMonitor) ID() string {
 	return t.Label
 }
 
-func (t *TLSMonitor) Run() error {
+func (t *TLSMonitor) Run(_ context.Context) error {
 	d, err := t.tlsHandshake()
 	if err != nil {
 		return errors.Wrap(err, "error running tls handshake")
@@ -38,7 +99,7 @@ type TLSHealthCheckerData struct {
 }
 
 func (t *TLSMonitor) tlsHandshake() (*TLSHealthCheckerData, error) {
-	conn, err := tls.Dial("tcp", t.Domain+":443", nil)
+	conn, err := t.DialFunc("tcp", t.Domain+":443", nil)
 	if err != nil {
 		return nil, err
 	}

@@ -15,7 +15,9 @@ type RoundTripperMiddleware struct {
 func (m RoundTripperMiddleware) RoundTrip(req *http.Request) (res *http.Response, err error) {
 	m.OnBefore(req)
 	res, err = m.Proxied.RoundTrip(req)
-	m.OnAfter(res)
+	if res != nil {
+		m.OnAfter(res)
+	}
 
 	return res, err
 }

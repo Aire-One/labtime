@@ -1,6 +1,7 @@
 package scheduler
 
 import (
+	"context"
 	"log"
 	"time"
 
@@ -27,22 +28,22 @@ func NewScheduler(logger *log.Logger) (*Scheduler, error) {
 	}, nil
 }
 
-func (s *Scheduler) AddJob(m monitors.Monitor, interval int) error {
-	j, err := s.scheduler.NewJob(
+func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
+	cronJob, err := s.scheduler.NewJob(
 		gocron.DurationJob(time.Duration(interval)*time.Second),
-		gocron.NewTask(func() {
-			s.logger.Printf("Running job for monitor %s\n", m.ID())
-			if err := m.Run(); err != nil {
-				s.logger.Printf("Error running job for monitor %s: %s\n", m.ID(), err)
+		gocron.NewTask(func(ctx context.Context) {
+			s.logger.Printf("Running job for monitor %s\n", job.ID())
+			if err := job.Run(ctx); err != nil {
+				s.logger.Printf("Error running job for monitor %s: %s\n", job.ID(), err)
 			}
-			s.logger.Printf("Job finished for monitor %s\n", m.ID())
+			s.logger.Printf("Job finished for monitor %s\n", job.ID())
 		}),
 	)
 	if err != nil {
 		return errors.Wrap(err, "error creating job")
 	}
 
-	s.logger.Printf("Job started for monitor %s with ID: %s\n", m.ID(), j.ID().String())
+	s.logger.Printf("Job started for monitor %s with ID: %s\n", job.ID(), cronJob.ID().String())
 
 	return nil
 }

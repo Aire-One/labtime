@@ -4,14 +4,73 @@ import (
 	"context"
 	"log"
 	"net/http"
-	"time"
 
 	aireoneHttp "aireone.xyz/labtime/internal/http"
+	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
-var ErrInvalidStatusCode = errors.New("expected status code 200")
+// HTTPTarget represents an HTTP monitoring target.
+type HTTPTarget struct {
+	Name     string `yaml:"name"`
+	URL      string `yaml:"url"`
+	Interval int    `yaml:"interval,omitempty"`
+}
+
+// GetName implements the Target interface.
+func (h HTTPTarget) GetName() string {
+	return h.Name
+}
+
+// GetInterval implements the Target interface.
+func (h HTTPTarget) GetInterval() int {
+	return h.Interval
+}
+
+// HTTPMonitorFactory implements MonitorFactory for HTTP monitoring.
+type HTTPMonitorFactory struct{}
+
+// CreateCollector creates a Prometheus GaugeVec for HTTP monitoring.
+func (h HTTPMonitorFactory) CreateCollector() *prometheus.GaugeVec {
+	return prometheus.NewGaugeVec(prometheus.GaugeOpts{
+		Name: "labtime_http_site_status_code",
+		Help: "The status code of the site.",
+	}, []string{"http_monitor_site_name", "http_site_url"})
+}
+
+// CreateMonitor creates an HTTP monitor instance.
+func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *prometheus.GaugeVec, logger *log.Logger) Job {
+	return &HTTPMonitor{
+		Label:                 target.Name,
+		URL:                   target.URL,
+		Logger:                logger,
+		SiteStatusCodeMonitor: collector,
+		Client: &http.Client{
+			Transport: aireoneHttp.NewLoggerMiddleware(logger, http.DefaultTransport),
+		},
+	}
+}
+
+// HTTPTargetProvider implements TargetProvider for HTTP targets.
+type HTTPTargetProvider struct{}
+
+// GetTargets extracts HTTP targets from the configuration.
+func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarget {
+	targets := make([]HTTPTarget, len(config.HTTPStatusCode))
+	for i, t := range config.HTTPStatusCode {
+		targets[i] = HTTPTarget{
+			Name:     t.Name,
+			URL:      t.URL,
+			Interval: t.Interval,
+		}
+	}
+	return targets
+}
+
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
 
 type HTTPMonitor struct {
 	Label string
@@ -20,14 +79,16 @@ type HTTPMonitor struct {
 	Logger *log.Logger
 
 	SiteStatusCodeMonitor *prometheus.GaugeVec
+
+	Client HTTPClient
 }
 
 func (h *HTTPMonitor) ID() string {
 	return h.Label
 }
 
-func (h *HTTPMonitor) Run() error {
-	d, err := h.httpHealthCheck()
+func (h *HTTPMonitor) Run(ctx context.Context) error {
+	d, err := h.httpHealthCheck(ctx)
 	if err != nil {
 		return errors.Wrap(err, "error running http health check")
 	}
@@ -37,36 +98,18 @@ func (h *HTTPMonitor) Run() error {
 	return nil
 }
 
-func newHTTPDurationMiddleware(duration *time.Duration, proxied http.RoundTripper) *aireoneHttp.RoundTripperMiddleware {
-	var t time.Time
-
-	return &aireoneHttp.RoundTripperMiddleware{
-		Proxied: proxied,
-		OnBefore: func(_ *http.Request) {
-			t = time.Now()
-		},
-		OnAfter: func(_ *http.Response) {
-			*duration = time.Since(t)
-		},
-	}
-}
-
 type HTTPHealthCheckerData struct {
 	StatusCode int
 }
 
-func (h *HTTPMonitor) httpHealthCheck() (*HTTPHealthCheckerData, error) {
-	r, err := http.NewRequest(http.MethodHead, h.URL, http.NoBody)
+func (h *HTTPMonitor) httpHealthCheck(ctx context.Context) (*HTTPHealthCheckerData, error) {
+	req, err := http.NewRequest(http.MethodHead, h.URL, http.NoBody)
 	if err != nil {
 		return nil, errors.Wrap(err, "error creating http request")
 	}
-	req := r.WithContext(context.TODO())
+	req = req.WithContext(ctx)
 
-	var duration time.Duration
-	client := &http.Client{
-		Transport: aireoneHttp.NewLoggerMiddleware(h.Logger, newHTTPDurationMiddleware(&duration, http.DefaultTransport)),
-	}
-	resp, err := client.Do(req)
+	resp, err := h.Client.Do(req)
 	if err != nil {
 		return nil, err
 	}
