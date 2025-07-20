@@ -5,3 +5,7 @@ http_status_code:
 tls_monitors:
   - domain: aireone.xyz
   - domain: gitea.aireone.xyz
+docker_monitors:
+  - container_name: example-stack-grafana-1
+  - name: prom
+    container_name: example-stack-prometheus-1

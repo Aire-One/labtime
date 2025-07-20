@@ -30,6 +30,15 @@ type YamlConfig struct {
 		// Interval to ping the target. Default is 60 seconds.
 		Interval int `yaml:"interval,omitempty"`
 	} `yaml:"tls_monitors"`
+	// List of Docker containers to monitor.
+	DockerMonitors []struct {
+		// Name of the target. Used to identify the target from Prometheus. Default is the container name.
+		Name string `yaml:"name"`
+		// Container name to monitor. Should match the exact container name in Docker.
+		ContainerName string `yaml:"container_name"`
+		// Interval to check the container status. Default is 60 seconds.
+		Interval int `yaml:"interval,omitempty"`
+	} `yaml:"docker_monitors"`
 }
 
 func NewYamlConfig(r io.Reader) (*YamlConfig, error) {
@@ -61,6 +70,15 @@ func applyDefault(config *YamlConfig) {
 		}
 		if config.TLSMonitors[i].Interval == 0 {
 			config.TLSMonitors[i].Interval = 60
+		}
+	}
+
+	for i := range config.DockerMonitors {
+		if config.DockerMonitors[i].Name == "" {
+			config.DockerMonitors[i].Name = config.DockerMonitors[i].ContainerName
+		}
+		if config.DockerMonitors[i].Interval == 0 {
+			config.DockerMonitors[i].Interval = 60
 		}
 	}
 }
