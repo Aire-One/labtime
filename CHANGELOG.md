@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-12
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-20
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,17 @@
 
 ### Misc
 
+- refactor/app-monitor-setup [[#76](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/76)]
+- fix: cspell ([6812351](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/6812351d5893f5c3aba2ac162a275a5e0513bbde))
+- test(monitors): implement TLSMonitor tests ([3fcaace](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/3fcaace60e561938465df7a0cbad13d18c4efe0c))
+- test(monitors): implement HTTPMonitor tests ([5a9edcb](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/5a9edcb3efc68c92b2eae8256179819ae1b1c80d))
+- fix(middlewares): add nil check before calling OnAfter ([82a8ba1](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/82a8ba16785b21bc54f645ca2c5b6a2dfef5713e))
+- refactor(scheduler): pass context to Run methods ([bab8cff](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/bab8cff8537f1b37cb2b5199bda914dbe5417943))
+- refactor(httpmonitor): inject http client ([248bb81](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/248bb811b5b408890918f5c92270a9792107274f))
+- refactor(httpmonitor): remove duration middleware ([ce47367](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ce473678110defaa82e85a402638bdff4745fbc8))
+- chore(makefile): add fmt target ([100a56c](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/100a56c710a18283f9e1ddd2733de5b0cc01afb0))
+- refactor(monitoring): restructure monitoring setup ([e3a51b4](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/e3a51b4d73b21aef64b7c3ee072082c397a25190))
+- refactor(app): make `createScheduler` modular ([ad6c456](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ad6c456e05fb41b24113f94d675be85fbc96794e))
 - chore(renovate): update golang package rules and add regex manager for golangci-lint ([c9e8d33](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c9e8d3381f850cdebeb2718d8376ddf29fa2d316))
 - chore(renovate): add golangci-lint package rule for version bumping ([c9cba60](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/c9cba60b0633a766ad25b43711657b5fb24daa01))
 - chore(renovate): add golangci-lint package rule for version bumping ([84dfd33](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/84dfd33d373344f82631a679ce963189d2a1ea8f))
