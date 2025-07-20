@@ -103,7 +103,7 @@ type HTTPHealthCheckerData struct {
 }
 
 func (h *HTTPMonitor) httpHealthCheck(ctx context.Context) (*HTTPHealthCheckerData, error) {
-	req, err := http.NewRequest(http.MethodHead, h.URL, http.NoBody)
+	req, err := http.NewRequestWithContext(ctx, http.MethodHead, h.URL, http.NoBody)
 	if err != nil {
 		return nil, errors.Wrap(err, "error creating http request")
 	}
