@@ -8,6 +8,8 @@
 
 ### Misc
 
+- feat/add-docker-monitor [[#75](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/75)]
+- feat(monitor): initial DockerMonitor implementation ([a9fbf23](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a9fbf233b9bb3ea11b9590db904f9eba9975b5a9))
 - chore(deps): update golangci-lint to v2 (major) [[#74](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/74)]
 - fix(httpmonitor): noctx lint failure ([41a9481](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/41a94818dee07272465788c819c861863749217c))
 - chore: run `golangci-lint migrate` ([2706c2f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/2706c2f495d6be16c27b479c01b51a8a3c071fd4))
