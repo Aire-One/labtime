@@ -8,6 +8,10 @@
 
 ### Misc
 
+- chore/renovate-lint [[#78](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/78)]
+- fix(renovate): apply lint fixes ([2bacfd7](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/2bacfd785590c2a4d4438934270999ed0d95807a))
+- chore(devcontainer): add YAML extension for better DX ([1ed1c59](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/1ed1c59ccbe34b88149115323e46ffd74b3eb1df))
+- ci(lint): add renovate-config-validator step ([ecdc9b3](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ecdc9b3a898fe7b6004550f99f3451bb94d5869d))
 - chore(renovate): manage cspell from makefile [[#77](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/77)]
 - chore(renovate): manage cspell from makefile ([7ac598d](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/7ac598dce8e6d5b80a7c53eacd7d34af50dacf7f))
 - feat/add-docker-monitor [[#75](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/75)]
