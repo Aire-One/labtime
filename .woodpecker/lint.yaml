@@ -29,3 +29,13 @@ steps:
     commands:
       - golangci-lint run --timeout 15m
     depends_on: []
+
+  renovate:
+    image: renovate/renovate:41.40.0
+    commands:
+      - renovate-config-validator --strict
+    when:
+      path:
+        - renovate.json
+        - .woodpecker/lint.yaml
+    depends_on: []

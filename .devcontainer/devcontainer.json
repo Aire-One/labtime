@@ -13,7 +13,8 @@
       "extensions": [
         "streetsidesoftware.code-spell-checker",
         "EditorConfig.EditorConfig",
-        "DavidAnson.vscode-markdownlint"
+        "DavidAnson.vscode-markdownlint",
+        "redhat.vscode-yaml"
       ]
     }
   },
