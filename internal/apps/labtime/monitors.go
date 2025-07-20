@@ -17,5 +17,9 @@ func getMonitorConfigs() map[string]monitorconfig.MonitorSetup {
 			Factory:  monitors.TLSMonitorFactory{},
 			Provider: monitors.TLSTargetProvider{},
 		},
+		"docker": &monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec]{
+			Factory:  monitors.DockerMonitorFactory{},
+			Provider: monitors.DockerTargetProvider{},
+		},
 	}
 }
