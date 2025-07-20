@@ -1,4 +1,4 @@
----
+version: "2"
 linters:
   enable:
     - asasalint
@@ -7,17 +7,11 @@ linters:
     - copyloopvar
     - depguard
     - durationcheck
-    - errcheck
     - errname
     - errorlint
     - gocritic
     - godot
-    - gofumpt
-    - goimports
     - gosec
-    - gosimple
-    - govet
-    - ineffassign
     - misspell
     - nilerr
     - nilnil
@@ -28,23 +22,42 @@ linters:
     - promlinter
     - reassign
     - revive
-    - staticcheck
     - testableexamples
     - thelper
     - tparallel
-    - typecheck
     - unconvert
-    - unused
     - unparam
     - usestdlibvars
     - usetesting
     - wastedassign
-linters-settings:
-  depguard:
-    rules:
-      main:
-        list-mode: lax
-        allow: [aireone.xyz/labtime] # It's mendatory to have at least one package in allow or deny list
-  errcheck:
-    check-type-assertions: true
-    check-blank: true
+  settings:
+    depguard:
+      rules:
+        main:
+          list-mode: lax
+          allow:
+            - aireone.xyz/labtime
+    errcheck:
+      check-type-assertions: true
+      check-blank: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
