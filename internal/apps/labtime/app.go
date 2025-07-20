@@ -7,11 +7,9 @@ import (
 	"os"
 	"time"
 
-	"aireone.xyz/labtime/internal/monitors"
 	"aireone.xyz/labtime/internal/scheduler"
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -62,39 +60,13 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 		return nil, errors.Wrap(err, "error creating scheduler")
 	}
 
-	// HTTP monitor
-	httpMonitor := prometheus.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "labtime_http_site_status_code",
-		Help: "The status code of the site.",
-	}, []string{"http_monitor_site_name", "http_site_url"})
-	prometheus.MustRegister(httpMonitor)
+	// Dictionary of monitor configurations
+	monitorConfigs := getMonitorConfigs()
 
-	for _, t := range config.HTTPStatusCode {
-		if err := scheduler.AddJob(&monitors.HTTPMonitor{
-			Label:                 t.Name,
-			URL:                   t.URL,
-			Logger:                logger,
-			SiteStatusCodeMonitor: httpMonitor,
-		}, t.Interval); err != nil {
-			return nil, errors.Wrap(err, "error adding job")
-		}
-	}
-
-	// TLS monitor
-	tlsMonitor := prometheus.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "labtime_tls_cert_expire_time",
-		Help: "The duration (in second) until the TLS certificate expires.",
-	}, []string{"tls_monitor_name", "tls_domain_name"})
-	prometheus.MustRegister(tlsMonitor)
-
-	for _, t := range config.TLSMonitors {
-		if err := scheduler.AddJob(&monitors.TLSMonitor{
-			Label:              t.Name,
-			Domain:             t.Domain,
-			Logger:             logger,
-			ExpiresTimeMonitor: tlsMonitor,
-		}, t.Interval); err != nil {
-			return nil, errors.Wrap(err, "error adding job")
+	// Setup monitors using the dictionary
+	for monitorType, monitorConfig := range monitorConfigs {
+		if err := monitorConfig.Setup(scheduler, config, logger); err != nil {
+			return nil, errors.Wrapf(err, "error setting up %s monitor", monitorType)
 		}
 	}
 

@@ -8,6 +8,11 @@ clean:
 	go clean -i ./...
 	rm -rf build
 
+.PHONY: fmt
+fmt:
+	@echo "Formatting code"
+	go fmt ./...
+
 .PHONY: lint
 lint:
 	@echo "Running golangci-lint"

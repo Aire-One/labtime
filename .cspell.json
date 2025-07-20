@@ -20,12 +20,15 @@
     "hadolint",
     "healthcheckers",
     "labtime",
+    "monitorconfig",
     "nonroot",
     "promhttp",
     "prommonitors",
     "proxied",
     "sigchan",
+    "testutil",
     "woodpeckerci",
+    "Wrapf",
     "yamlconfig"
   ]
 }
