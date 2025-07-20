@@ -8,6 +8,8 @@
 
 ### Misc
 
+- chore(renovate): manage cspell from makefile [[#77](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/77)]
+- chore(renovate): manage cspell from makefile ([7ac598d](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/7ac598dce8e6d5b80a7c53eacd7d34af50dacf7f))
 - feat/add-docker-monitor [[#75](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/75)]
 - feat(monitor): initial DockerMonitor implementation ([a9fbf23](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/a9fbf233b9bb3ea11b9590db904f9eba9975b5a9))
 - chore(deps): update golangci-lint to v2 (major) [[#74](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/74)]
