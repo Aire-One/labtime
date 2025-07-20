@@ -17,6 +17,13 @@
       ],
       "rangeStrategy": "bump",
       "groupName": "golangci-lint"
+    },
+    {
+      "matchPackageNames": [
+        "ghcr.io/streetsidesoftware/cspell"
+      ],
+      "rangeStrategy": "bump",
+      "groupName": "cspell"
     }
   ],
   "regexManagers": [
@@ -29,6 +36,15 @@
       ],
       "depNameTemplate": "github.com/golangci/golangci-lint",
       "datasourceTemplate": "go"
+    },
+    {
+      "fileMatch": [
+        "Makefile"
+      ],
+      "matchStrings": [
+        "\\sdocker run -it --rm -v ./:/workdir (?<depName>.*?):(?<currentValue>.*?) lint /workdir"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
