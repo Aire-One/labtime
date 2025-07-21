@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-20
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-21
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### Misc
 
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.0 [[#71](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/71)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.0 ([f4b223d](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/f4b223dd0a4f09a753a9ff35d889a282fd594dd9))
 - chore/renovate-lint [[#78](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/78)]
 - fix(renovate): apply lint fixes ([2bacfd7](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/2bacfd785590c2a4d4438934270999ed0d95807a))
 - chore(devcontainer): add YAML extension for better DX ([1ed1c59](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/1ed1c59ccbe34b88149115323e46ffd74b3eb1df))
