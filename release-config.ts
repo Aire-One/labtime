@@ -49,6 +49,5 @@ export default {
             weight: -2,
         },
     ],
-    skipCommitsWithoutPullRequest: false,
     useVersionPrefixV: true,
 };
