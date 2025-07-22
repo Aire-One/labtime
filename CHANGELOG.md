@@ -8,6 +8,7 @@
 
 ### Misc
 
+- chore(release-config): update config [[#85](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/85)]
 - chore(release-config): update config [[#84](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/84)]
 - chore/configure-release-helper [[#83](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/83)]
 - chore(deps): update golangci-lint to v2.3.0 [[#80](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/80)]
