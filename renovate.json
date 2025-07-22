@@ -17,6 +17,14 @@
       ],
       "rangeStrategy": "bump",
       "groupName": "golangci-lint"
+    },
+    {
+      "matchPackageNames": [
+        "/^renovate/"
+      ],
+      "automerge": true,
+      "separateMultipleMinor": false,
+      "separateMultipleMajor": false
     }
   ],
   "customManagers": [
