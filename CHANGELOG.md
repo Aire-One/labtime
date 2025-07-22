@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-21
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-22
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### Misc
 
+- chore(deps): update golangci-lint to v2.3.0 [[#80](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/80)]
+- chore(deps): update golangci-lint to v2.3.0 ([ef6efa0](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ef6efa0b01d54b1e05ff5536a564df4d4abdfe03))
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.0 [[#71](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/71)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.0 ([f4b223d](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/f4b223dd0a4f09a753a9ff35d889a282fd594dd9))
 - chore/renovate-lint [[#78](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/78)]
