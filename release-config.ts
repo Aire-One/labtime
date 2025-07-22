@@ -16,13 +16,13 @@ export default {
         },
         {
             title: '✨ Features',
-            labels: ['feature', 'feature 🚀️'],
+            labels: ['feature', 'feature 🚀️', 'feat'],
             bump: 'minor',
             weight: 1,
         },
         {
             title: '📈 Enhancement',
-            labels: ['enhancement', 'refactor', 'enhancement 👆️'],
+            labels: ['enhancement', 'refactor', 'enhancement 👆️', 'ci'],
             bump: 'minor',
         },
         {
@@ -37,7 +37,7 @@ export default {
         },
         {
             title: '📦️ Dependency',
-            labels: ['dependency', 'dependencies'],
+            labels: ['dependency', 'dependencies', 'deps'],
             bump: 'patch',
             weight: -1,
         },
