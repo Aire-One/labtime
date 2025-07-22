@@ -8,6 +8,9 @@
 
 ### Misc
 
+- chore/configure-release-helper [[#83](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/83)]
+- chore(release-config): add detailed change types for release notes ([815498f](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/815498faf3c47d4ba3795ba1fb11b585d477bb5f))
+- chore(renovate): add automerge configuration for renovate packages ([1a71bb7](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/1a71bb749b286c7cbbe85c24e9eea36133566a1a))
 - chore(deps): update golangci-lint to v2.3.0 [[#80](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/80)]
 - chore(deps): update golangci-lint to v2.3.0 ([ef6efa0](https://forgejo.aireone.xyz/Aire-One/labtime/src/commit/ef6efa0b01d54b1e05ff5536a564df4d4abdfe03))
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.0 [[#71](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/71)]
