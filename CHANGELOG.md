@@ -8,6 +8,7 @@
 
 ### Misc
 
+- chore(cspell): add missing words [[#87](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/87)]
 - chore(deps): update renovate/renovate docker tag to v41.43.0 [[#81](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/81)]
 - chore/cspell-commit-messages [[#86](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/86)]
 - chore(deps): update golang to v1.24.5 [[#70](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/70)]
