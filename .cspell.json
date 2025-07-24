@@ -1,5 +1,11 @@
 {
+  "version": "0.2",
+  "language": "en",
+  "allowCompoundWords": true,
+  "caseSensitive": false,
+  "enableGlobDot": true,
   "ignorePaths": [
+    ".git", // Git directory
     ".golangci.yaml", // Configuration file with a lot of Go specific words
     "go.mod", // This file is managed by Go
     "go.sum", // This file is managed by Go
@@ -11,24 +17,29 @@
     "autoconfigured",
     "buildx",
     "datasource",
+    "DavidAnson",
     "devcontainers",
     "distroless",
     "forgejo",
-    "Gitea",
+    "gitea",
     "gocron",
+    "gofumpt",
     "golangci",
+    "gopls",
     "hadolint",
     "healthcheckers",
     "labtime",
     "monitorconfig",
+    "noctx",
     "nonroot",
     "promhttp",
     "prommonitors",
     "proxied",
     "sigchan",
+    "tenv",
     "testutil",
+    "userns",
     "woodpeckerci",
-    "Wrapf",
-    "yamlconfig"
+    "Wrapf"
   ]
 }
