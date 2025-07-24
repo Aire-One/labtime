@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-22
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-24
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,9 @@
 
 ### Misc
 
+- chore(deps): update renovate/renovate docker tag to v41.43.0 [[#81](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/81)]
+- chore/cspell-commit-messages [[#86](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/86)]
+- chore(deps): update golang to v1.24.5 [[#70](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/70)]
 - chore(release-config): update config [[#85](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/85)]
 - chore(release-config): update config [[#84](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/84)]
 - chore/configure-release-helper [[#83](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/83)]
