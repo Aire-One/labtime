@@ -6,13 +6,14 @@ const (
 	defaultConfigFile = "config.yaml"
 )
 
-type FlagConfig struct {
-	configFile string
+type Flags struct {
+	// Path to the configuration file.
+	ConfigFile string
 }
 
-func LoadFlag() *FlagConfig {
-	cfg := FlagConfig{}
-	flag.StringVar(&cfg.configFile, "config", defaultConfigFile, "Path to the configuration file")
+func LoadFlag() *Flags {
+	cfg := Flags{}
+	flag.StringVar(&cfg.ConfigFile, "config", defaultConfigFile, "Path to the configuration file")
 	flag.Parse()
 	return &cfg
 }
