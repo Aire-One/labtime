@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.1) - 2025-07-26
+## [0.1.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.1) - 2025-07-27
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -13,6 +13,7 @@
 
 ### Misc
 
+- chore(deps): update renovate/renovate docker tag to v41.43.5 [[#92](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/92)]
 - chore: remove release-helper configuration file [[#90](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/90)]
 
 ## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-24
