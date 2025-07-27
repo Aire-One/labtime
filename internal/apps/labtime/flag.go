@@ -1,6 +1,12 @@
 package labtime
 
-import "flag"
+import (
+	"flag"
+	"log"
+	"os"
+
+	"github.com/peterbourgon/ff/v3"
+)
 
 const (
 	defaultConfigFile = "config.yaml"
@@ -8,12 +14,19 @@ const (
 
 type Flags struct {
 	// Path to the configuration file.
-	ConfigFile string
+	ConfigFile *string
 }
 
-func LoadFlag() *Flags {
-	cfg := Flags{}
-	flag.StringVar(&cfg.ConfigFile, "config", defaultConfigFile, "Path to the configuration file")
-	flag.Parse()
+func LoadFlag(logger *log.Logger) *Flags {
+	fs := flag.NewFlagSet("labtime", flag.ContinueOnError)
+
+	cfg := Flags{
+		ConfigFile: fs.String("config", defaultConfigFile, "Path to the configuration file"),
+	}
+
+	if err := ff.Parse(fs, os.Args[1:], ff.WithEnvVars()); err != nil {
+		logger.Fatalf("Error parsing flags: %v", err)
+	}
+
 	return &cfg
 }
