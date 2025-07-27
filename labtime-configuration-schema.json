@@ -2,5 +2,80 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://aireone.xyz/labtime/internal/yamlconfig/yaml-config",
   "$ref": "#/$defs/YamlConfig",
-  "$defs": {}
+  "$defs": {
+    "YamlConfig": {
+      "properties": {
+        "http_status_code": {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "interval": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "url"
+            ]
+          },
+          "type": "array"
+        },
+        "tls_monitors": {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "domain": {
+                "type": "string"
+              },
+              "interval": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "domain"
+            ]
+          },
+          "type": "array"
+        },
+        "docker_monitors": {
+          "items": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "container_name": {
+                "type": "string"
+              },
+              "interval": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "container_name"
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "http_status_code",
+        "tls_monitors",
+        "docker_monitors"
+      ]
+    }
+  }
 }
