@@ -59,10 +59,18 @@ type HTTPTargetProvider struct{}
 func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarget {
 	targets := make([]HTTPTarget, len(config.HTTPStatusCode))
 	for i, t := range config.HTTPStatusCode {
+		name := t.Name
+		if name == "" {
+			name = t.URL
+		}
+		interval := t.Interval
+		if interval == 0 {
+			interval = 60
+		}
 		targets[i] = HTTPTarget{
-			Name:     t.Name,
+			Name:     name,
 			URL:      t.URL,
-			Interval: t.Interval,
+			Interval: interval,
 		}
 	}
 	return targets
