@@ -13,9 +13,9 @@ const (
 
 func main() {
 	logger := log.New(os.Stdout, loggerPrefix, log.LstdFlags|log.Lshortfile)
-	cfg := labtime.LoadFlag()
+	cfg := labtime.LoadFlag(logger)
 
-	app, err := labtime.NewApp(cfg.ConfigFile, logger)
+	app, err := labtime.NewApp(*cfg.ConfigFile, logger)
 	if err != nil {
 		logger.Fatalf("Error creating app: %v", err)
 	}
