@@ -13,8 +13,8 @@
     "configs/example-stack/grafana-provisioning/dashboards/labtime.json" // This file is a Grafana dashboard
   ],
   "words": [
-    "aireone",
     "Aire-One",
+    "aireone",
     "autoconfigured",
     "buildx",
     "datasource",
@@ -34,6 +34,7 @@
     "monitorconfig",
     "noctx",
     "nonroot",
+    "peterbourgon",
     "promhttp",
     "prommonitors",
     "proxied",
