@@ -64,10 +64,18 @@ type DockerTargetProvider struct{}
 func (d DockerTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []DockerTarget {
 	targets := make([]DockerTarget, len(config.DockerMonitors))
 	for i, monitor := range config.DockerMonitors {
+		name := monitor.Name
+		if name == "" {
+			name = monitor.ContainerName
+		}
+		interval := monitor.Interval
+		if interval == 0 {
+			interval = 60
+		}
 		targets[i] = DockerTarget{
-			Name:          monitor.Name,
+			Name:          name,
 			ContainerName: monitor.ContainerName,
-			Interval:      monitor.Interval,
+			Interval:      interval,
 		}
 	}
 	return targets

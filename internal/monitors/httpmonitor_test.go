@@ -131,37 +131,74 @@ func TestHTTPMonitorFactory_CreateMonitor(t *testing.T) {
 }
 
 func TestHTTPTargetProvider_GetTargets(t *testing.T) {
-	config := &yamlconfig.YamlConfig{
-		HTTPStatusCode: []struct {
-			Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-			URL      string `yaml:"url" json:"url"`
-			Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-		}{
-			{Name: "site1", URL: "https://example1.com", Interval: 30},
-			{Name: "site2", URL: "https://example2.com", Interval: 60},
+	tests := []struct {
+		name           string
+		config         *yamlconfig.YamlConfig
+		expectedTarget HTTPTarget
+	}{
+		{
+			name: "explicit values - site1",
+			config: &yamlconfig.YamlConfig{
+				HTTPStatusCode: []struct {
+					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
+					URL      string `yaml:"url" json:"url"`
+					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
+				}{
+					{Name: "site1", URL: "https://example1.com", Interval: 30},
+				},
+			},
+			expectedTarget: HTTPTarget{Name: "site1", URL: "https://example1.com", Interval: 30},
+		},
+		{
+			name: "explicit values - site2",
+			config: &yamlconfig.YamlConfig{
+				HTTPStatusCode: []struct {
+					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
+					URL      string `yaml:"url" json:"url"`
+					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
+				}{
+					{Name: "site2", URL: "https://example2.com", Interval: 60},
+				},
+			},
+			expectedTarget: HTTPTarget{Name: "site2", URL: "https://example2.com", Interval: 60},
+		},
+		{
+			name: "with defaults - default name and interval",
+			config: &yamlconfig.YamlConfig{
+				HTTPStatusCode: []struct {
+					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
+					URL      string `yaml:"url" json:"url"`
+					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
+				}{
+					{URL: "https://example.com"}, // Test defaults
+				},
+			},
+			expectedTarget: HTTPTarget{Name: "https://example.com", URL: "https://example.com", Interval: 60}, // Default name is URL, default interval is 60
 		},
 	}
-	expectedTargets := config.HTTPStatusCode
 
-	provider := HTTPTargetProvider{}
-	targets := provider.GetTargets(config)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			provider := HTTPTargetProvider{}
+			targets := provider.GetTargets(tt.config)
 
-	expectedTargetCount := len(expectedTargets)
-	if len(targets) != expectedTargetCount {
-		t.Fatalf("Expected %d targets, got %d", expectedTargetCount, len(targets))
-	}
+			if len(targets) != 1 {
+				t.Fatalf("Expected 1 target, got %d", len(targets))
+			}
 
-	for i, expected := range expectedTargets {
-		target := targets[i]
-		if target.Name != expected.Name {
-			t.Errorf("Target %d Name: expected %s, got %s", i, expected.Name, target.Name)
-		}
-		if target.URL != expected.URL {
-			t.Errorf("Target %d URL: expected %s, got %s", i, expected.URL, target.URL)
-		}
-		if target.Interval != expected.Interval {
-			t.Errorf("Target %d Interval: expected %d, got %d", i, expected.Interval, target.Interval)
-		}
+			actual := targets[0]
+			expected := tt.expectedTarget
+
+			if actual.Name != expected.Name {
+				t.Errorf("Name: expected %s, got %s", expected.Name, actual.Name)
+			}
+			if actual.URL != expected.URL {
+				t.Errorf("URL: expected %s, got %s", expected.URL, actual.URL)
+			}
+			if actual.Interval != expected.Interval {
+				t.Errorf("Interval: expected %d, got %d", expected.Interval, actual.Interval)
+			}
+		})
 	}
 }
 

@@ -49,36 +49,5 @@ func NewYamlConfig(r io.Reader) (*YamlConfig, error) {
 		return nil, errors.Wrap(ErrYAMLDecode, err.Error())
 	}
 
-	applyDefault(config)
-
 	return config, nil
-}
-
-func applyDefault(config *YamlConfig) {
-	for i := range config.HTTPStatusCode {
-		if config.HTTPStatusCode[i].Name == "" {
-			config.HTTPStatusCode[i].Name = config.HTTPStatusCode[i].URL
-		}
-		if config.HTTPStatusCode[i].Interval == 0 {
-			config.HTTPStatusCode[i].Interval = 60
-		}
-	}
-
-	for i := range config.TLSMonitors {
-		if config.TLSMonitors[i].Name == "" {
-			config.TLSMonitors[i].Name = config.TLSMonitors[i].Domain
-		}
-		if config.TLSMonitors[i].Interval == 0 {
-			config.TLSMonitors[i].Interval = 60
-		}
-	}
-
-	for i := range config.DockerMonitors {
-		if config.DockerMonitors[i].Name == "" {
-			config.DockerMonitors[i].Name = config.DockerMonitors[i].ContainerName
-		}
-		if config.DockerMonitors[i].Interval == 0 {
-			config.DockerMonitors[i].Interval = 60
-		}
-	}
 }

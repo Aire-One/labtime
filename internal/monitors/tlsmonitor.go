@@ -59,10 +59,18 @@ type TLSTargetProvider struct{}
 func (t TLSTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []TLSTarget {
 	targets := make([]TLSTarget, len(config.TLSMonitors))
 	for i, monitor := range config.TLSMonitors {
+		name := monitor.Name
+		if name == "" {
+			name = monitor.Domain
+		}
+		interval := monitor.Interval
+		if interval == 0 {
+			interval = 60
+		}
 		targets[i] = TLSTarget{
-			Name:     monitor.Name,
+			Name:     name,
 			Domain:   monitor.Domain,
-			Interval: monitor.Interval,
+			Interval: interval,
 		}
 	}
 	return targets
