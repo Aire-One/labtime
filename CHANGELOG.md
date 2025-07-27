@@ -8,12 +8,13 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update renovate/renovate docker tag to v41.43.5 [[#92](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/92)]
 - chore(deps): update renovate/renovate docker tag to v41.43.3 [[#91](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/91)]
 - chore(deps): update renovate/renovate docker tag to v41.43.2 [[#89](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/89)]
 
 ### Misc
 
-- chore(deps): update renovate/renovate docker tag to v41.43.5 [[#92](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/92)]
+- chore: add labels to renovate configuration [[#94](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/94)]
 - chore: remove release-helper configuration file [[#90](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/90)]
 
 ## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-24
