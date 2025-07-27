@@ -29,6 +29,7 @@
     "gopls",
     "hadolint",
     "healthcheckers",
+    "invopop",
     "labtime",
     "monitorconfig",
     "noctx",

@@ -89,9 +89,9 @@ func TestDockerMonitorFactory_CreateMonitor(t *testing.T) {
 func TestDockerTargetProvider_GetTargets(t *testing.T) {
 	config := &yamlconfig.YamlConfig{
 		DockerMonitors: []struct {
-			Name          string `yaml:"name"`
-			ContainerName string `yaml:"container_name"`
-			Interval      int    `yaml:"interval,omitempty"`
+			Name          string `yaml:"name,omitempty" json:"name,omitempty"`
+			ContainerName string `yaml:"container_name" json:"container_name"`
+			Interval      int    `yaml:"interval,omitempty" json:"interval,omitempty"`
 		}{
 			{Name: "nginx-container", ContainerName: "nginx", Interval: 30},
 			{Name: "redis-cache", ContainerName: "redis", Interval: 60},

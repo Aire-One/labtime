@@ -109,9 +109,9 @@ func TestTLSMonitorFactory_CreateMonitor(t *testing.T) {
 func TestTLSTargetProvider_GetTargets(t *testing.T) {
 	config := &yamlconfig.YamlConfig{
 		TLSMonitors: []struct {
-			Name     string `yaml:"name"`
-			Domain   string `yaml:"domain"`
-			Interval int    `yaml:"interval,omitempty"`
+			Name     string `yaml:"name,omitempty" json:"name,omitempty"`
+			Domain   string `yaml:"domain" json:"domain"`
+			Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
 		}{
 			{Name: "domain1", Domain: "example1.com", Interval: 30},
 			{Name: "domain2", Domain: "example2.com", Interval: 60},

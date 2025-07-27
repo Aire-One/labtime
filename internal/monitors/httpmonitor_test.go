@@ -133,9 +133,9 @@ func TestHTTPMonitorFactory_CreateMonitor(t *testing.T) {
 func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 	config := &yamlconfig.YamlConfig{
 		HTTPStatusCode: []struct {
-			Name     string `yaml:"name"`
-			URL      string `yaml:"url"`
-			Interval int    `yaml:"interval,omitempty"`
+			Name     string `yaml:"name,omitempty" json:"name,omitempty"`
+			URL      string `yaml:"url" json:"url"`
+			Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
 		}{
 			{Name: "site1", URL: "https://example1.com", Interval: 30},
 			{Name: "site2", URL: "https://example2.com", Interval: 60},
@@ -152,8 +152,15 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 	}
 
 	for i, expected := range expectedTargets {
-		if targets[i] != expected {
-			t.Errorf("Target %d: expected %+v, got %+v", i, expected, targets[i])
+		target := targets[i]
+		if target.Name != expected.Name {
+			t.Errorf("Target %d Name: expected %s, got %s", i, expected.Name, target.Name)
+		}
+		if target.URL != expected.URL {
+			t.Errorf("Target %d URL: expected %s, got %s", i, expected.URL, target.URL)
+		}
+		if target.Interval != expected.Interval {
+			t.Errorf("Target %d Interval: expected %d, got %d", i, expected.Interval, target.Interval)
 		}
 	}
 }
