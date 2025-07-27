@@ -20,8 +20,8 @@ type App struct {
 	logger *log.Logger
 }
 
-func NewApp(flag *FlagConfig, logger *log.Logger) (*App, error) {
-	config, err := loadYamlConfig(flag.configFile)
+func NewApp(configFile string, logger *log.Logger) (*App, error) {
+	config, err := loadYamlConfig(configFile)
 	if err != nil {
 		return nil, errors.Wrap(err, "error loading yaml config")
 	}

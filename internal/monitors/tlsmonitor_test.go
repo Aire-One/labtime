@@ -107,37 +107,62 @@ func TestTLSMonitorFactory_CreateMonitor(t *testing.T) {
 }
 
 func TestTLSTargetProvider_GetTargets(t *testing.T) {
-	config := &yamlconfig.YamlConfig{
-		TLSMonitors: []struct {
-			Name     string `yaml:"name"`
-			Domain   string `yaml:"domain"`
-			Interval int    `yaml:"interval,omitempty"`
-		}{
-			{Name: "domain1", Domain: "example1.com", Interval: 30},
-			{Name: "domain2", Domain: "example2.com", Interval: 60},
+	tests := []struct {
+		name           string
+		config         *yamlconfig.YamlConfig
+		expectedTarget TLSTarget
+	}{
+		{
+			name: "explicit values - domain1",
+			config: &yamlconfig.YamlConfig{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
+					{Name: "domain1", Domain: "example1.com", Interval: 30},
+				},
+			},
+			expectedTarget: TLSTarget{Name: "domain1", Domain: "example1.com", Interval: 30},
+		},
+		{
+			name: "explicit values - domain2",
+			config: &yamlconfig.YamlConfig{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
+					{Name: "domain2", Domain: "example2.com", Interval: 60},
+				},
+			},
+			expectedTarget: TLSTarget{Name: "domain2", Domain: "example2.com", Interval: 60},
+		},
+		{
+			name: "with defaults - default name and interval",
+			config: &yamlconfig.YamlConfig{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
+					{Domain: "example.com"}, // Test defaults
+				},
+			},
+			expectedTarget: TLSTarget{Name: "example.com", Domain: "example.com", Interval: 60}, // Default name is Domain, default interval is 60
 		},
 	}
-	expectedTargets := config.TLSMonitors
 
-	provider := TLSTargetProvider{}
-	targets := provider.GetTargets(config)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			provider := TLSTargetProvider{}
+			targets := provider.GetTargets(tt.config)
 
-	expectedTargetCount := len(expectedTargets)
-	if len(targets) != expectedTargetCount {
-		t.Fatalf("Expected %d targets, got %d", expectedTargetCount, len(targets))
-	}
+			if len(targets) != 1 {
+				t.Fatalf("Expected 1 target, got %d", len(targets))
+			}
 
-	for i, expected := range expectedTargets {
-		target := targets[i]
-		if target.Name != expected.Name {
-			t.Errorf("Target %d Name: expected %s, got %s", i, expected.Name, target.Name)
-		}
-		if target.Domain != expected.Domain {
-			t.Errorf("Target %d Domain: expected %s, got %s", i, expected.Domain, target.Domain)
-		}
-		if target.Interval != expected.Interval {
-			t.Errorf("Target %d Interval: expected %d, got %d", i, expected.Interval, target.Interval)
-		}
+			actual := targets[0]
+			expected := tt.expectedTarget
+
+			if actual.Name != expected.Name {
+				t.Errorf("Name: expected %s, got %s", expected.Name, actual.Name)
+			}
+			if actual.Domain != expected.Domain {
+				t.Errorf("Domain: expected %s, got %s", expected.Domain, actual.Domain)
+			}
+			if actual.Interval != expected.Interval {
+				t.Errorf("Interval: expected %d, got %d", expected.Interval, actual.Interval)
+			}
+		})
 	}
 }
 

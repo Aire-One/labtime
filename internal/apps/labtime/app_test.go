@@ -7,12 +7,10 @@ import (
 )
 
 func TestNewApp(t *testing.T) {
-	flag := &FlagConfig{
-		configFile: "../../../configs/example-config.yaml", // we shouldn't rely on the actual file
-	}
-	logger := log.New(os.Stdout, "", 0) // silent?
+	configFile := "../../../configs/example-config.yaml" // we shouldn't rely on the actual file
+	logger := log.New(os.Stdout, "", 0)                  // silent?
 
-	app, err := NewApp(flag, logger)
+	app, err := NewApp(configFile, logger)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}

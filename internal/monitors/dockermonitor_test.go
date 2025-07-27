@@ -87,37 +87,62 @@ func TestDockerMonitorFactory_CreateMonitor(t *testing.T) {
 }
 
 func TestDockerTargetProvider_GetTargets(t *testing.T) {
-	config := &yamlconfig.YamlConfig{
-		DockerMonitors: []struct {
-			Name          string `yaml:"name"`
-			ContainerName string `yaml:"container_name"`
-			Interval      int    `yaml:"interval,omitempty"`
-		}{
-			{Name: "nginx-container", ContainerName: "nginx", Interval: 30},
-			{Name: "redis-cache", ContainerName: "redis", Interval: 60},
+	tests := []struct {
+		name           string
+		config         *yamlconfig.YamlConfig
+		expectedTarget DockerTarget
+	}{
+		{
+			name: "explicit values - nginx",
+			config: &yamlconfig.YamlConfig{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
+					{Name: "nginx-container", ContainerName: "nginx", Interval: 30},
+				},
+			},
+			expectedTarget: DockerTarget{Name: "nginx-container", ContainerName: "nginx", Interval: 30},
+		},
+		{
+			name: "explicit values - redis",
+			config: &yamlconfig.YamlConfig{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
+					{Name: "redis-cache", ContainerName: "redis", Interval: 60},
+				},
+			},
+			expectedTarget: DockerTarget{Name: "redis-cache", ContainerName: "redis", Interval: 60},
+		},
+		{
+			name: "with defaults - default name and interval",
+			config: &yamlconfig.YamlConfig{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
+					{ContainerName: "postgres"}, // Test defaults
+				},
+			},
+			expectedTarget: DockerTarget{Name: "postgres", ContainerName: "postgres", Interval: 60}, // Default name is ContainerName, default interval is 60
 		},
 	}
-	expectedTargets := config.DockerMonitors
 
-	provider := DockerTargetProvider{}
-	targets := provider.GetTargets(config)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			provider := DockerTargetProvider{}
+			targets := provider.GetTargets(tt.config)
 
-	expectedLen := len(expectedTargets)
-	if len(targets) != expectedLen {
-		t.Errorf("GetTargets() returned %v targets, want %v", len(targets), expectedLen)
-	}
+			if len(targets) != 1 {
+				t.Fatalf("Expected 1 target, got %d", len(targets))
+			}
 
-	for i, expected := range expectedTargets {
-		target := targets[i]
-		if target.Name != expected.Name {
-			t.Errorf("Target[%d] name = %v, want %v", i, target.Name, expected.Name)
-		}
-		if target.ContainerName != expected.ContainerName {
-			t.Errorf("Target[%d] container name = %v, want %v", i, target.ContainerName, expected.ContainerName)
-		}
-		if target.Interval != expected.Interval {
-			t.Errorf("Target[%d] interval = %v, want %v", i, target.Interval, expected.Interval)
-		}
+			actual := targets[0]
+			expected := tt.expectedTarget
+
+			if actual.Name != expected.Name {
+				t.Errorf("Name: expected %s, got %s", expected.Name, actual.Name)
+			}
+			if actual.ContainerName != expected.ContainerName {
+				t.Errorf("ContainerName: expected %s, got %s", expected.ContainerName, actual.ContainerName)
+			}
+			if actual.Interval != expected.Interval {
+				t.Errorf("Interval: expected %d, got %d", expected.Interval, actual.Interval)
+			}
+		})
 	}
 }
 

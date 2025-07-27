@@ -37,8 +37,8 @@ func TestLoadFlag(t *testing.T) {
 
 			cfg := LoadFlag()
 
-			if cfg.configFile != tt.expectedFile {
-				t.Errorf("got %s, want %s", cfg.configFile, tt.expectedFile)
+			if cfg.ConfigFile != tt.expectedFile {
+				t.Errorf("got %s, want %s", cfg.ConfigFile, tt.expectedFile)
 			}
 		})
 	}

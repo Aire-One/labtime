@@ -6,7 +6,10 @@ steps:
   woodpecker:
     image: woodpeckerci/woodpecker-cli:v3.8.0-alpine
     commands:
-      - woodpecker-cli lint --plugins-privileged="woodpeckerci/plugin-docker-buildx" .woodpecker/*.yaml
+      - woodpecker-cli
+        lint
+        --plugins-privileged="woodpeckerci/plugin-docker-buildx"
+        .woodpecker/*.yaml
     when:
       path: .woodpecker/**/*.yaml
     depends_on: []
@@ -38,4 +41,11 @@ steps:
       path:
         - renovate.json
         - .woodpecker/lint.yaml
+    depends_on: []
+
+  yamllint:
+    image: python:3.13.5-alpine3.22
+    commands:
+      - pip install yamllint
+      - yamllint --strict .
     depends_on: []
