@@ -139,11 +139,7 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - site1",
 			config: &yamlconfig.YamlConfig{
-				HTTPStatusCode: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					URL      string `yaml:"url" json:"url"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
 					{Name: "site1", URL: "https://example1.com", Interval: 30},
 				},
 			},
@@ -152,11 +148,7 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - site2",
 			config: &yamlconfig.YamlConfig{
-				HTTPStatusCode: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					URL      string `yaml:"url" json:"url"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
 					{Name: "site2", URL: "https://example2.com", Interval: 60},
 				},
 			},
@@ -165,11 +157,7 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "with defaults - default name and interval",
 			config: &yamlconfig.YamlConfig{
-				HTTPStatusCode: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					URL      string `yaml:"url" json:"url"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
 					{URL: "https://example.com"}, // Test defaults
 				},
 			},

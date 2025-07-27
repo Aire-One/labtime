@@ -115,11 +115,7 @@ func TestTLSTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - domain1",
 			config: &yamlconfig.YamlConfig{
-				TLSMonitors: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					Domain   string `yaml:"domain" json:"domain"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
 					{Name: "domain1", Domain: "example1.com", Interval: 30},
 				},
 			},
@@ -128,11 +124,7 @@ func TestTLSTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - domain2",
 			config: &yamlconfig.YamlConfig{
-				TLSMonitors: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					Domain   string `yaml:"domain" json:"domain"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
 					{Name: "domain2", Domain: "example2.com", Interval: 60},
 				},
 			},
@@ -141,11 +133,7 @@ func TestTLSTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "with defaults - default name and interval",
 			config: &yamlconfig.YamlConfig{
-				TLSMonitors: []struct {
-					Name     string `yaml:"name,omitempty" json:"name,omitempty"`
-					Domain   string `yaml:"domain" json:"domain"`
-					Interval int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				TLSMonitors: []yamlconfig.TLSMonitorDTO{
 					{Domain: "example.com"}, // Test defaults
 				},
 			},

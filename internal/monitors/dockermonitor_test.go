@@ -95,11 +95,7 @@ func TestDockerTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - nginx",
 			config: &yamlconfig.YamlConfig{
-				DockerMonitors: []struct {
-					Name          string `yaml:"name,omitempty" json:"name,omitempty"`
-					ContainerName string `yaml:"container_name" json:"container_name"`
-					Interval      int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
 					{Name: "nginx-container", ContainerName: "nginx", Interval: 30},
 				},
 			},
@@ -108,11 +104,7 @@ func TestDockerTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "explicit values - redis",
 			config: &yamlconfig.YamlConfig{
-				DockerMonitors: []struct {
-					Name          string `yaml:"name,omitempty" json:"name,omitempty"`
-					ContainerName string `yaml:"container_name" json:"container_name"`
-					Interval      int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
 					{Name: "redis-cache", ContainerName: "redis", Interval: 60},
 				},
 			},
@@ -121,11 +113,7 @@ func TestDockerTargetProvider_GetTargets(t *testing.T) {
 		{
 			name: "with defaults - default name and interval",
 			config: &yamlconfig.YamlConfig{
-				DockerMonitors: []struct {
-					Name          string `yaml:"name,omitempty" json:"name,omitempty"`
-					ContainerName string `yaml:"container_name" json:"container_name"`
-					Interval      int    `yaml:"interval,omitempty" json:"interval,omitempty"`
-				}{
+				DockerMonitors: []yamlconfig.DockerMonitorDTO{
 					{ContainerName: "postgres"}, // Test defaults
 				},
 			},

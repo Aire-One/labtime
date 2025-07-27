@@ -3,68 +3,77 @@
   "$id": "https://aireone.xyz/labtime/internal/yamlconfig/yaml-config",
   "$ref": "#/$defs/YamlConfig",
   "$defs": {
+    "DockerMonitorDTO": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "container_name": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "container_name"
+      ]
+    },
+    "HTTPMonitorDTO": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "url"
+      ]
+    },
+    "TLSMonitorDTO": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "domain"
+      ]
+    },
     "YamlConfig": {
       "properties": {
         "http_status_code": {
           "items": {
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "interval": {
-                "type": "integer"
-              }
-            },
-            "additionalProperties": false,
-            "type": "object",
-            "required": [
-              "url"
-            ]
+            "$ref": "#/$defs/HTTPMonitorDTO"
           },
           "type": "array"
         },
         "tls_monitors": {
           "items": {
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "domain": {
-                "type": "string"
-              },
-              "interval": {
-                "type": "integer"
-              }
-            },
-            "additionalProperties": false,
-            "type": "object",
-            "required": [
-              "domain"
-            ]
+            "$ref": "#/$defs/TLSMonitorDTO"
           },
           "type": "array"
         },
         "docker_monitors": {
           "items": {
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "container_name": {
-                "type": "string"
-              },
-              "interval": {
-                "type": "integer"
-              }
-            },
-            "additionalProperties": false,
-            "type": "object",
-            "required": [
-              "container_name"
-            ]
+            "$ref": "#/$defs/DockerMonitorDTO"
           },
           "type": "array"
         }
