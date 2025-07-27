@@ -6,6 +6,10 @@
 
 @Aire-One, @renovate-bot
 
+### ✨ Features
+
+- Environment variable support [[#95](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/95)]
+
 ### 📈 Enhancement
 
 - Generate YAML schema [[#93](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/93)]
