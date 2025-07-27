@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.1.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.1) - 2025-07-27
+## [0.2.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.0) - 2025-07-27
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Aire-One, @renovate-bot
+
+### 📈 Enhancement
+
+- Generate YAML schema [[#93](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/93)]
 
 ### 📦️ Dependency
 
