@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aireone.xyz/labtime/internal/yamlconfig/yaml-config",
+  "$ref": "#/$defs/YamlConfig",
+  "$defs": {}
+}

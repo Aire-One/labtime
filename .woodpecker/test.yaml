@@ -7,3 +7,12 @@ steps:
     image: golang:1.24.5
     commands:
       - go test -v ./...
+    depends_on: []
+
+  "generate yaml schema":
+    image: golang:1.24.5
+    commands:
+      - mv labtime-configuration-schema.json /tmp/labtime-configuration-schema.json
+      - go generate ./cmd/generator/main.go
+      - diff --brief /tmp/labtime-configuration-schema.json labtime-configuration-schema.json
+    depends_on: []
