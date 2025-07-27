@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell test generate build
+all: lint cspell yamllint test generate build
 
 .PHONY: clean
 clean:
@@ -17,6 +17,10 @@ fmt:
 lint:
 	@echo "Running golangci-lint"
 	golangci-lint run
+
+.PHONY: yamllint
+yamllint:
+	yamllint --strict .
 
 .PHONY: cspell
 cspell:
