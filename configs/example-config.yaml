@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=../labtime-configuration-schema.json
 http_status_code:
   - url: https://aireone.xyz
   - url: https://gitea.aireone.xyz
