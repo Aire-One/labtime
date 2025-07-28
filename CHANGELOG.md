@@ -1,13 +1,39 @@
 # Changelog
 
-## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-24
+## [0.2.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.0) - 2025-07-27
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Aire-One, @renovate-bot
 
+### ✨ Features
+
+- Environment variable support [[#95](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/95)]
+
+### 📈 Enhancement
+
+- Generate YAML schema [[#93](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/93)]
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.43.5 [[#92](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/92)]
+- chore(deps): update renovate/renovate docker tag to v41.43.3 [[#91](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/91)]
+- chore(deps): update renovate/renovate docker tag to v41.43.2 [[#89](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/89)]
+
 ### Misc
 
+- chore: add labels to renovate configuration [[#94](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/94)]
+- chore: remove release-helper configuration file [[#90](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/90)]
+
+## [0.1.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.1.0) - 2025-07-24
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot, @woodpecker-bot
+
+### Misc
+
+- 🎉 Release 0.1.0 [[#69](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/69)]
 - chore(cspell): add missing words [[#87](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/87)]
 - chore(deps): update renovate/renovate docker tag to v41.43.0 [[#81](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/81)]
 - chore/cspell-commit-messages [[#86](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/86)]
