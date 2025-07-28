@@ -1,10 +1,10 @@
 # Changelog
 
-## [0.2.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.0) - 2025-07-27
+## [0.2.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.0) - 2025-07-28
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Aire-One, @renovate-bot
+@Aire-One, @renovate-bot, @woodpecker-bot
 
 ### ✨ Features
 
@@ -22,6 +22,7 @@
 
 ### Misc
 
+- 🎉 Release 0.2.0 [[#88](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/88)]
 - chore: add labels to renovate configuration [[#94](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/94)]
 - chore: remove release-helper configuration file [[#90](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/90)]
 
