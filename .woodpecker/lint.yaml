@@ -34,7 +34,7 @@ steps:
     depends_on: []
 
   renovate:
-    image: renovate/renovate:41.43.5
+    image: renovate/renovate:41.43.7
     commands:
       - renovate-config-validator --strict
     when:
