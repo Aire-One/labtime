@@ -29,6 +29,9 @@
         "url": {
           "type": "string"
         },
+        "method": {
+          "type": "string"
+        },
         "interval": {
           "type": "integer"
         }

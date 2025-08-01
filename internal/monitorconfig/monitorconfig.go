@@ -28,7 +28,10 @@ func (mc *MonitorConfig[T, C]) Setup(scheduler *scheduler.Scheduler, config *yam
 	prometheus.MustRegister(collector)
 
 	// Get targets for this monitor type
-	targets := mc.Provider.GetTargets(config)
+	targets, err := mc.Provider.GetTargets(config)
+	if err != nil {
+		return errors.Wrap(err, "error getting targets from configuration")
+	}
 
 	// Iterate over the targets
 	for _, target := range targets {
