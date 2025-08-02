@@ -28,6 +28,7 @@ linters:
     - tparallel
     - unconvert
     - unparam
+    - unused
     - usestdlibvars
     - usetesting
     - wastedassign
