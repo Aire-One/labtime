@@ -1,0 +1,19 @@
+---
+when:
+  event: pull_request
+
+variables:
+  - &golang golang:1.24.5
+
+steps:
+  labtime:
+    image: *golang
+    commands:
+      - go build -o build/labtime cmd/labtime/main.go
+    depends_on: []
+
+  generator:
+    image: *golang
+    commands:
+      - go build -o build/generator cmd/generator/main.go
+    depends_on: []
