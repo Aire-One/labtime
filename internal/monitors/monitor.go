@@ -28,5 +28,5 @@ type MonitorFactory[T Target, C prometheus.Collector] interface {
 
 // TargetProvider defines the interface for extracting targets from configuration.
 type TargetProvider[T Target] interface {
-	GetTargets(config *yamlconfig.YamlConfig) []T
+	GetTargets(config *yamlconfig.YamlConfig) ([]T, error)
 }

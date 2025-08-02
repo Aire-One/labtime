@@ -61,7 +61,7 @@ func (d DockerMonitorFactory) CreateMonitor(target DockerTarget, collector *prom
 type DockerTargetProvider struct{}
 
 // GetTargets extracts Docker targets from the configuration.
-func (d DockerTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []DockerTarget {
+func (d DockerTargetProvider) GetTargets(config *yamlconfig.YamlConfig) ([]DockerTarget, error) {
 	targets := make([]DockerTarget, len(config.DockerMonitors))
 	for i, monitor := range config.DockerMonitors {
 		name := monitor.Name
@@ -78,7 +78,7 @@ func (d DockerTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []Docker
 			Interval:      interval,
 		}
 	}
-	return targets
+	return targets, nil
 }
 
 // DockerClient interface for testing purposes.

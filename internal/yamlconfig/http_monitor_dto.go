@@ -7,6 +7,8 @@ type HTTPMonitorDTO struct {
 	// URL of the target. The target should be accessible from the machine running the exporter.
 	// The URL should contain the protocol (http:// or https://) and the port if it's not the default one.
 	URL string `yaml:"url" json:"url"`
+	// Method is the HTTP method to use for the request. Default is HEAD.
+	Method string `yaml:"method,omitempty" json:"method,omitempty"`
 	// Interval to ping the target. Default is 60 seconds.
 	Interval int `yaml:"interval,omitempty" json:"interval,omitempty"`
 }

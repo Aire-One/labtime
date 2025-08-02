@@ -15,6 +15,7 @@ import (
 type HTTPTarget struct {
 	Name     string `yaml:"name"`
 	URL      string `yaml:"url"`
+	Method   string `yaml:"method"`
 	Interval int    `yaml:"interval,omitempty"`
 }
 
@@ -44,6 +45,7 @@ func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *promethe
 	return &HTTPMonitor{
 		Label:                 target.Name,
 		URL:                   target.URL,
+		Method:                target.Method,
 		Logger:                logger,
 		SiteStatusCodeMonitor: collector,
 		Client: &http.Client{
@@ -56,7 +58,7 @@ func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *promethe
 type HTTPTargetProvider struct{}
 
 // GetTargets extracts HTTP targets from the configuration.
-func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarget {
+func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) ([]HTTPTarget, error) {
 	targets := make([]HTTPTarget, len(config.HTTPStatusCode))
 	for i, t := range config.HTTPStatusCode {
 		name := t.Name
@@ -67,13 +69,38 @@ func (h HTTPTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []HTTPTarg
 		if interval == 0 {
 			interval = 60
 		}
+		method := t.Method
+		if method == "" {
+			method = http.MethodHead
+		} else if !isValidHTTPMethod(method) {
+			return nil, errors.Wrapf(errors.New("invalid HTTP method"), "invalid method '%s' for target '%s'", method, name)
+		}
 		targets[i] = HTTPTarget{
 			Name:     name,
 			URL:      t.URL,
+			Method:   method,
 			Interval: interval,
 		}
 	}
-	return targets
+	return targets, nil
+}
+
+// isValidHTTPMethod checks if the provided method is a valid HTTP method.
+func isValidHTTPMethod(method string) bool {
+	switch method {
+	case http.MethodGet,
+		http.MethodPost,
+		http.MethodPut,
+		http.MethodDelete,
+		http.MethodHead,
+		http.MethodOptions,
+		http.MethodPatch,
+		http.MethodConnect,
+		http.MethodTrace:
+		return true
+	default:
+		return false
+	}
 }
 
 type HTTPClient interface {
@@ -81,8 +108,9 @@ type HTTPClient interface {
 }
 
 type HTTPMonitor struct {
-	Label string
-	URL   string
+	Label  string
+	URL    string
+	Method string
 
 	Logger *log.Logger
 
@@ -111,7 +139,7 @@ type HTTPHealthCheckerData struct {
 }
 
 func (h *HTTPMonitor) httpHealthCheck(ctx context.Context) (*HTTPHealthCheckerData, error) {
-	req, err := http.NewRequestWithContext(ctx, http.MethodHead, h.URL, http.NoBody)
+	req, err := http.NewRequestWithContext(ctx, h.Method, h.URL, http.NoBody)
 	if err != nil {
 		return nil, errors.Wrap(err, "error creating http request")
 	}
