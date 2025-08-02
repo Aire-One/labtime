@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.3.0) - 2025-08-02
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### ✨ Features
+
+- feat: allow to configure the HTTP method used by the httpmonitor [[#106](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/106)]
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.51.0 [[#105](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/105)]
+- chore(deps): update renovate/renovate docker tag to v41.46.6 [[#103](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/103)]
+- chore(deps): update renovate/renovate docker tag to v41.46.3 [[#101](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/101)]
+
+### Misc
+
+- release-helper: add labels configuration [[#109](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/109)]
+
 ## [0.2.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.1) - 2025-07-30
 
 ### ❤️ Thanks to all contributors! ❤️
