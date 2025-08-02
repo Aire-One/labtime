@@ -16,6 +16,10 @@
 - chore(deps): update renovate/renovate docker tag to v41.46.6 [[#103](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/103)]
 - chore(deps): update renovate/renovate docker tag to v41.46.3 [[#101](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/101)]
 
+### Misc
+
+- release-helper: add labels configuration [[#109](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/109)]
+
 ## [0.2.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.1) - 2025-07-30
 
 ### ❤️ Thanks to all contributors! ❤️
