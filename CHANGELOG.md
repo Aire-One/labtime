@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.2.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.2) - 2025-08-02
+## [0.3.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.3.0) - 2025-08-02
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate-bot
+@Aire-One, @renovate-bot
+
+### ✨ Features
+
+- feat: allow to configure the HTTP method used by the httpmonitor [[#106](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/106)]
 
 ### 📦️ Dependency
 
