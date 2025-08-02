@@ -56,7 +56,7 @@ func (t TLSMonitorFactory) CreateMonitor(target TLSTarget, collector *prometheus
 type TLSTargetProvider struct{}
 
 // GetTargets extracts TLS targets from the configuration.
-func (t TLSTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []TLSTarget {
+func (t TLSTargetProvider) GetTargets(config *yamlconfig.YamlConfig) ([]TLSTarget, error) {
 	targets := make([]TLSTarget, len(config.TLSMonitors))
 	for i, monitor := range config.TLSMonitors {
 		name := monitor.Name
@@ -73,7 +73,7 @@ func (t TLSTargetProvider) GetTargets(config *yamlconfig.YamlConfig) []TLSTarget
 			Interval: interval,
 		}
 	}
-	return targets
+	return targets, nil
 }
 
 type TLSMonitor struct {

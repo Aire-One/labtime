@@ -135,6 +135,7 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 		name           string
 		config         *yamlconfig.YamlConfig
 		expectedTarget HTTPTarget
+		expectError    bool
 	}{
 		{
 			name: "explicit values - site1",
@@ -143,16 +144,18 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 					{Name: "site1", URL: "https://example1.com", Interval: 30},
 				},
 			},
-			expectedTarget: HTTPTarget{Name: "site1", URL: "https://example1.com", Interval: 30},
+			expectedTarget: HTTPTarget{Name: "site1", URL: "https://example1.com", Method: "HEAD", Interval: 30}, // Method: default HEAD
+			expectError:    false,
 		},
 		{
 			name: "explicit values - site2",
 			config: &yamlconfig.YamlConfig{
 				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
-					{Name: "site2", URL: "https://example2.com", Interval: 60},
+					{Name: "site2", URL: "https://example2.com"},
 				},
 			},
-			expectedTarget: HTTPTarget{Name: "site2", URL: "https://example2.com", Interval: 60},
+			expectedTarget: HTTPTarget{Name: "site2", URL: "https://example2.com", Method: "HEAD", Interval: 60}, // Method: default HEAD, Interval: default 60
+			expectError:    false,
 		},
 		{
 			name: "with defaults - default name and interval",
@@ -161,14 +164,45 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 					{URL: "https://example.com"}, // Test defaults
 				},
 			},
-			expectedTarget: HTTPTarget{Name: "https://example.com", URL: "https://example.com", Interval: 60}, // Default name is URL, default interval is 60
+			expectedTarget: HTTPTarget{Name: "https://example.com", URL: "https://example.com", Method: "HEAD", Interval: 60}, // Name: default URL, Method: default HEAD, Interval: default 60
+			expectError:    false,
+		},
+		{
+			name: "explicit valid method - GET",
+			config: &yamlconfig.YamlConfig{
+				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
+					{URL: "https://example.com", Method: "GET"},
+				},
+			},
+			expectedTarget: HTTPTarget{Name: "https://example.com", URL: "https://example.com", Method: "GET", Interval: 60}, // Name: default URL, Interval: default 60
+			expectError:    false,
+		},
+		{
+			name: "invalid method - should return error",
+			config: &yamlconfig.YamlConfig{
+				HTTPStatusCode: []yamlconfig.HTTPMonitorDTO{
+					{URL: "https://example.com", Method: "INVALID"},
+				},
+			},
+			expectError: true,
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			provider := HTTPTargetProvider{}
-			targets := provider.GetTargets(tt.config)
+			targets, err := provider.GetTargets(tt.config)
+
+			if tt.expectError {
+				if err == nil {
+					t.Fatalf("Expected error but got none")
+				}
+				return
+			}
+
+			if err != nil {
+				t.Fatalf("GetTargets() returned unexpected error: %v", err)
+			}
 
 			if len(targets) != 1 {
 				t.Fatalf("Expected 1 target, got %d", len(targets))
@@ -183,8 +217,40 @@ func TestHTTPTargetProvider_GetTargets(t *testing.T) {
 			if actual.URL != expected.URL {
 				t.Errorf("URL: expected %s, got %s", expected.URL, actual.URL)
 			}
+			if actual.Method != expected.Method {
+				t.Errorf("Method: expected %s, got %s", expected.Method, actual.Method)
+			}
 			if actual.Interval != expected.Interval {
 				t.Errorf("Interval: expected %d, got %d", expected.Interval, actual.Interval)
+			}
+		})
+	}
+}
+
+func TestIsValidHTTPMethod(t *testing.T) {
+	tests := []struct {
+		method string
+		valid  bool
+	}{
+		{"GET", true},
+		{"POST", true},
+		{"PUT", true},
+		{"DELETE", true},
+		{"HEAD", true},
+		{"OPTIONS", true},
+		{"PATCH", true},
+		{"CONNECT", true},
+		{"TRACE", true},
+		{"get", false},     // lowercase
+		{"INVALID", false}, // not a standard method
+		{"", false},        // empty string
+		{"CUSTOM", false},  // custom method
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.method, func(t *testing.T) {
+			if got := isValidHTTPMethod(tt.method); got != tt.valid {
+				t.Errorf("isValidHTTPMethod(%q) = %v, want %v", tt.method, got, tt.valid)
 			}
 		})
 	}
@@ -265,6 +331,7 @@ func TestHTTPMonitor_Run(t *testing.T) {
 			monitor := &HTTPMonitor{
 				Label:                 testLabel,
 				URL:                   server.URL,
+				Method:                http.MethodHead,
 				Logger:                logger,
 				Client:                &http.Client{}, // Use real client for integration test
 				SiteStatusCodeMonitor: collector,

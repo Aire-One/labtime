@@ -144,7 +144,10 @@ func TestTLSTargetProvider_GetTargets(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			provider := TLSTargetProvider{}
-			targets := provider.GetTargets(tt.config)
+			targets, err := provider.GetTargets(tt.config)
+			if err != nil {
+				t.Fatalf("GetTargets() returned unexpected error: %v", err)
+			}
 
 			if len(targets) != 1 {
 				t.Fatalf("Expected 1 target, got %d", len(targets))
