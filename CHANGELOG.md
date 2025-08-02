@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.2) - 2025-08-01
+## [0.2.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.2.2) - 2025-08-02
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update renovate/renovate docker tag to v41.51.0 [[#105](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/105)]
 - chore(deps): update renovate/renovate docker tag to v41.46.6 [[#103](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/103)]
 - chore(deps): update renovate/renovate docker tag to v41.46.3 [[#101](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/101)]
 
