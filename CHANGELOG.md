@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.3.1) - 2025-08-04
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.51.1 [[#112](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/112)]
+
 ## [0.3.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.3.0) - 2025-08-02
 
 ### ❤️ Thanks to all contributors! ❤️
