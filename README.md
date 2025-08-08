@@ -42,7 +42,7 @@ endpoint (e.g., `http://localhost:2112/metrics`).
 ```yaml
 services:
   labtime:
-    image: forgejo.aireone.xyz/aire-one/labtime:latest
+    image: ghcr.io/aire-one/labtime:latest
     ports:
       - 2112:2112
     volumes:
@@ -86,7 +86,7 @@ docker_monitors:
 
 Configuration can be validated against the JSON schema in
 `labtime-configuration-schema.json` by adding the
-`# yaml-language-server: $schema=https://forgejo.aireone.xyz/Aire-One/labtime/raw/branch/main/labtime-configuration-schema.json`
+`# yaml-language-server: $schema=https://raw.githubusercontent.com/Aire-One/labtime/refs/heads/main/labtime-configuration-schema.json`
 comment to the top of the YAML file to enable schema validation in editors that
 support it.
 
