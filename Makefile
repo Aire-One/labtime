@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell yamllint test generate build
+all: lint cspell yamllint tidy-check test generate build
 
 .PHONY: clean
 clean:
@@ -43,3 +43,11 @@ dev:
 .PHONY: generate
 generate:
 	go generate ./...
+
+.PHONY: tidy-check
+tidy-check:
+	go mod tidy -diff
+
+.PHONY: tidy
+tidy:
+	go mod tidy
