@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One
+
+### 📈 Enhancement
+
+- Manage Tidying dependancies [[#122](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/122)]
+
 ## [0.4.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.4.0) - 2025-08-08
 
 ### ❤️ Thanks to all contributors! ❤️
