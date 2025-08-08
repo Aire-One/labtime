@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.4.0) - 2025-08-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### 📈 Enhancement
+
+- Add Github Actions workflow for Docker release on ghcr.io [[#121](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/121)]
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.58.2 [[#118](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/118)]
+- chore(deps): update renovate/renovate docker tag to v41.53.1 [[#115](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/115)]
+- chore(deps): update renovate/renovate docker tag to v41.52.1 [[#114](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/114)]
+- chore(deps): update renovate/renovate docker tag to v41.51.1 [[#112](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/112)]
+
+### Misc
+
+- Add initial GitHub Copilot instructions [[#120](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/120)]
+
 ## [0.3.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.3.0) - 2025-08-02
 
 ### ❤️ Thanks to all contributors! ❤️
