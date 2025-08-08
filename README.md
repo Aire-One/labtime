@@ -154,8 +154,17 @@ navigate to the dashboard at `Home > Dashboards > Labtime` to see the metrics.
 - `make dev` - Run application with example config
 - `make test` - Run all tests
 - `make lint` - Run golangci-lint
+- `make fmt` - Format Go code
+- `make yamllint` - Lint YAML files
+- `make markdownlint` - Lint Markdown files
+- `make cspell` - Spell check source and docs
 - `make generate` - **Required after config changes** - Updates JSON schema
 - `make build` - Build binary to `build/labtime`
+- `make clean` - Remove build artifacts
+- `make build-generator` - Build the config schema generator application to
+  `build/labtime-generator`
+- `make tidy-check` - Check for go.mod/go.sum changes (CI safe)
+- `make tidy` - Update go.mod/go.sum to match imports
 
 ### Architecture
 
