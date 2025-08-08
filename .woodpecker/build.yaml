@@ -1,33 +1,19 @@
 ---
 when:
-  branch: main
+  event: pull_request
 
 variables:
-  - &buildx woodpeckerci/plugin-docker-buildx:6.0.2
-  - &buildx_settings
-    platforms: linux/amd64
+  - &golang golang:1.24.5
 
 steps:
-  dryrun:
-    image: *buildx
-    settings:
-      <<: *buildx_settings
-      dry_run: true
-    when:
-      event:
-        - pull_request
-        - push
+  labtime:
+    image: *golang
+    commands:
+      - go build -o build/labtime cmd/labtime/main.go
+    depends_on: []
 
-  publish:
-    image: *buildx
-    settings:
-      <<: *buildx_settings
-      registry: forgejo.aireone.xyz
-      repo: forgejo.aireone.xyz/${CI_REPO,,}
-      auto_tag: true
-      username:
-        from_secret: publish_username
-      password:
-        from_secret: publish_token
-    when:
-      event: tag
+  generator:
+    image: *golang
+    commands:
+      - go build -o build/generator cmd/generator/main.go
+    depends_on: []

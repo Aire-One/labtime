@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell yamllint tidy-check test generate build
+all: lint cspell yamllint tidy-check test generate build build-generator
 
 .PHONY: clean
 clean:
@@ -35,6 +35,10 @@ test:
 build:
 	@echo "Building binary"
 	go build -o build/$(BINARY_NAME) cmd/labtime/main.go
+
+.PHONY: build-generator
+build-generator:
+	go build -o build/$(BINARY_NAME)-generator cmd/generator/main.go
 
 .PHONY: dev
 dev:

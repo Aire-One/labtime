@@ -1,0 +1,33 @@
+---
+when:
+  branch: main
+
+variables:
+  - &buildx woodpeckerci/plugin-docker-buildx:6.0.2
+  - &buildx_settings
+    platforms: linux/amd64
+
+steps:
+  dryrun:
+    image: *buildx
+    settings:
+      <<: *buildx_settings
+      dry_run: true
+    when:
+      event:
+        - pull_request
+        - push
+
+  publish:
+    image: *buildx
+    settings:
+      <<: *buildx_settings
+      registry: forgejo.aireone.xyz
+      repo: forgejo.aireone.xyz/${CI_REPO,,}
+      auto_tag: true
+      username:
+        from_secret: publish_username
+      password:
+        from_secret: publish_token
+    when:
+      event: tag
