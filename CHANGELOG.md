@@ -9,7 +9,7 @@
 ### 📈 Enhancement
 
 - CI: Build all apps (labtime and labtime-generator) outside of the context of docker [[#108](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/108)]
-- Manage Tidying dependancies [[#122](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/122)]
+- Manage Tidying dependencies [[#122](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/122)]
 
 ## [0.4.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.4.0) - 2025-08-08
 
