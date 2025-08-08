@@ -10,12 +10,10 @@ clean:
 
 .PHONY: fmt
 fmt:
-	@echo "Formatting code"
 	go fmt ./...
 
 .PHONY: lint
 lint:
-	@echo "Running golangci-lint"
 	golangci-lint run
 
 .PHONY: yamllint
@@ -28,12 +26,10 @@ cspell:
 
 .PHONY: test
 test:
-	@echo "Running tests"
 	go test -v ./...
 
 .PHONY: build
 build:
-	@echo "Building binary"
 	go build -o build/$(BINARY_NAME) cmd/labtime/main.go
 
 .PHONY: build-generator
