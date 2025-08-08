@@ -9,6 +9,12 @@ steps:
       - go test -v ./...
     depends_on: []
 
+  tidy:
+    image: golang:1.24.5
+    commands:
+      - go mod tidy -diff
+    depends_on: []
+
   "generate yaml schema":
     image: golang:1.24.5
     commands:
