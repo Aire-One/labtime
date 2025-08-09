@@ -26,6 +26,7 @@
     "gocron",
     "gofumpt",
     "golangci",
+    "gomod",
     "gopls",
     "hadolint",
     "healthcheckers",
