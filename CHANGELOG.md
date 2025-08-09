@@ -17,6 +17,7 @@
 
 ### Misc
 
+- Add renovate Golang postUpdateOptions [[#126](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/126)]
 - Clean Makefile [[#124](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/124)]
 
 ## [0.4.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.4.0) - 2025-08-08
