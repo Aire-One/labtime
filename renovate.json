@@ -3,6 +3,10 @@
   "labels": [
     "dependencies"
   ],
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ],
   "packageRules": [
     {
       "matchPackageNames": [
