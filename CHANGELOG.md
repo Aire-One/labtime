@@ -1,15 +1,19 @@
 # Changelog
 
-## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-08
+## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-09
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Aire-One
+@Aire-One, @renovate-bot
 
 ### 📈 Enhancement
 
 - CI: Build all apps (labtime and labtime-generator) outside of the context of docker [[#108](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/108)]
 - Manage Tidying dependencies [[#122](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/122)]
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.60.1 [[#125](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/125)]
 
 ### Misc
 
