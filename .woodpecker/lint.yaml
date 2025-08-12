@@ -10,15 +10,10 @@ steps:
         lint
         --plugins-privileged="woodpeckerci/plugin-docker-buildx"
         .woodpecker/*.yaml
-    when:
-      path: .woodpecker/**/*.yaml
     depends_on: []
 
   dockerfile:
     image: ghcr.io/hadolint/hadolint:v2.12.0
-    when:
-      path:
-        - Dockerfile
     depends_on: []
 
   cspell:
@@ -37,10 +32,6 @@ steps:
     image: renovate/renovate:41.62.3
     commands:
       - renovate-config-validator --strict
-    when:
-      path:
-        - renovate.json
-        - .woodpecker/lint.yaml
     depends_on: []
 
   yamllint:
