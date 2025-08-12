@@ -1,6 +1,9 @@
 ---
 when:
-  branch: main
+  branch: ${CI_REPO_DEFAULT_BRANCH}
+  event:
+    - pull_request
+    - push
 
 variables:
   - &buildx woodpeckerci/plugin-docker-buildx:6.0.2
