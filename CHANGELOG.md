@@ -20,6 +20,7 @@
 
 ### Misc
 
+- ci(docker): update branch and event conditions [[#133](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/133)]
 - Reduce renovate-validator noise [[#132](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/132)]
 - ci(lint): always run as much steps as possible [[#131](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/131)]
 - Add renovate Golang postUpdateOptions [[#126](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/126)]
