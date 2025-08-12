@@ -34,7 +34,12 @@ steps:
     depends_on: []
 
   renovate:
-    image: renovate/renovate:41.62.3
+    # We don't expect renovate to introduce breaking changes on minor and patch
+    # releases. So we pin the major version only and force Woodpecker to pull
+    # the latest image on every run.
+    # This is to reduce the noise of renovate PRs to update the validator image.
+    image: renovate/renovate:41
+    pull: true
     commands:
       - renovate-config-validator --strict
     when:
