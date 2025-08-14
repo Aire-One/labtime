@@ -16,7 +16,8 @@
         "streetsidesoftware.code-spell-checker",
         "EditorConfig.EditorConfig",
         "DavidAnson.vscode-markdownlint",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "MermaidChart.vscode-mermaid-chart"
       ]
     }
   },
