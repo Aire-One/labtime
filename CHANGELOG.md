@@ -6,6 +6,10 @@
 
 @Aire-One, @renovate-bot
 
+### 📚 Documentation
+
+- Add README documentation [[#116](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/116)]
+
 ### 📈 Enhancement
 
 - CI: Build all apps (labtime and labtime-generator) outside of the context of docker [[#108](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/108)]
