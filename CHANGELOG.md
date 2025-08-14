@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-12
+## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -20,6 +20,7 @@
 
 ### Misc
 
+- Fix pinned GitHub Actions version number [[#135](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/135)]
 - ci(docker): update branch and event conditions [[#133](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/133)]
 - Reduce renovate-validator noise [[#132](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/132)]
 - ci(lint): always run as much steps as possible [[#131](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/131)]
