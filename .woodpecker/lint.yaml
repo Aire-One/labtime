@@ -45,3 +45,9 @@ steps:
       - pip install yamllint
       - yamllint --strict .
     depends_on: []
+
+  markdownlint:
+    image: davidanson/markdownlint-cli2:v0.18.1
+    commands:
+      - markdownlint-cli2 **/*.md
+    depends_on: []

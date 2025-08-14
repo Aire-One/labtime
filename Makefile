@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell yamllint tidy-check test generate build build-generator
+all: lint cspell yamllint markdownlint tidy-check test generate build build-generator
 
 .PHONY: clean
 clean:
@@ -19,6 +19,10 @@ lint:
 .PHONY: yamllint
 yamllint:
 	yamllint --strict .
+
+.PHONY: markdownlint
+markdownlint:
+	markdownlint-cli2 **/*.md
 
 .PHONY: cspell
 cspell:

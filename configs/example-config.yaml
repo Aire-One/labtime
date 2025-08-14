@@ -2,11 +2,17 @@
 # yaml-language-server: $schema=../labtime-configuration-schema.json
 http_status_code:
   - url: https://aireone.xyz
-  - url: https://gitea.aireone.xyz
+  - url: https://github.com
+    name: GitHub
+  - url: https://www.google.com/404
+    name: Not Found Site
 tls_monitors:
   - domain: aireone.xyz
-  - domain: gitea.aireone.xyz
+  - domain: github.com
+    name: GitHub
 docker_monitors:
   - container_name: example-stack-grafana-1
   - name: prom
     container_name: example-stack-prometheus-1
+  - container_name: unreachable
+    name: Unreachable Container
