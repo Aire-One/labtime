@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### 📚 Documentation
+
+- Add README documentation [[#116](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/116)]
+
+### 📈 Enhancement
+
+- CI: Build all apps (labtime and labtime-generator) outside of the context of docker [[#108](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/108)]
+- Manage Tidying dependencies [[#122](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/122)]
+
+### 📦️ Dependency
+
+- chore(deps): update renovate/renovate docker tag to v41.62.3 [[#130](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/130)]
+- chore(deps): update renovate/renovate docker tag to v41.61.0 [[#128](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/128)]
+- chore(deps): update renovate/renovate docker tag to v41.60.3 [[#127](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/127)]
+- chore(deps): update renovate/renovate docker tag to v41.60.1 [[#125](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/125)]
+
+### Misc
+
+- Fix pinned GitHub Actions version number [[#135](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/135)]
+- ci(docker): update branch and event conditions [[#133](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/133)]
+- Reduce renovate-validator noise [[#132](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/132)]
+- ci(lint): always run as much steps as possible [[#131](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/131)]
+- Add renovate Golang postUpdateOptions [[#126](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/126)]
+- Clean Makefile [[#124](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/124)]
+
 ## [0.4.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.4.0) - 2025-08-08
 
 ### ❤️ Thanks to all contributors! ❤️
