@@ -170,6 +170,95 @@ navigate to the dashboard at `Home > Dashboards > Labtime` to see the metrics.
 
 Labtime uses a **generic plugin-based architecture** with three main components:
 
+```mermaid
+flowchart TD
+    %% Configuration Input
+    CONFIG[YAML Config File]
+    DTO[ExampleMonitorDTO]
+
+    %% External Systems
+    SCHEDULER[Scheduler<br/>Runs jobs periodically]
+    PROMETHEUS[Prometheus Metrics<br/>Exposed via /metrics]
+
+    %% Plugin/Generic System Interfaces
+    subgraph INTERFACES["Plugin/Generic System Interfaces"]
+        IPROVIDER[TargetProvider Interface]
+        IFACTORY[MonitorFactory Interface]
+        ITARGET[Target Interface]
+    end
+
+    %% Plugin Registration System
+    subgraph REGISTRATION["Plugin Registration System"]
+        PROVIDER[ExampleProvider]
+        FACTORY[ExampleFactory]
+        WIRING["monitorConfigs"]
+
+        PROVIDER ---o WIRING
+        FACTORY ---o WIRING
+    end
+
+    subgraph Business
+        TARGET[ExampleTarget]
+        MONITOR[ExampleMonitor]
+    end
+
+    COLLECTOR[Prometheus Collector<br/>GaugeVec/...]
+
+    IJOB[Job Interface]
+
+    %% Implementation Flow
+    PROVIDER -..-> IPROVIDER
+    TARGET -..-> ITARGET
+    FACTORY -..-> IFACTORY
+    MONITOR -..-> IJOB
+    CONFIG --> DTO
+    DTO --> PROVIDER
+    PROVIDER -- maps DTO to Target --> TARGET
+    FACTORY --> COLLECTOR
+    TARGET --> MONITOR
+    FACTORY --> MONITOR
+
+    %% Plugin System Wiring
+    WIRING -- provides jobs --> SCHEDULER
+    SCHEDULER --> MONITOR
+
+    MONITOR --> PROMETHEUS
+
+    %% Styling
+    classDef config fill:#fff8e1,stroke:#f57c00,stroke-width:2px
+    classDef implementation fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef interface fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef external fill:#f5f5f5,stroke:#616161,stroke-width:2px
+
+    class DTO,WIRING config
+    class PROVIDER,TARGET,FACTORY,MONITOR implementation
+    class ITARGET,IFACTORY,IPROVIDER,IJOB interface
+    class CONFIG,SCHEDULER,PROMETHEUS,COLLECTOR external
+
+    subgraph Legend["Legend"]
+        direction TB
+
+        subgraph Arrows
+            direction LR
+
+            A -. implements .-> B
+            C -- compose --o D
+
+            classDef hide fill:#0000,stroke:#0000,stroke-width:0px,color:#0000;
+            class A,B,C,D hide;
+        end
+
+        subgraph Colors
+            direction LR
+
+            L_CONFIG[Configuration]:::config
+            L_IMPL[Implementation]:::implementation
+            L_INTERFACE[Interfaces]:::interface
+            L_EXTERNAL[External Systems]:::external
+        end
+    end
+```
+
 #### 1. Monitor Plugin Pattern
 
 Each monitor type (HTTP, TLS, Docker) implements three core interfaces defined
@@ -177,50 +266,61 @@ in [`internal/monitors/monitor.go`](internal/monitors/monitor.go):
 
 - **`Target`** - Configuration data structure with `GetName()` and
   `GetInterval()` methods
-  - Example: [`HTTPTarget`](internal/monitors/httpmonitor.go) contains URL,
-    method, name, and interval fields
-  - Provides type-safe access to monitor-specific configuration
 - **`MonitorFactory[T Target, C prometheus.Collector]`** - Factory pattern for
   creating collectors and monitor instances
   - `CreateCollector()` - Creates Prometheus metrics collectors (e.g., GaugeVec
     for status codes)
   - `CreateMonitor(target, collector, logger)` - Instantiates the actual monitor
     job
-  - Example: [`HTTPMonitorFactory`](internal/monitors/httpmonitor.go) creates
-    HTTP status code collectors
 - **`TargetProvider[T]`** - Extracts and validates targets from YAML
   configuration
   - `GetTargets(config)` - Parses YAML DTOs into strongly-typed Target structs
-  - Applies default values (60s intervals, fallback names)
-  - Example: [`HTTPTargetProvider`](internal/monitors/httpmonitor.go) validates
-    HTTP methods and applies default values
+    and applies default values (60s intervals, fallback names)
 
 #### 2. Generic Type System
 
 The architecture leverages Go generics to ensure compile-time type safety and
 eliminate runtime type assertions:
 
-- **`MonitorConfig[T Target, C prometheus.Collector]`** in
+- **`MonitorConfig[T monitors.Target, C prometheus.Collector]`** in
   [`internal/monitorconfig/monitorconfig.go`](internal/monitorconfig/monitorconfig.go)
-  - Eliminates `interface{}` usage and runtime type casting
-  - Ensures Target and Collector types match at compile time
+  - Ensures Target and Collector types match at compile time, eliminating
+    `interface{}` usage and runtime type casting
   - Example: `MonitorConfig[HTTPTarget, *prometheus.GaugeVec]` guarantees
-    HTTP-specific types
+    HTTP-specific types and prevents mismatched configurations
 - **`MonitorFactory[T Target, C prometheus.Collector]`** interface enforces type
   relationships
-  - Factory methods must accept the correct Target type and return compatible
+  - Factory methods must accept the correct Target type and compatible
     Collectors
   - Prevents mismatched target/collector combinations at compile time
-- **Unified `Job` interface** returned by all monitors for scheduler integration
+- **Unified `Job` interface** from
+  [`internal/monitors/monitor.go`](internal/monitors/monitor.go) returned by all
+  monitors for scheduler integration
   - `ID()` - Returns unique identifier for the monitoring job
   - `Run(context.Context)` - Executes the health check and updates metrics
   - Enables polymorphic scheduling regardless of monitor type
+- **Single Configuration** in
+  [`internal/apps/labtime/monitors.go`](internal/apps/labtime/monitors.go) by
+  the `getMonitorConfigs()` function
+  - Provides a single configuration entry point for all monitor types
+  - Links monitor types to their factory and target provider ensuring type
+    safety and consistency
 
-#### 3. Dependency Injection for Testing
+#### 3. Dependency Injection
 
-- Monitor implementations accept function types for external dependencies
-- All external dependencies are mockable via function injection
-- No real network connections in unit tests
+Monitor implementations accept interface or function types for external
+dependencies to enable testing without real network connections:
+
+- **TLS Monitor**: Uses `TLSDialFunc` function type to mock `tls.Dial` calls
+  - Example: `DialFunc: func(_, _ string, _ *tls.Config) (*tls.Conn, error)`
+- **HTTP Monitor**: Accepts `HTTPClient` interface to mock HTTP requests
+  - Allows injection of mock clients that return predetermined responses
+- **Docker Monitor**: Uses `DockerClient` interface to mock container API calls
+  - Enables testing container status checks without Docker daemon
+
+All external dependencies are mockable via injection, preventing real network
+connections in unit tests. See test files like
+`TestTLSMonitor_tlsHandshake_DialError` for implementation examples.
 
 #### Project Structure
 
