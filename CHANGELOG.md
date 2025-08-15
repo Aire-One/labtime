@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update python docker tag to v3.13.6 [[#119](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/119)]
 - chore(deps): update module github.com/prometheus/client_golang to v1.23.0 [[#104](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/104)]
 - chore(deps): update module github.com/docker/docker to v28.3.3+incompatible [[#98](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/98)]
 
