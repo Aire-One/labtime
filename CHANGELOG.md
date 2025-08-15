@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update golangci-lint to v2.4.0 [[#111](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/111)]
 - chore(deps): update actions/checkout action to v5 [[#134](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/134)]
 - chore(deps): update python docker tag to v3.13.6 [[#119](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/119)]
 - chore(deps): update module github.com/prometheus/client_golang to v1.23.0 [[#104](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/104)]
