@@ -4,7 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Aire-One
+@Aire-One, @renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update module github.com/docker/docker to v28.3.3+incompatible [[#98](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/98)]
 
 ### Misc
 
