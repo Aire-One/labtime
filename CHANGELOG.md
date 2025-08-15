@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.1) - 2025-08-15
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One
+
+### Misc
+
+- ci(docker): fix woodpecker missing tag event [[#136](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/136)]
+
 ## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
 
 ### ❤️ Thanks to all contributors! ❤️
