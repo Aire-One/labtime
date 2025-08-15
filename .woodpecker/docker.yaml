@@ -4,6 +4,7 @@ when:
   event:
     - pull_request
     - push
+    - tag
 
 variables:
   - &buildx woodpeckerci/plugin-docker-buildx:6.0.2
