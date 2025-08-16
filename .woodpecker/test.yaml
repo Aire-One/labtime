@@ -4,19 +4,19 @@ when:
 
 steps:
   golang:
-    image: golang:1.24.5
+    image: golang:1.25.0
     commands:
       - go test -v ./...
     depends_on: []
 
   tidy:
-    image: golang:1.24.5
+    image: golang:1.25.0
     commands:
       - go mod tidy -diff
     depends_on: []
 
   "generate yaml schema":
-    image: golang:1.24.5
+    image: golang:1.25.0
     commands:
       - mv
         labtime-configuration-schema.json
