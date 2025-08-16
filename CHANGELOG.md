@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update golang to v1.25.0 [[#117](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/117)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.3 [[#99](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/99)]
 - chore(deps): update golangci-lint to v2.4.0 [[#111](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/111)]
 - chore(deps): update actions/checkout action to v5 [[#134](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/134)]
