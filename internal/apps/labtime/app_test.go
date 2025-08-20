@@ -10,7 +10,7 @@ func TestNewApp(t *testing.T) {
 	configFile := "../../../configs/example-config.yaml" // we shouldn't rely on the actual file
 	logger := log.New(os.Stdout, "", 0)                  // silent?
 
-	app, err := NewApp(configFile, logger)
+	app, err := NewApp(Options{ConfigFile: configFile}, logger)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}

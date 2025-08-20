@@ -5,9 +5,11 @@ import (
 	"aireone.xyz/labtime/internal/monitors"
 )
 
+type MonitorConfigs = map[string]monitorconfig.MonitorSetup
+
 // getMonitorConfigs returns a map of monitor configurations.
-func getMonitorConfigs() map[string]monitorconfig.MonitorSetup {
-	return map[string]monitorconfig.MonitorSetup{
+func getMonitorConfigs() MonitorConfigs {
+	return MonitorConfigs{
 		"http": monitorconfig.NewMonitorConfig(
 			monitors.HTTPMonitorFactory{},
 			monitors.HTTPTargetProvider{},

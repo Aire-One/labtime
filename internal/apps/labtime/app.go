@@ -11,76 +11,89 @@ import (
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"golang.org/x/sync/errgroup"
 )
 
+type Options struct {
+	ConfigFile string
+}
+
 type App struct {
+	options              Options
+	monitorConfigs       MonitorConfigs
 	scheduler            *scheduler.Scheduler
 	prometheusHTTPServer *http.Server
 
 	logger *log.Logger
 }
 
-func NewApp(configFile string, logger *log.Logger) (*App, error) {
-	config, err := loadYamlConfig(configFile)
-	if err != nil {
-		return nil, errors.Wrap(err, "error loading yaml config")
-	}
+func NewApp(options Options, logger *log.Logger) (*App, error) {
+	monitorConfigs := getMonitorConfigs()
 
-	scheduler, err := createScheduler(config, logger)
-	if err != nil {
-		return nil, errors.Wrap(err, "error creating scheduler")
-	}
-
-	return &App{
-		logger:    logger,
-		scheduler: scheduler,
-		prometheusHTTPServer: &http.Server{
-			Addr:         ":2112",
-			ReadTimeout:  5 * time.Second,
-			WriteTimeout: 10 * time.Second,
-			IdleTimeout:  15 * time.Second,
-		},
-	}, nil
-}
-
-func loadYamlConfig(configFile string) (*yamlconfig.YamlConfig, error) {
-	file, err := os.Open(configFile)
-	if err != nil {
-		return nil, errors.Wrap(err, "error opening config file")
-	}
-
-	defer file.Close()
-
-	return yamlconfig.NewYamlConfig(file)
-}
-
-func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*scheduler.Scheduler, error) {
 	scheduler, err := scheduler.NewScheduler(logger)
 	if err != nil {
 		return nil, errors.Wrap(err, "error creating scheduler")
 	}
 
-	// Dictionary of monitor configurations
-	monitorConfigs := getMonitorConfigs()
+	server := &http.Server{
+		Addr:         ":2112",
+		ReadTimeout:  5 * time.Second,
+		WriteTimeout: 10 * time.Second,
+		IdleTimeout:  15 * time.Second,
+	}
 
-	// Setup monitors using the dictionary
+	return &App{
+		options:              options,
+		monitorConfigs:       monitorConfigs,
+		scheduler:            scheduler,
+		prometheusHTTPServer: server,
+		logger:               logger,
+	}, nil
+}
+
+func setupJobsFromFile(configFile string, scheduler *scheduler.Scheduler, monitorConfigs MonitorConfigs, logger *log.Logger) error {
+	file, err := os.Open(configFile)
+	if err != nil {
+		return errors.Wrap(err, "error opening config file")
+	}
+	defer file.Close()
+
+	config, err := yamlconfig.NewYamlConfig(file)
+	if err != nil {
+		return errors.Wrap(err, "error creating yaml config")
+	}
+
 	for monitorType, monitorConfig := range monitorConfigs {
 		if err := monitorConfig.Setup(scheduler, config, logger); err != nil {
-			return nil, errors.Wrapf(err, "error setting up %s monitor", monitorType)
+			return errors.Wrapf(err, "error setting up %s monitor", monitorType)
 		}
 	}
 
-	return scheduler, nil
+	return nil
 }
 
-func (a *App) Start() error {
-	// Serve Prometheus metrics
-	http.Handle("/metrics", promhttp.Handler())
-	if err := a.prometheusHTTPServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		return errors.Wrap(err, "error starting prometheus http server")
-	}
+func (a *App) Start(ctx context.Context) error {
+	errs, _ := errgroup.WithContext(ctx)
 
-	return nil
+	// Serve Prometheus metrics
+	errs.Go(func() error {
+		http.Handle("/metrics", promhttp.Handler())
+		if err := a.prometheusHTTPServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			return errors.Wrap(err, "error starting prometheus http server")
+		}
+		return nil
+	})
+
+	// Load YAML configuration
+	errs.Go(func() error {
+		if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
+			return errors.Wrap(err, "error setting up jobs from file")
+		}
+
+		return nil
+	})
+
+	return errs.Wait()
 }
 
 func (a *App) Shutdown() error {
