@@ -74,8 +74,6 @@ func createScheduler(config *yamlconfig.YamlConfig, logger *log.Logger) (*schedu
 }
 
 func (a *App) Start() error {
-	a.scheduler.Start()
-
 	// Serve Prometheus metrics
 	http.Handle("/metrics", promhttp.Handler())
 	if err := a.prometheusHTTPServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
