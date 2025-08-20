@@ -35,11 +35,14 @@ func NewApp(options Options, logger *log.Logger) (*App, error) {
 		return nil, errors.Wrap(err, "error creating scheduler")
 	}
 
+	mux := http.NewServeMux()
+	mux.Handle("/metrics", promhttp.Handler())
 	server := &http.Server{
 		Addr:         ":2112",
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  15 * time.Second,
+		Handler:      mux,
 	}
 
 	return &App{
@@ -77,7 +80,6 @@ func (a *App) Start(ctx context.Context) error {
 
 	// Serve Prometheus metrics
 	errs.Go(func() error {
-		http.Handle("/metrics", promhttp.Handler())
 		if err := a.prometheusHTTPServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			return errors.Wrap(err, "error starting prometheus http server")
 		}
