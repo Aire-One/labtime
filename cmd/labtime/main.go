@@ -16,7 +16,10 @@ func main() {
 	logger := log.New(os.Stdout, loggerPrefix, log.LstdFlags|log.Lshortfile)
 	cfg := labtime.LoadFlag(logger)
 
-	app, err := labtime.NewApp(labtime.Options{ConfigFile: *cfg.ConfigFile}, logger)
+	app, err := labtime.NewApp(labtime.Options{
+		ConfigFile:      *cfg.ConfigFile,
+		WatchConfigFile: *cfg.WatchConfigFile,
+	}, logger)
 	if err != nil {
 		logger.Fatalf("Error creating app: %v", err)
 	}

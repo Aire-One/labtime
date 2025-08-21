@@ -53,6 +53,17 @@ func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 	return nil
 }
 
+func (s *Scheduler) ClearJobs() error {
+	for _, job := range s.scheduler.Jobs() {
+		if err := s.scheduler.RemoveJob(job.ID()); err != nil {
+			return errors.Wrapf(err, "error removing job with ID %s", job.ID())
+		}
+		s.logger.Printf("Job with ID %s removed\n", job.ID())
+	}
+
+	return nil
+}
+
 func (s *Scheduler) Shutdown() error {
 	if err := s.scheduler.Shutdown(); err != nil {
 		return errors.Wrap(err, "error shutting down scheduler")

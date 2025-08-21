@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"aireone.xyz/labtime/internal/scheduler"
+	"aireone.xyz/labtime/internal/watcher"
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -15,7 +16,8 @@ import (
 )
 
 type Options struct {
-	ConfigFile string
+	ConfigFile      string
+	WatchConfigFile bool
 }
 
 type App struct {
@@ -23,6 +25,7 @@ type App struct {
 	monitorConfigs       MonitorConfigs
 	scheduler            *scheduler.Scheduler
 	prometheusHTTPServer *http.Server
+	watcher              *watcher.Watcher
 
 	logger *log.Logger
 }
@@ -45,11 +48,20 @@ func NewApp(options Options, logger *log.Logger) (*App, error) {
 		Handler:      mux,
 	}
 
+	var w *watcher.Watcher
+	if options.WatchConfigFile {
+		w, err = watcher.NewWatcher(options.ConfigFile)
+		if err != nil {
+			return nil, errors.Wrap(err, "error creating watcher")
+		}
+	}
+
 	return &App{
 		options:              options,
 		monitorConfigs:       monitorConfigs,
 		scheduler:            scheduler,
 		prometheusHTTPServer: server,
+		watcher:              w,
 		logger:               logger,
 	}, nil
 }
@@ -94,13 +106,37 @@ func (a *App) Start(ctx context.Context) error {
 	})
 
 	// Load YAML configuration
-	errs.Go(func() error {
-		if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
-			return errors.Wrap(err, "error setting up jobs from file")
-		}
+	if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
+		return errors.Wrap(err, "error setting up jobs from file")
+	}
+	if a.options.WatchConfigFile {
+		errs.Go(func() error {
+			go func() {
+				<-derivedCtx.Done()
+				if err := shutdownWatcher(a.watcher); err != nil {
+					a.logger.Printf("Error shutting down watcher: %v", err)
+				}
+			}()
 
-		return nil
-	})
+			for {
+				select {
+				case err := <-a.watcher.Errors:
+					return errors.Wrap(err, "error received from watcher")
+				case <-a.watcher.Events:
+					a.logger.Println("Configuration file changed, reloading jobs...")
+
+					if err := a.scheduler.ClearJobs(); err != nil {
+						return errors.Wrap(err, "error clearing jobs")
+					}
+
+					if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
+						a.logger.Printf("Error reloading jobs: %v", err)
+					}
+
+				}
+			}
+		})
+	}
 
 	return errs.Wait()
 }
@@ -123,6 +159,13 @@ func shutdownPrometheusServer(ctx context.Context, server *http.Server) error {
 	return nil
 }
 
+func shutdownWatcher(watcher *watcher.Watcher) error {
+	if err := watcher.Shutdown(); err != nil {
+		return errors.Wrap(err, "error shutting down watcher")
+	}
+	return nil
+}
+
 func (a *App) Shutdown(ctx context.Context) error {
 	if err := shutdownScheduler(a.scheduler); err != nil {
 		return errors.Wrap(err, "error shutting down scheduler")
@@ -130,6 +173,10 @@ func (a *App) Shutdown(ctx context.Context) error {
 
 	if err := shutdownPrometheusServer(ctx, a.prometheusHTTPServer); err != nil {
 		return errors.Wrap(err, "error shutting down prometheus http server")
+	}
+
+	if err := shutdownWatcher(a.watcher); err != nil {
+		return errors.Wrap(err, "error shutting down watcher")
 	}
 
 	return nil
