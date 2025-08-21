@@ -76,10 +76,17 @@ func setupJobsFromFile(configFile string, scheduler *scheduler.Scheduler, monito
 }
 
 func (a *App) Start(ctx context.Context) error {
-	errs, _ := errgroup.WithContext(ctx)
+	errs, derivedCtx := errgroup.WithContext(ctx)
 
 	// Serve Prometheus metrics
 	errs.Go(func() error {
+		go func() {
+			<-derivedCtx.Done()
+			if err := shutdownPrometheusServer(derivedCtx, a.prometheusHTTPServer); err != nil {
+				a.logger.Printf("Error shutting down prometheus http server: %v", err)
+			}
+		}()
+
 		if err := a.prometheusHTTPServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			return errors.Wrap(err, "error starting prometheus http server")
 		}
@@ -98,12 +105,30 @@ func (a *App) Start(ctx context.Context) error {
 	return errs.Wait()
 }
 
-func (a *App) Shutdown() error {
-	if err := a.scheduler.Shutdown(); err != nil {
+func shutdownScheduler(scheduler *scheduler.Scheduler) error {
+	if err := scheduler.Shutdown(); err != nil {
+		return errors.Wrap(err, "error shutting down scheduler")
+	}
+	return nil
+}
+
+func shutdownPrometheusServer(ctx context.Context, server *http.Server) error {
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel()
+
+	if err := server.Shutdown(ctx); err != nil {
+		return errors.Wrap(err, "error shutting down prometheus http server")
+	}
+
+	return nil
+}
+
+func (a *App) Shutdown(ctx context.Context) error {
+	if err := shutdownScheduler(a.scheduler); err != nil {
 		return errors.Wrap(err, "error shutting down scheduler")
 	}
 
-	if err := a.prometheusHTTPServer.Shutdown(context.TODO()); err != nil {
+	if err := shutdownPrometheusServer(ctx, a.prometheusHTTPServer); err != nil {
 		return errors.Wrap(err, "error shutting down prometheus http server")
 	}
 
