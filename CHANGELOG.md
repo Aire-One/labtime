@@ -11,6 +11,10 @@
 - Gracefully shutdown the application on SIGINT and SIGTERM signals [[#110](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/110)]
 - Watch config file changes [[#139](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/139)]
 
+### 📈 Enhancement
+
+- chore: deadcode checks [[#107](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/107)]
+
 ### 📦️ Dependency
 
 - chore(deps): update python docker tag to v3.13.7 [[#138](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/138)]
