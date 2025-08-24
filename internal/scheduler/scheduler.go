@@ -22,6 +22,10 @@ func NewScheduler(logger *log.Logger) (*Scheduler, error) {
 		return nil, errors.Wrap(err, "error creating scheduler")
 	}
 
+	// Start immediately the scheduler, new jobs can be added later with a start
+	// immediately option
+	s.Start()
+
 	return &Scheduler{
 		scheduler: s,
 		logger:    logger,
@@ -38,6 +42,7 @@ func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 			}
 			s.logger.Printf("Job finished for monitor %s\n", job.ID())
 		}),
+		gocron.JobOption(gocron.WithStartImmediately()),
 	)
 	if err != nil {
 		return errors.Wrap(err, "error creating job")
@@ -48,8 +53,15 @@ func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 	return nil
 }
 
-func (s *Scheduler) Start() {
-	s.scheduler.Start()
+func (s *Scheduler) ClearJobs() error {
+	for _, job := range s.scheduler.Jobs() {
+		if err := s.scheduler.RemoveJob(job.ID()); err != nil {
+			return errors.Wrapf(err, "error removing job with ID %s", job.ID())
+		}
+		s.logger.Printf("Job with ID %s removed\n", job.ID())
+	}
+
+	return nil
 }
 
 func (s *Scheduler) Shutdown() error {

@@ -3,23 +3,24 @@ package labtime
 import (
 	"aireone.xyz/labtime/internal/monitorconfig"
 	"aireone.xyz/labtime/internal/monitors"
-	"github.com/prometheus/client_golang/prometheus"
 )
 
+type MonitorConfigs = map[string]monitorconfig.MonitorSetup
+
 // getMonitorConfigs returns a map of monitor configurations.
-func getMonitorConfigs() map[string]monitorconfig.MonitorSetup {
-	return map[string]monitorconfig.MonitorSetup{
-		"http": &monitorconfig.MonitorConfig[monitors.HTTPTarget, *prometheus.GaugeVec]{
-			Factory:  monitors.HTTPMonitorFactory{},
-			Provider: monitors.HTTPTargetProvider{},
-		},
-		"tls": &monitorconfig.MonitorConfig[monitors.TLSTarget, *prometheus.GaugeVec]{
-			Factory:  monitors.TLSMonitorFactory{},
-			Provider: monitors.TLSTargetProvider{},
-		},
-		"docker": &monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec]{
-			Factory:  monitors.DockerMonitorFactory{},
-			Provider: monitors.DockerTargetProvider{},
-		},
+func getMonitorConfigs() MonitorConfigs {
+	return MonitorConfigs{
+		"http": monitorconfig.NewMonitorConfig(
+			monitors.HTTPMonitorFactory{},
+			monitors.HTTPTargetProvider{},
+		),
+		"tls": monitorconfig.NewMonitorConfig(
+			monitors.TLSMonitorFactory{},
+			monitors.TLSTargetProvider{},
+		),
+		"docker": monitorconfig.NewMonitorConfig(
+			monitors.DockerMonitorFactory{},
+			monitors.DockerTargetProvider{},
+		),
 	}
 }
