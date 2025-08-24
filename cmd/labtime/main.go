@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 
@@ -15,12 +16,15 @@ func main() {
 	logger := log.New(os.Stdout, loggerPrefix, log.LstdFlags|log.Lshortfile)
 	cfg := labtime.LoadFlag(logger)
 
-	app, err := labtime.NewApp(*cfg.ConfigFile, logger)
+	app, err := labtime.NewApp(labtime.Options{
+		ConfigFile:      *cfg.ConfigFile,
+		WatchConfigFile: *cfg.WatchConfigFile,
+	}, logger)
 	if err != nil {
 		logger.Fatalf("Error creating app: %v", err)
 	}
 
-	if err := app.Start(); err != nil {
+	if err := app.Start(context.TODO()); err != nil {
 		logger.Fatalf("Error starting app: %v", err)
 	}
 }

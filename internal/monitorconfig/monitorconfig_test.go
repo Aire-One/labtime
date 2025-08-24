@@ -119,14 +119,21 @@ func TestMonitorConfig_Setup_Success(t *testing.T) {
 	provider := &mockTargetProvider{targets: targets}
 	factory := &mockMonitorFactory{metricName: "test_metric_success"}
 
-	// Create monitor config
-	config := &MonitorConfig[mockTarget, *mockCollector]{
-		Factory:  factory,
-		Provider: provider,
-	}
+	// Create monitor config using constructor (this calls CreateCollector)
+	config := NewMonitorConfig(factory, provider)
 
 	// Create a minimal YAML config
 	yamlConfig := &yamlconfig.YamlConfig{}
+
+	// Verify that the collector was created during construction
+	if factory.collector == nil {
+		t.Error("Expected collector to be created")
+	}
+
+	// Verify that CreateCollector was called exactly once during construction
+	if factory.createCollectorCalls != 1 {
+		t.Errorf("Expected CreateCollector to be called once during construction, got %d calls", factory.createCollectorCalls)
+	}
 
 	// Test Setup
 	err = config.Setup(mockScheduler, yamlConfig, logger)
@@ -134,14 +141,9 @@ func TestMonitorConfig_Setup_Success(t *testing.T) {
 		t.Errorf("Setup() failed: %v", err)
 	}
 
-	// Verify that the collector was created
-	if factory.collector == nil {
-		t.Error("Expected collector to be created")
-	}
-
-	// Verify that CreateCollector was called exactly once
+	// Verify that CreateCollector was NOT called again during Setup
 	if factory.createCollectorCalls != 1 {
-		t.Errorf("Expected CreateCollector to be called once, got %d calls", factory.createCollectorCalls)
+		t.Errorf("Expected CreateCollector to be called only once total, got %d calls", factory.createCollectorCalls)
 	}
 
 	// Verify that CreateMonitor was called for each target
@@ -215,14 +217,21 @@ func TestMonitorConfig_Setup_EmptyTargets(t *testing.T) {
 	provider := &mockTargetProvider{targets: []mockTarget{}}
 	factory := &mockMonitorFactory{metricName: "test_metric_empty"}
 
-	// Create monitor config
-	config := &MonitorConfig[mockTarget, *mockCollector]{
-		Factory:  factory,
-		Provider: provider,
-	}
+	// Create monitor config using constructor (this calls CreateCollector)
+	config := NewMonitorConfig(factory, provider)
 
 	// Create a minimal YAML config
 	yamlConfig := &yamlconfig.YamlConfig{}
+
+	// Verify that the collector was created during construction
+	if factory.collector == nil {
+		t.Error("Expected collector to be created even with no targets")
+	}
+
+	// Verify that CreateCollector was called exactly once during construction
+	if factory.createCollectorCalls != 1 {
+		t.Errorf("Expected CreateCollector to be called once during construction, got %d calls", factory.createCollectorCalls)
+	}
 
 	// Test Setup - should succeed with no targets
 	err = config.Setup(mockScheduler, yamlConfig, logger)
@@ -230,14 +239,9 @@ func TestMonitorConfig_Setup_EmptyTargets(t *testing.T) {
 		t.Errorf("Setup() with empty targets failed: %v", err)
 	}
 
-	// Verify that the collector was still created and registered
-	if factory.collector == nil {
-		t.Error("Expected collector to be created even with no targets")
-	}
-
-	// Verify that CreateCollector was called exactly once
+	// Verify that CreateCollector was NOT called again during Setup
 	if factory.createCollectorCalls != 1 {
-		t.Errorf("Expected CreateCollector to be called once, got %d calls", factory.createCollectorCalls)
+		t.Errorf("Expected CreateCollector to be called only once total, got %d calls", factory.createCollectorCalls)
 	}
 
 	// Verify that CreateMonitor was not called (no targets)
@@ -270,14 +274,21 @@ func TestMonitorConfig_Setup_MultipleTargets(t *testing.T) {
 	provider := &mockTargetProvider{targets: targets}
 	factory := &mockMonitorFactory{metricName: "test_metric_multiple"}
 
-	// Create monitor config
-	config := &MonitorConfig[mockTarget, *mockCollector]{
-		Factory:  factory,
-		Provider: provider,
-	}
+	// Create monitor config using constructor (this calls CreateCollector)
+	config := NewMonitorConfig(factory, provider)
 
 	// Create a minimal YAML config
 	yamlConfig := &yamlconfig.YamlConfig{}
+
+	// Verify that the collector was created during construction
+	if factory.collector == nil {
+		t.Error("Expected collector to be created")
+	}
+
+	// Verify that CreateCollector was called exactly once during construction
+	if factory.createCollectorCalls != 1 {
+		t.Errorf("Expected CreateCollector to be called once during construction, got %d calls", factory.createCollectorCalls)
+	}
 
 	// Test Setup
 	err = config.Setup(mockScheduler, yamlConfig, logger)
@@ -285,14 +296,9 @@ func TestMonitorConfig_Setup_MultipleTargets(t *testing.T) {
 		t.Errorf("Setup() with multiple targets failed: %v", err)
 	}
 
-	// Verify that the collector was created
-	if factory.collector == nil {
-		t.Error("Expected collector to be created")
-	}
-
-	// Verify that CreateCollector was called exactly once
+	// Verify that CreateCollector was NOT called again during Setup
 	if factory.createCollectorCalls != 1 {
-		t.Errorf("Expected CreateCollector to be called once, got %d calls", factory.createCollectorCalls)
+		t.Errorf("Expected CreateCollector to be called only once total, got %d calls", factory.createCollectorCalls)
 	}
 
 	// Verify that CreateMonitor was called for each target (3 targets)

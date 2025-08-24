@@ -33,6 +33,7 @@ labtime --config config.yaml
 
 - `--config` (or env `CONFIG`): Path to configuration file (default:
   `config.yaml`)
+- `--watch` (or env `WATCH`): Watch for changes in the configuration
 
 The application serves Prometheus metrics on port `:2112` at the `/metrics`
 endpoint (e.g., `http://localhost:2112/metrics`).
@@ -95,6 +96,7 @@ support it.
 | Variable Name | Description | Default |
 | ------------- | ----------- | ------- |
 | `CONFIG` | Path to the configuration file | `config.yaml` |
+| `WATCH` | Watch for changes in the configuration file | `false` |
 
 ## Metrics
 
