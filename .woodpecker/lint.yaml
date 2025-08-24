@@ -4,7 +4,7 @@ when:
 
 steps:
   woodpecker:
-    image: woodpeckerci/woodpecker-cli:v3.8.0-alpine
+    image: woodpeckerci/woodpecker-cli:v3.9.0-alpine
     commands:
       - woodpecker-cli
         lint
