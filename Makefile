@@ -34,7 +34,7 @@ test:
 
 .PHONY: deadcode
 deadcode:
-	@OUTPUT=$$(deadcode -test ./...); \
+	@OUTPUT=$$(go run golang.org/x/tools/cmd/deadcode@latest -test ./...); \
 	if [ -n "$$OUTPUT" ]; then \
 		echo "$$OUTPUT"; \
 		exit 1; \
