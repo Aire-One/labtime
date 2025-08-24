@@ -17,6 +17,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.9.0 [[#140](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/140)]
 - chore(deps): update python docker tag to v3.13.7 [[#138](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/138)]
 - chore(deps): update golang to v1.25.0 [[#117](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/117)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.3 [[#99](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/99)]
