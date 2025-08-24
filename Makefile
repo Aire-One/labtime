@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell yamllint markdownlint tidy-check test generate build build-generator
+all: lint cspell yamllint markdownlint tidy-check test deadcode generate build build-generator
 
 .PHONY: clean
 clean:
@@ -31,6 +31,14 @@ cspell:
 .PHONY: test
 test:
 	go test -v ./...
+
+.PHONY: deadcode
+deadcode:
+	@OUTPUT=$$(go run golang.org/x/tools/cmd/deadcode@latest -test ./...); \
+	if [ -n "$$OUTPUT" ]; then \
+		echo "$$OUTPUT"; \
+		exit 1; \
+	fi
 
 .PHONY: build
 build:

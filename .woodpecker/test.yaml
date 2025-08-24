@@ -15,6 +15,18 @@ steps:
       - go mod tidy -diff
     depends_on: []
 
+  deadcode:
+    image: golang:1.25.0
+    commands:
+      - go install golang.org/x/tools/cmd/deadcode@latest
+      - |
+        OUTPUT=$(deadcode -test ./...)
+        if [ -n "$OUTPUT" ]; then
+          echo "$OUTPUT"
+          exit 1
+        fi
+    depends_on: []
+
   "generate yaml schema":
     image: golang:1.25.0
     commands:
