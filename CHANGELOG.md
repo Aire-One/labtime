@@ -8,6 +8,7 @@
 
 ### ✨ Features
 
+- Gracefully shutdown the application on SIGINT and SIGTERM signals [[#110](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/110)]
 - Watch config file changes [[#139](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/139)]
 
 ### 📦️ Dependency
