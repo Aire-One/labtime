@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.5.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.1) - 2025-08-17
+## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-08-24
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Aire-One, @renovate-bot
+
+### ✨ Features
+
+- Watch config file changes [[#139](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/139)]
 
 ### 📦️ Dependency
 
