@@ -1,6 +1,6 @@
 module aireone.xyz/labtime
 
-go 1.25.0
+go 1.25.1
 
 require (
 	github.com/docker/docker v28.3.3+incompatible
