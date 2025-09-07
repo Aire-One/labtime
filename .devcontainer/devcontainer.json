@@ -6,7 +6,7 @@
       "version": "1.25.1",
       "golangciLintVersion": "2.4.0"
     },
-    "ghcr.io/devcontainers/features/docker-in-docker:2.12.2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2.12.3": {},
     "ghcr.io/devcontainers-extra/features/yamllint:2": {},
     "ghcr.io/devcontainers-extra/features/markdownlint-cli2:1": {}
   },
