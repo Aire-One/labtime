@@ -17,6 +17,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2 [[#148](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/148)]
 - chore(deps): update golang to v1.25.1 [[#145](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/145)]
 - chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.9.0 [[#140](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/140)]
 - chore(deps): update python docker tag to v3.13.7 [[#138](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/138)]
