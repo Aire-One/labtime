@@ -17,6 +17,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update actions/attest-build-provenance action to v3 [[#143](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/143)]
 - chore(deps): update ghcr.io/hadolint/hadolint docker tag to v2.13.1 [[#144](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/144)]
 - chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.3 [[#141](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/141)]
 - chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2 [[#148](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/148)]
