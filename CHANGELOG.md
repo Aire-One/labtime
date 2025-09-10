@@ -17,6 +17,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.5 [[#142](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/142)]
 - chore(deps): update module golang.org/x/sync to v0.17.0 [[#149](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/149)]
 - chore(deps): update actions/attest-build-provenance action to v3 [[#143](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/143)]
 - chore(deps): update ghcr.io/hadolint/hadolint docker tag to v2.13.1 [[#144](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/144)]
