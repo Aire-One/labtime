@@ -17,6 +17,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update module github.com/docker/docker to v28.4.0+incompatible [[#146](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/146)]
 - chore(deps): update module github.com/prometheus/client_golang to v1.23.2 [[#147](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/147)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.5 [[#142](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/142)]
 - chore(deps): update module golang.org/x/sync to v0.17.0 [[#149](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/149)]
