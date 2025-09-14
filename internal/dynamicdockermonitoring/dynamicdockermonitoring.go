@@ -33,6 +33,10 @@ func NewDynamicDockerMonitor(ctx context.Context) (*DynamicDockerMonitor, error)
 	}, nil
 }
 
+func (d *DynamicDockerMonitor) Shutdown() error {
+	return d.client.Close()
+}
+
 func watch(ctx context.Context, cli *client.Client, eventchan chan events.Message, errchan chan error) {
 	eventStream, errs := cli.Events(ctx, events.ListOptions{
 		Filters: filters.NewArgs(

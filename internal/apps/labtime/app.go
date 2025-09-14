@@ -223,6 +223,13 @@ func shutdownWatcher(watcher *watcher.Watcher) error {
 	return nil
 }
 
+func shutdownDynamicDockerMonitor(d *dynamicdockermonitoring.DynamicDockerMonitor) error {
+	if err := d.Shutdown(); err != nil {
+		return errors.Wrap(err, "error shutting down dynamic docker monitor")
+	}
+	return nil
+}
+
 func (a *App) Shutdown(ctx context.Context) error {
 	if err := shutdownScheduler(a.scheduler); err != nil {
 		return errors.Wrap(err, "error shutting down scheduler")
@@ -234,6 +241,10 @@ func (a *App) Shutdown(ctx context.Context) error {
 
 	if err := shutdownWatcher(a.watcher); err != nil {
 		return errors.Wrap(err, "error shutting down watcher")
+	}
+
+	if err := shutdownDynamicDockerMonitor(a.dockerWatcher); err != nil {
+		return errors.Wrap(err, "error shutting down dynamic docker monitor")
 	}
 
 	return nil
