@@ -7,17 +7,22 @@ import (
 	"os"
 	"time"
 
+	"aireone.xyz/labtime/internal/dynamicdockermonitoring"
+	"aireone.xyz/labtime/internal/monitorconfig"
+	"aireone.xyz/labtime/internal/monitors"
 	"aireone.xyz/labtime/internal/scheduler"
 	"aireone.xyz/labtime/internal/watcher"
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/sync/errgroup"
 )
 
 type Options struct {
-	ConfigFile      string
-	WatchConfigFile bool
+	ConfigFile              string
+	WatchConfigFile         bool
+	DynamicDockerMonitoring bool
 }
 
 type App struct {
@@ -26,6 +31,7 @@ type App struct {
 	scheduler            *scheduler.Scheduler
 	prometheusHTTPServer *http.Server
 	watcher              *watcher.Watcher
+	dockerWatcher        *dynamicdockermonitoring.DynamicDockerMonitor
 
 	logger *log.Logger
 }
@@ -56,12 +62,21 @@ func NewApp(options Options, logger *log.Logger) (*App, error) {
 		}
 	}
 
+	var dockerWatcher *dynamicdockermonitoring.DynamicDockerMonitor
+	if options.DynamicDockerMonitoring {
+		dockerWatcher, err = dynamicdockermonitoring.NewDynamicDockerMonitor(context.Background())
+		if err != nil {
+			return nil, errors.Wrap(err, "error creating dynamic docker monitor")
+		}
+	}
+
 	return &App{
 		options:              options,
 		monitorConfigs:       monitorConfigs,
 		scheduler:            scheduler,
 		prometheusHTTPServer: server,
 		watcher:              w,
+		dockerWatcher:        dockerWatcher,
 		logger:               logger,
 	}, nil
 }
@@ -133,6 +148,48 @@ func (a *App) Start(ctx context.Context) error {
 						a.logger.Printf("Error reloading jobs: %v", err)
 					}
 
+				}
+			}
+		})
+	}
+
+	// Enable dynamic Docker monitoring
+	if a.options.DynamicDockerMonitoring {
+		errs.Go(func() error {
+			go func() {
+				<-derivedCtx.Done()
+				if err := shutdownWatcher(a.watcher); err != nil {
+					a.logger.Printf("Error shutting down dynamic docker monitor: %v", err)
+				}
+			}()
+
+			for {
+				select {
+				case err := <-a.dockerWatcher.Errors:
+					return errors.Wrap(err, "error received from dynamic docker monitor")
+				case event := <-a.dockerWatcher.Events:
+					a.logger.Println("Docker event received")
+
+					if event.Action == "create" && event.Type == "container" && event.Actor.Attributes["labtime"] == "true" {
+						a.logger.Printf("New container created: %s, setting up monitoring jobs...", event.Actor.ID)
+
+						mc, ok := a.monitorConfigs["docker"].(*monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec])
+						if !ok {
+							panic("docker monitor config not found or wrong type")
+						}
+
+						target := monitors.DockerTarget{
+							Name:          event.Actor.Attributes["name"],
+							ContainerName: event.Actor.Attributes["name"],
+							Interval:      5,
+						}
+
+						job := mc.Factory.CreateMonitor(target, mc.Collector, a.logger)
+						interval := target.GetInterval()
+						if err := a.scheduler.AddJob(job, interval); err != nil {
+							return errors.Wrap(err, "error adding job for new docker container")
+						}
+					}
 				}
 			}
 		})

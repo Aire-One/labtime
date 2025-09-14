@@ -20,8 +20,9 @@ func main() {
 	cfg := labtime.LoadFlag(logger)
 
 	app, err := labtime.NewApp(labtime.Options{
-		ConfigFile:      *cfg.ConfigFile,
-		WatchConfigFile: *cfg.WatchConfigFile,
+		ConfigFile:              *cfg.ConfigFile,
+		WatchConfigFile:         *cfg.WatchConfigFile,
+		DynamicDockerMonitoring: *cfg.DynamicDockerMonitoring,
 	}, logger)
 	if err != nil {
 		logger.Fatalf("Error creating app: %v", err)
