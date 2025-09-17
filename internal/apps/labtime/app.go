@@ -102,6 +102,34 @@ func setupJobsFromFile(configFile string, scheduler *scheduler.Scheduler, monito
 	return nil
 }
 
+type Container struct {
+	ID           string
+	Name         string
+	LabtimeLabel bool
+}
+
+func setupDynamicDockerMonitoring(container Container, scheduler *scheduler.Scheduler, mc *monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec], logger *log.Logger) error {
+	if !container.LabtimeLabel {
+		return nil
+	}
+
+	logger.Printf("New container created: %s, setting up monitoring jobs...", container.ID)
+
+	target := monitors.DockerTarget{
+		Name:          container.Name,
+		ContainerName: container.Name,
+		Interval:      5,
+	}
+
+	job := mc.Factory.CreateMonitor(target, mc.Collector, logger)
+	interval := target.GetInterval()
+	if err := scheduler.AddJob(job, interval); err != nil {
+		return errors.Wrap(err, "error adding job for new docker container")
+	}
+
+	return nil
+}
+
 func (a *App) Start(ctx context.Context) error {
 	errs, derivedCtx := errgroup.WithContext(ctx)
 
@@ -155,6 +183,26 @@ func (a *App) Start(ctx context.Context) error {
 
 	// Enable dynamic Docker monitoring
 	if a.options.DynamicDockerMonitoring {
+		containers, err := dynamicdockermonitoring.GetRunningContainers(derivedCtx)
+		if err != nil {
+			return errors.Wrap(err, "error listing running containers for dynamic docker monitoring")
+		}
+
+		mc, ok := a.monitorConfigs["docker"].(*monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec])
+		if !ok {
+			panic("docker monitor config not found or wrong type")
+		}
+
+		for _, container := range containers {
+			if err := setupDynamicDockerMonitoring(Container{
+				ID:           container.ID,
+				Name:         container.Names[0],
+				LabtimeLabel: container.Labels["labtime"] == "true",
+			}, a.scheduler, mc, a.logger); err != nil {
+				a.logger.Printf("Error setting up monitoring for existing docker container: %v", err)
+			}
+		}
+
 		errs.Go(func() error {
 			go func() {
 				<-derivedCtx.Done()
@@ -171,23 +219,17 @@ func (a *App) Start(ctx context.Context) error {
 					a.logger.Println("Docker event received")
 
 					if event.Action == "create" && event.Type == "container" && event.Actor.Attributes["labtime"] == "true" {
-						a.logger.Printf("New container created: %s, setting up monitoring jobs...", event.Actor.ID)
-
 						mc, ok := a.monitorConfigs["docker"].(*monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec])
 						if !ok {
 							panic("docker monitor config not found or wrong type")
 						}
 
-						target := monitors.DockerTarget{
-							Name:          event.Actor.Attributes["name"],
-							ContainerName: event.Actor.Attributes["name"],
-							Interval:      5,
-						}
-
-						job := mc.Factory.CreateMonitor(target, mc.Collector, a.logger)
-						interval := target.GetInterval()
-						if err := a.scheduler.AddJob(job, interval); err != nil {
-							return errors.Wrap(err, "error adding job for new docker container")
+						if err := setupDynamicDockerMonitoring(Container{
+							ID:           event.Actor.ID,
+							Name:         event.Actor.Attributes["name"],
+							LabtimeLabel: event.Actor.Attributes["labtime"] == "true",
+						}, a.scheduler, mc, a.logger); err != nil {
+							a.logger.Printf("Error setting up monitoring for new docker container: %v", err)
 						}
 					}
 				}

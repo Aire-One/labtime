@@ -3,6 +3,7 @@ package dynamicdockermonitoring
 import (
 	"context"
 
+	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/events"
 	"github.com/docker/docker/api/types/filters"
 	"github.com/docker/docker/client"
@@ -56,4 +57,23 @@ func watch(ctx context.Context, cli *client.Client, eventchan chan events.Messag
 			return
 		}
 	}
+}
+
+func GetRunningContainers(ctx context.Context) ([]container.Summary, error) {
+	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+	if err != nil {
+		return nil, errors.Wrap(err, "error creating docker client")
+	}
+	defer cli.Close()
+
+	containers, err := cli.ContainerList(ctx, container.ListOptions{
+		Filters: filters.NewArgs(
+			filters.Arg("status", "running"),
+		),
+	})
+	if err != nil {
+		return nil, errors.Wrap(err, "error listing running containers")
+	}
+
+	return containers, nil
 }
