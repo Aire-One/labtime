@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"aireone.xyz/labtime/internal/dynamicdockermonitoring"
@@ -194,7 +195,7 @@ func (a *App) Start(ctx context.Context) error {
 		for _, container := range containers {
 			if err := setupDynamicDockerMonitoring(Container{
 				ID:           container.ID,
-				Name:         container.Names[0],
+				Name:         strings.Trim(container.Names[0], "/"),
 				LabtimeLabel: container.Labels["labtime"] == "true",
 			}, a.scheduler, mc, a.logger); err != nil {
 				a.logger.Printf("Error setting up monitoring for existing docker container: %v", err)
