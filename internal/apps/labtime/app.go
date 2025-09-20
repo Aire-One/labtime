@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -106,6 +107,7 @@ func setupJobsFromFile(configFile string, scheduler *scheduler.Scheduler, monito
 type Container struct {
 	ID           string
 	Name         string
+	Interval     int
 	LabtimeLabel bool
 }
 
@@ -119,7 +121,7 @@ func setupDynamicDockerMonitoring(container Container, s *scheduler.Scheduler, m
 	target := monitors.DockerTarget{
 		Name:          container.Name,
 		ContainerName: container.Name,
-		Interval:      5,
+		Interval:      container.Interval,
 	}
 
 	job := mc.Factory.CreateMonitor(target, mc.Collector, logger)
@@ -193,9 +195,14 @@ func (a *App) Start(ctx context.Context) error {
 		}
 
 		for _, container := range containers {
+			interval, err := strconv.Atoi(container.Labels["labtime_interval"])
+			if err != nil {
+				interval = 60 // default interval
+			}
 			if err := setupDynamicDockerMonitoring(Container{
 				ID:           container.ID,
 				Name:         strings.Trim(container.Names[0], "/"),
+				Interval:     interval,
 				LabtimeLabel: container.Labels["labtime"] == "true",
 			}, a.scheduler, mc, a.logger); err != nil {
 				a.logger.Printf("Error setting up monitoring for existing docker container: %v", err)
@@ -223,9 +230,15 @@ func (a *App) Start(ctx context.Context) error {
 							panic("docker monitor config not found or wrong type")
 						}
 
+						interval, err := strconv.Atoi(event.Actor.Attributes["labtime_interval"])
+						if err != nil {
+							interval = 60 // default interval
+						}
+
 						if err := setupDynamicDockerMonitoring(Container{
 							ID:           event.Actor.ID,
 							Name:         event.Actor.Attributes["name"],
+							Interval:     interval,
 							LabtimeLabel: event.Actor.Attributes["labtime"] == "true",
 						}, a.scheduler, mc, a.logger); err != nil {
 							a.logger.Printf("Error setting up monitoring for new docker container: %v", err)
