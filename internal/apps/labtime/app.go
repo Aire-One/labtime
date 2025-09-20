@@ -108,7 +108,7 @@ type Container struct {
 	LabtimeLabel bool
 }
 
-func setupDynamicDockerMonitoring(container Container, scheduler *scheduler.Scheduler, mc *monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec], logger *log.Logger) error {
+func setupDynamicDockerMonitoring(container Container, s *scheduler.Scheduler, mc *monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec], logger *log.Logger) error {
 	if !container.LabtimeLabel {
 		return nil
 	}
@@ -123,7 +123,7 @@ func setupDynamicDockerMonitoring(container Container, scheduler *scheduler.Sche
 
 	job := mc.Factory.CreateMonitor(target, mc.Collector, logger)
 	interval := target.GetInterval()
-	if err := scheduler.AddJob(job, interval); err != nil {
+	if err := s.AddJob(job, interval, scheduler.DynamicDockerJobTag); err != nil {
 		return errors.Wrap(err, "error adding job for new docker container")
 	}
 
@@ -168,9 +168,7 @@ func (a *App) Start(ctx context.Context) error {
 				case <-a.watcher.Events:
 					a.logger.Println("Configuration file changed, reloading jobs...")
 
-					if err := a.scheduler.ClearJobs(); err != nil {
-						return errors.Wrap(err, "error clearing jobs")
-					}
+					a.scheduler.RemoveByTag(scheduler.FileJobTag)
 
 					if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
 						a.logger.Printf("Error reloading jobs: %v", err)
