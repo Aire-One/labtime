@@ -34,7 +34,7 @@ func NewMonitorConfig[T monitors.Target, C prometheus.Collector](factory monitor
 	}
 }
 
-func (mc *MonitorConfig[T, C]) Setup(scheduler *scheduler.Scheduler, config *yamlconfig.YamlConfig, logger *log.Logger) error {
+func (mc *MonitorConfig[T, C]) Setup(s *scheduler.Scheduler, config *yamlconfig.YamlConfig, logger *log.Logger) error {
 	// Get targets for this monitor type
 	targets, err := mc.Provider.GetTargets(config)
 	if err != nil {
@@ -45,7 +45,7 @@ func (mc *MonitorConfig[T, C]) Setup(scheduler *scheduler.Scheduler, config *yam
 	for _, target := range targets {
 		job := mc.Factory.CreateMonitor(target, mc.Collector, logger)
 		interval := target.GetInterval()
-		if err := scheduler.AddJob(job, interval); err != nil {
+		if err := s.AddJob(job, interval, scheduler.FileJobTag); err != nil {
 			return errors.Wrap(err, "error adding job")
 		}
 	}

@@ -5,19 +5,26 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
+	"strings"
 	"time"
 
+	"aireone.xyz/labtime/internal/dynamicdockermonitoring"
+	"aireone.xyz/labtime/internal/monitorconfig"
+	"aireone.xyz/labtime/internal/monitors"
 	"aireone.xyz/labtime/internal/scheduler"
 	"aireone.xyz/labtime/internal/watcher"
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/sync/errgroup"
 )
 
 type Options struct {
-	ConfigFile      string
-	WatchConfigFile bool
+	ConfigFile              string
+	WatchConfigFile         bool
+	DynamicDockerMonitoring bool
 }
 
 type App struct {
@@ -26,6 +33,7 @@ type App struct {
 	scheduler            *scheduler.Scheduler
 	prometheusHTTPServer *http.Server
 	watcher              *watcher.Watcher
+	dockerWatcher        *dynamicdockermonitoring.DynamicDockerMonitor
 
 	logger *log.Logger
 }
@@ -56,12 +64,21 @@ func NewApp(options Options, logger *log.Logger) (*App, error) {
 		}
 	}
 
+	var dockerWatcher *dynamicdockermonitoring.DynamicDockerMonitor
+	if options.DynamicDockerMonitoring {
+		dockerWatcher, err = dynamicdockermonitoring.NewDynamicDockerMonitor(context.Background())
+		if err != nil {
+			return nil, errors.Wrap(err, "error creating dynamic docker monitor")
+		}
+	}
+
 	return &App{
 		options:              options,
 		monitorConfigs:       monitorConfigs,
 		scheduler:            scheduler,
 		prometheusHTTPServer: server,
 		watcher:              w,
+		dockerWatcher:        dockerWatcher,
 		logger:               logger,
 	}, nil
 }
@@ -82,6 +99,35 @@ func setupJobsFromFile(configFile string, scheduler *scheduler.Scheduler, monito
 		if err := monitorConfig.Setup(scheduler, config, logger); err != nil {
 			return errors.Wrapf(err, "error setting up %s monitor", monitorType)
 		}
+	}
+
+	return nil
+}
+
+type Container struct {
+	ID           string
+	Name         string
+	Interval     int
+	LabtimeLabel bool
+}
+
+func setupDynamicDockerMonitoring(container Container, s *scheduler.Scheduler, mc *monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec], logger *log.Logger) error {
+	if !container.LabtimeLabel {
+		return nil
+	}
+
+	logger.Printf("New container created: %s, setting up monitoring jobs...", container.ID)
+
+	target := monitors.DockerTarget{
+		Name:          container.Name,
+		ContainerName: container.Name,
+		Interval:      container.Interval,
+	}
+
+	job := mc.Factory.CreateMonitor(target, mc.Collector, logger)
+	interval := target.GetInterval()
+	if err := s.AddJob(job, interval, scheduler.DynamicDockerJobTag); err != nil {
+		return errors.Wrap(err, "error adding job for new docker container")
 	}
 
 	return nil
@@ -125,14 +171,79 @@ func (a *App) Start(ctx context.Context) error {
 				case <-a.watcher.Events:
 					a.logger.Println("Configuration file changed, reloading jobs...")
 
-					if err := a.scheduler.ClearJobs(); err != nil {
-						return errors.Wrap(err, "error clearing jobs")
-					}
+					a.scheduler.RemoveByTag(scheduler.FileJobTag)
 
 					if err := setupJobsFromFile(a.options.ConfigFile, a.scheduler, a.monitorConfigs, a.logger); err != nil {
 						a.logger.Printf("Error reloading jobs: %v", err)
 					}
 
+				}
+			}
+		})
+	}
+
+	// Enable dynamic Docker monitoring
+	if a.options.DynamicDockerMonitoring {
+		containers, err := dynamicdockermonitoring.GetRunningContainers(derivedCtx)
+		if err != nil {
+			return errors.Wrap(err, "error listing running containers for dynamic docker monitoring")
+		}
+
+		mc, ok := a.monitorConfigs["docker"].(*monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec])
+		if !ok {
+			panic("docker monitor config not found or wrong type")
+		}
+
+		for _, container := range containers {
+			interval, err := strconv.Atoi(container.Labels["labtime_interval"])
+			if err != nil {
+				interval = 60 // default interval
+			}
+			if err := setupDynamicDockerMonitoring(Container{
+				ID:           container.ID,
+				Name:         strings.Trim(container.Names[0], "/"),
+				Interval:     interval,
+				LabtimeLabel: container.Labels["labtime"] == "true",
+			}, a.scheduler, mc, a.logger); err != nil {
+				a.logger.Printf("Error setting up monitoring for existing docker container: %v", err)
+			}
+		}
+
+		errs.Go(func() error {
+			go func() {
+				<-derivedCtx.Done()
+				if err := shutdownWatcher(a.watcher); err != nil {
+					a.logger.Printf("Error shutting down dynamic docker monitor: %v", err)
+				}
+			}()
+
+			for {
+				select {
+				case err := <-a.dockerWatcher.Errors:
+					return errors.Wrap(err, "error received from dynamic docker monitor")
+				case event := <-a.dockerWatcher.Events:
+					a.logger.Println("Docker event received")
+
+					if event.Action == "create" && event.Type == "container" && event.Actor.Attributes["labtime"] == "true" {
+						mc, ok := a.monitorConfigs["docker"].(*monitorconfig.MonitorConfig[monitors.DockerTarget, *prometheus.GaugeVec])
+						if !ok {
+							panic("docker monitor config not found or wrong type")
+						}
+
+						interval, err := strconv.Atoi(event.Actor.Attributes["labtime_interval"])
+						if err != nil {
+							interval = 60 // default interval
+						}
+
+						if err := setupDynamicDockerMonitoring(Container{
+							ID:           event.Actor.ID,
+							Name:         event.Actor.Attributes["name"],
+							Interval:     interval,
+							LabtimeLabel: event.Actor.Attributes["labtime"] == "true",
+						}, a.scheduler, mc, a.logger); err != nil {
+							a.logger.Printf("Error setting up monitoring for new docker container: %v", err)
+						}
+					}
 				}
 			}
 		})
@@ -166,6 +277,13 @@ func shutdownWatcher(watcher *watcher.Watcher) error {
 	return nil
 }
 
+func shutdownDynamicDockerMonitor(d *dynamicdockermonitoring.DynamicDockerMonitor) error {
+	if err := d.Shutdown(); err != nil {
+		return errors.Wrap(err, "error shutting down dynamic docker monitor")
+	}
+	return nil
+}
+
 func (a *App) Shutdown(ctx context.Context) error {
 	if err := shutdownScheduler(a.scheduler); err != nil {
 		return errors.Wrap(err, "error shutting down scheduler")
@@ -177,6 +295,10 @@ func (a *App) Shutdown(ctx context.Context) error {
 
 	if err := shutdownWatcher(a.watcher); err != nil {
 		return errors.Wrap(err, "error shutting down watcher")
+	}
+
+	if err := shutdownDynamicDockerMonitor(a.dockerWatcher); err != nil {
+		return errors.Wrap(err, "error shutting down dynamic docker monitor")
 	}
 
 	return nil

@@ -10,6 +10,11 @@ import (
 	"github.com/pkg/errors"
 )
 
+const (
+	FileJobTag          = "file_job"
+	DynamicDockerJobTag = "dynamic_docker_job"
+)
+
 type Scheduler struct {
 	scheduler gocron.Scheduler
 
@@ -32,7 +37,7 @@ func NewScheduler(logger *log.Logger) (*Scheduler, error) {
 	}, nil
 }
 
-func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
+func (s *Scheduler) AddJob(job monitors.Job, interval int, tag string) error {
 	cronJob, err := s.scheduler.NewJob(
 		gocron.DurationJob(time.Duration(interval)*time.Second),
 		gocron.NewTask(func(ctx context.Context) {
@@ -43,6 +48,7 @@ func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 			s.logger.Printf("Job finished for monitor %s\n", job.ID())
 		}),
 		gocron.JobOption(gocron.WithStartImmediately()),
+		gocron.WithTags(tag),
 	)
 	if err != nil {
 		return errors.Wrap(err, "error creating job")
@@ -53,15 +59,8 @@ func (s *Scheduler) AddJob(job monitors.Job, interval int) error {
 	return nil
 }
 
-func (s *Scheduler) ClearJobs() error {
-	for _, job := range s.scheduler.Jobs() {
-		if err := s.scheduler.RemoveJob(job.ID()); err != nil {
-			return errors.Wrapf(err, "error removing job with ID %s", job.ID())
-		}
-		s.logger.Printf("Job with ID %s removed\n", job.ID())
-	}
-
-	return nil
+func (s *Scheduler) RemoveByTag(tag string) {
+	s.scheduler.RemoveByTags(tag)
 }
 
 func (s *Scheduler) Shutdown() error {
