@@ -50,7 +50,7 @@ build-generator:
 
 .PHONY: dev
 dev:
-	go run github.com/mitranim/gow@latest -v run cmd/labtime/main.go --config configs/example-config.yaml --watch
+	go run github.com/mitranim/gow@latest -v run cmd/labtime/main.go --config configs/example-config.yaml --watch --dynamic-docker-monitoring
 
 .PHONY: generate
 generate:

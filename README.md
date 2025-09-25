@@ -15,6 +15,7 @@ health checks to integrate with Infrastructure as Code driven homelabs.
   methods
 - **TLS Certificate Monitoring**: Monitor SSL/TLS certificate expiration dates
 - **Docker Container Monitoring**: Track container status
+- **Dynamic Docker Monitoring**: Automatically monitor containers with specific labels
 - **Prometheus Integration**: Export metrics for monitoring dashboards
 - **Configurable Intervals**: Set custom check intervals per monitor
 - **Distroless and Rootless Container**: Secure, minimal container image
@@ -34,6 +35,9 @@ labtime --config config.yaml
 - `--config` (or env `CONFIG`): Path to configuration file (default:
   `config.yaml`)
 - `--watch` (or env `WATCH`): Watch for changes in the configuration
+- `--dynamic-docker-monitoring` (or env `DYNAMIC_DOCKER_MONITORING`): Enable
+  dynamic Docker monitoring to automatically monitor containers with specific
+  labels
 
 The application serves Prometheus metrics on port `:2112` at the `/metrics`
 endpoint (e.g., `http://localhost:2112/metrics`).
@@ -52,10 +56,14 @@ services:
       # - /var/run/docker.sock:/var/run/docker.sock:ro
     # May need to run as root for Docker socket access:
     # user: root
+    environment:
+      # Enable dynamic Docker monitoring (optional)
+      # - DYNAMIC_DOCKER_MONITORING=true
 ```
 
 The container is distroless and runs as a non-root user by default. For Docker
-monitoring features, running with root privileges may be required.
+monitoring features (including dynamic monitoring), running with root
+privileges may be required.
 
 ### Configuration
 
@@ -91,12 +99,49 @@ Configuration can be validated against the JSON schema in
 comment to the top of the YAML file to enable schema validation in editors that
 support it.
 
+### Dynamic Docker Monitoring
+
+Dynamic Docker monitoring enables automatic monitoring of Docker containers
+based on labels, without requiring static configuration.
+
+#### Container Labels
+
+Containers must have the following labels to be monitored:
+
+- `labtime=true`: Required label to enable monitoring for the container
+- `labtime_interval=<seconds>`: Optional monitoring interval in seconds
+  (default: 60)
+
+#### Running Containers with Labels
+
+Run containers with the required labels to enable monitoring:
+
+```bash
+# Monitor a container with default 60-second interval
+docker run -d --label labtime=true nginx
+
+# Monitor with custom 30-second interval
+docker run -d --label labtime=true --label labtime_interval=30 nginx
+```
+
+Or in Compose files:
+
+```yaml
+services:
+  web:
+    image: nginx
+    labels:
+      - labtime=true
+      - labtime_interval=30
+```
+
 ### Environment Variables
 
 | Variable Name | Description | Default |
 | ------------- | ----------- | ------- |
 | `CONFIG` | Path to the configuration file | `config.yaml` |
 | `WATCH` | Watch for changes in the configuration file | `false` |
+| `DYNAMIC_DOCKER_MONITORING` | Enable dynamic Docker monitoring | `false` |
 
 ## Metrics
 
@@ -121,7 +166,7 @@ tools.
 To run the application locally:
 
 ```bash
-# Run with example configuration
+# Run with example configuration and features enabled
 make dev
 
 # Or build and run manually
@@ -153,7 +198,7 @@ navigate to the dashboard at `Home > Dashboards > Labtime` to see the metrics.
 ### Development Commands
 
 - `make all` - Full build pipeline (lint, test, generate, build)
-- `make dev` - Run application with example config
+- `make dev` - Run application with example config and features enabled
 - `make test` - Run all tests
 - `make lint` - Run golangci-lint
 - `make fmt` - Format Go code
@@ -332,6 +377,8 @@ connections in unit tests. See test files like
 - `internal/monitorconfig/` - Generic monitor configuration system
 - `internal/scheduler/` - Job scheduling and execution
 - `internal/yamlconfig/` - Configuration parsing and monitor DTOs
+- `internal/dynamicdockermonitoring/` - Dynamic Docker container discovery and
+  event monitoring
 
 #### Key Conventions
 
@@ -340,6 +387,9 @@ connections in unit tests. See test files like
 - Error wrapping with `github.com/pkg/errors.Wrap()` for context
 - Structured logging with prefixes and file/line numbers
 - Default values applied at monitor level (60s interval, fallback names)
+- Job tagging system distinguishes between static configuration jobs
+  (`file_job`) and dynamic Docker jobs (`dynamic_docker_job`) for lifecycle
+  management
 
 ## Contributing
 
