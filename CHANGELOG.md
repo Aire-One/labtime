@@ -18,6 +18,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.4 [[#151](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/151)]
 - chore(deps): update ghcr.io/hadolint/hadolint docker tag to v2.14.0 [[#153](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/153)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.6 [[#154](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/154)]
 - chore(deps): update module github.com/docker/docker to v28.4.0+incompatible [[#146](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/146)]
