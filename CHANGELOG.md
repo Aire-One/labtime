@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-09-11
+## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-09-25
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -38,6 +38,7 @@
 
 ### Misc
 
+- Add dynamic Docker monitoring support [[#150](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/150)]
 - ci(docker): fix woodpecker missing tag event [[#136](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/136)]
 
 ## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
