@@ -1,5 +1,49 @@
 # Changelog
 
+## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-09-25
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### ✨ Features
+
+- Add dynamic Docker monitoring support [[#150](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/150)]
+- Gracefully shutdown the application on SIGINT and SIGTERM signals [[#110](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/110)]
+- Watch config file changes [[#139](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/139)]
+
+### 📈 Enhancement
+
+- chore: deadcode checks [[#107](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/107)]
+
+### 📦️ Dependency
+
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.4 [[#151](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/151)]
+- chore(deps): update ghcr.io/hadolint/hadolint docker tag to v2.14.0 [[#153](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/153)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.6 [[#154](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/154)]
+- chore(deps): update module github.com/docker/docker to v28.4.0+incompatible [[#146](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/146)]
+- chore(deps): update module github.com/prometheus/client_golang to v1.23.2 [[#147](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/147)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.5 [[#142](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/142)]
+- chore(deps): update module golang.org/x/sync to v0.17.0 [[#149](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/149)]
+- chore(deps): update actions/attest-build-provenance action to v3 [[#143](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/143)]
+- chore(deps): update ghcr.io/hadolint/hadolint docker tag to v2.13.1 [[#144](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/144)]
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.12.3 [[#141](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/141)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2 [[#148](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/148)]
+- chore(deps): update golang to v1.25.1 [[#145](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/145)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.9.0 [[#140](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/140)]
+- chore(deps): update python docker tag to v3.13.7 [[#138](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/138)]
+- chore(deps): update golang to v1.25.0 [[#117](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/117)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.16.3 [[#99](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/99)]
+- chore(deps): update golangci-lint to v2.4.0 [[#111](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/111)]
+- chore(deps): update actions/checkout action to v5 [[#134](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/134)]
+- chore(deps): update python docker tag to v3.13.6 [[#119](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/119)]
+- chore(deps): update module github.com/prometheus/client_golang to v1.23.0 [[#104](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/104)]
+- chore(deps): update module github.com/docker/docker to v28.3.3+incompatible [[#98](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/98)]
+
+### Misc
+
+- ci(docker): fix woodpecker missing tag event [[#136](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/136)]
+
 ## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
 
 ### ❤️ Thanks to all contributors! ❤️
