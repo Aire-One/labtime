@@ -8,6 +8,7 @@
 
 ### ✨ Features
 
+- Add dynamic Docker monitoring support [[#150](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/150)]
 - Gracefully shutdown the application on SIGINT and SIGTERM signals [[#110](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/110)]
 - Watch config file changes [[#139](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/139)]
 
@@ -38,7 +39,6 @@
 
 ### Misc
 
-- Add dynamic Docker monitoring support [[#150](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/150)]
 - ci(docker): fix woodpecker missing tag event [[#136](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/136)]
 
 ## [0.5.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.5.0) - 2025-08-14
