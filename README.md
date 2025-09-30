@@ -30,14 +30,13 @@ Run labtime with a configuration file:
 labtime --config config.yaml
 ```
 
-### Command Line Flags
+### Configuration Options
 
-- `--config` (or env `CONFIG`): Path to configuration file (default:
-  `config.yaml`)
-- `--watch` (or env `WATCH`): Watch for changes in the configuration
-- `--dynamic-docker-monitoring` (or env `DYNAMIC_DOCKER_MONITORING`): Enable
-  dynamic Docker monitoring to automatically monitor containers with specific
-  labels
+| CLI Flag | Environment Variable | Description | Default |
+| ---- | ------------------- | ----------- | ------- |
+| `-config` | `CONFIG` | Path to configuration file | `config.yaml` |
+| `-watch` | `WATCH` | Watch for changes in the configuration file | `false` |
+| `-dynamic-docker-monitoring` | `DYNAMIC_DOCKER_MONITORING` | Enable dynamic Docker monitoring to automatically monitor containers with specific labels | `false` |
 
 The application serves Prometheus metrics on port `:2112` at the `/metrics`
 endpoint (e.g., `http://localhost:2112/metrics`).
@@ -134,14 +133,6 @@ services:
       - labtime=true
       - labtime_interval=30
 ```
-
-### Environment Variables
-
-| Variable Name | Description | Default |
-| ------------- | ----------- | ------- |
-| `CONFIG` | Path to the configuration file | `config.yaml` |
-| `WATCH` | Watch for changes in the configuration file | `false` |
-| `DYNAMIC_DOCKER_MONITORING` | Enable dynamic Docker monitoring | `false` |
 
 ## Metrics
 
