@@ -4,7 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate-bot
+@Aire-One, @renovate-bot
+
+### 📚 Documentation
+
+- doc(README): merge flags and envvars sections [[#158](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/158)]
 
 ### 📦️ Dependency
 
