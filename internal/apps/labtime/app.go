@@ -157,15 +157,14 @@ func (a *App) Start(ctx context.Context) error {
 	}
 	if a.options.WatchConfigFile {
 		errs.Go(func() error {
-			go func() {
-				<-derivedCtx.Done()
-				if err := shutdownWatcher(a.watcher); err != nil {
-					a.logger.Printf("Error shutting down watcher: %v", err)
-				}
-			}()
-
 			for {
 				select {
+				case <-derivedCtx.Done():
+					if err := shutdownWatcher(a.watcher); err != nil {
+						return errors.Wrap(err, "error shutting down watcher")
+					}
+					return nil
+
 				case err := <-a.watcher.Errors:
 					return errors.Wrap(err, "error received from watcher")
 				case <-a.watcher.Events:
@@ -210,15 +209,14 @@ func (a *App) Start(ctx context.Context) error {
 		}
 
 		errs.Go(func() error {
-			go func() {
-				<-derivedCtx.Done()
-				if err := shutdownDynamicDockerMonitor(a.dockerWatcher); err != nil {
-					a.logger.Printf("Error shutting down dynamic docker monitor: %v", err)
-				}
-			}()
-
 			for {
 				select {
+				case <-derivedCtx.Done():
+					if err := shutdownDynamicDockerMonitor(a.dockerWatcher); err != nil {
+						return errors.Wrap(err, "error shutting down dynamic docker monitor")
+					}
+					return nil
+
 				case err := <-a.dockerWatcher.Errors:
 					return errors.Wrap(err, "error received from dynamic docker monitor")
 				case event := <-a.dockerWatcher.Events:
