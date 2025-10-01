@@ -16,6 +16,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.10.0 [[#155](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/155)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.3 [[#160](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/160)]
 - chore(deps): update docker/login-action action to v3.6.0 [[#156](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/156)]
 
