@@ -212,7 +212,7 @@ func (a *App) Start(ctx context.Context) error {
 		errs.Go(func() error {
 			go func() {
 				<-derivedCtx.Done()
-				if err := shutdownWatcher(a.watcher); err != nil {
+				if err := shutdownDynamicDockerMonitor(a.dockerWatcher); err != nil {
 					a.logger.Printf("Error shutting down dynamic docker monitor: %v", err)
 				}
 			}()
