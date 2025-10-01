@@ -20,6 +20,10 @@
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.3 [[#160](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/160)]
 - chore(deps): update docker/login-action action to v3.6.0 [[#156](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/156)]
 
+### Misc
+
+- refactor(app): simplify goroutine shutdown [[#161](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/161)]
+
 ## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-09-25
 
 ### ❤️ Thanks to all contributors! ❤️
