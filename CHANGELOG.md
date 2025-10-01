@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.6.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.1) - 2025-10-01
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+###  Bug Fixes
+
+- Correctly shutdown dynamic Docker monitor in app ctx.Done event [[#159](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/159)]
+
+### 📚 Documentation
+
+- doc(README): merge flags and envvars sections [[#158](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/158)]
+
+### 📦️ Dependency
+
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.10.0 [[#155](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/155)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.3 [[#160](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/160)]
+- chore(deps): update docker/login-action action to v3.6.0 [[#156](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/156)]
+
+### Misc
+
+- refactor(app): simplify goroutine shutdown [[#161](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/161)]
+
 ## [0.6.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.0) - 2025-09-25
 
 ### ❤️ Thanks to all contributors! ❤️
