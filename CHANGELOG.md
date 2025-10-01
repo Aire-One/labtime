@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.6.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.1) - 2025-09-30
+## [0.6.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.1) - 2025-10-01
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Aire-One, @renovate-bot
+
+###  Bug Fixes
+
+- Correctly shutdown dynamic Docker monitor in app ctx.Done event [[#159](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/159)]
 
 ### 📚 Documentation
 
