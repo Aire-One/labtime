@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-10-06
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update module github.com/docker/docker to v28.5.0+incompatible [[#162](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/162)]
+
 ## [0.6.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.1) - 2025-10-01
 
 ### ❤️ Thanks to all contributors! ❤️
