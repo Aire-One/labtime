@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update golang to v1.25.2 [[#164](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/164)]
 - chore(deps): update module github.com/docker/docker to v28.5.1+incompatible [[#166](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/166)]
 - chore(deps): update module github.com/docker/docker to v28.5.0+incompatible [[#162](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/162)]
 
