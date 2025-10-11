@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update python docker tag to v3.14.0 [[#165](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/165)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.17.0 [[#167](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/167)]
 - chore(deps): update golang to v1.25.2 [[#164](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/164)]
 - chore(deps): update module github.com/docker/docker to v28.5.1+incompatible [[#166](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/166)]
