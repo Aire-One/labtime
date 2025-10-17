@@ -1,6 +1,6 @@
 {
   "name": "Labtime Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/base:2.0.1-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/base:2.0.2-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.25.3",
