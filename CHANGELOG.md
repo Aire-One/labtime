@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-10-24
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-10-28
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.2 [[#171](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/171)]
 - chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.11.0 [[#170](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/170)]
 - chore(deps): update golang to v1.25.3 [[#168](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/168)]
 - chore(deps): update python docker tag to v3.14.0 [[#165](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/165)]
