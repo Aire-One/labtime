@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-11-06
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-11-07
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.0 [[#175](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/175)]
 - chore(deps): update module github.com/docker/docker to v28.5.2+incompatible [[#174](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/174)]
 - chore(deps): update golang to v1.25.4 [[#173](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/173)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.2 [[#171](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/171)]
