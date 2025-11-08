@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.0.2 [[#169](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/169)]
 - chore(deps): update docker/metadata-action action to v5.9.0 [[#172](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/172)]
 - chore(deps): update renovate/renovate docker tag to v42 [[#176](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/176)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.0 [[#175](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/175)]
