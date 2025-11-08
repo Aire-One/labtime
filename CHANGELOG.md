@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update docker/metadata-action action to v5.9.0 [[#172](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/172)]
 - chore(deps): update renovate/renovate docker tag to v42 [[#176](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/176)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.0 [[#175](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/175)]
 - chore(deps): update module github.com/docker/docker to v28.5.2+incompatible [[#174](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/174)]
