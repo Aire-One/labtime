@@ -33,7 +33,7 @@ steps:
     # releases. So we pin the major version only and force Woodpecker to pull
     # the latest image on every run.
     # This is to reduce the noise of renovate PRs to update the validator image.
-    image: renovate/renovate:41
+    image: renovate/renovate:42
     pull: true
     commands:
       - renovate-config-validator --strict
