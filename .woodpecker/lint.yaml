@@ -17,7 +17,7 @@ steps:
     depends_on: []
 
   cspell:
-    image: ghcr.io/streetsidesoftware/cspell:9.3.0
+    image: ghcr.io/streetsidesoftware/cspell:9.3.1
     commands:
       - /usr/local/bin/cspell-cli lint .
     depends_on: []
