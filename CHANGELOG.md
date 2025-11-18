@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-11-16
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-11-18
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update actions/checkout action to v5.0.1 [[#182](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/182)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.1 [[#180](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/180)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.19.0 [[#179](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/179)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.0 [[#178](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/178)]
