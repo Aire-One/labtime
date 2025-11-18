@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.2 [[#181](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/181)]
 - chore(deps): update actions/checkout action to v5.0.1 [[#182](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/182)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.1 [[#180](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/180)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.19.0 [[#179](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/179)]
