@@ -47,7 +47,7 @@ steps:
     depends_on: []
 
   markdownlint:
-    image: davidanson/markdownlint-cli2:v0.19.0
+    image: davidanson/markdownlint-cli2:v0.19.1
     commands:
       - markdownlint-cli2 **/*.md
     depends_on: []
