@@ -4,19 +4,19 @@ when:
 
 steps:
   golang:
-    image: golang:1.25.4
+    image: golang:1.25.5
     commands:
       - go test -v ./...
     depends_on: []
 
   tidy:
-    image: golang:1.25.4
+    image: golang:1.25.5
     commands:
       - go mod tidy -diff
     depends_on: []
 
   deadcode:
-    image: golang:1.25.4
+    image: golang:1.25.5
     commands:
       - go install golang.org/x/tools/cmd/deadcode@latest
       - |
@@ -28,7 +28,7 @@ steps:
     depends_on: []
 
   "generate yaml schema":
-    image: golang:1.25.4
+    image: golang:1.25.5
     commands:
       - mv
         labtime-configuration-schema.json
