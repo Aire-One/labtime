@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-12-03
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-12-04
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update python docker tag to v3.14.1 [[#192](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/192)]
 - chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.2 [[#189](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/189)]
 - chore(deps): update golang to v1.25.5 [[#191](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/191)]
 - chore(deps): update actions/checkout action to v6.0.1 [[#190](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/190)]
