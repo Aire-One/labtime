@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.13.0 [[#196](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/196)]
 - chore(deps): update python docker tag to v3.14.2 [[#195](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/195)]
 - chore(deps): update python docker tag to v3.14.1 [[#192](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/192)]
 - chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.2 [[#189](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/189)]
