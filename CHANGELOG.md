@@ -1,5 +1,46 @@
 # Changelog
 
+## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-12-09
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.13.0 [[#196](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/196)]
+- chore(deps): update python docker tag to v3.14.2 [[#195](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/195)]
+- chore(deps): update python docker tag to v3.14.1 [[#192](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/192)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.2 [[#189](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/189)]
+- chore(deps): update golang to v1.25.5 [[#191](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/191)]
+- chore(deps): update actions/checkout action to v6.0.1 [[#190](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/190)]
+- chore(deps): update docker/metadata-action action to v5.10.0 [[#188](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/188)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.2 [[#187](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/187)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.1 [[#186](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/186)]
+- chore(deps): update golangci-lint to v2.6.2 [[#152](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/152)]
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.19.1 [[#185](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/185)]
+- chore(deps): update actions/checkout action to v6 [[#184](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/184)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.2 [[#181](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/181)]
+- chore(deps): update actions/checkout action to v5.0.1 [[#182](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/182)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.1 [[#180](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/180)]
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.19.0 [[#179](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/179)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.3.0 [[#178](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/178)]
+- chore(deps): update module golang.org/x/sync to v0.18.0 [[#177](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/177)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.0.2 [[#169](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/169)]
+- chore(deps): update docker/metadata-action action to v5.9.0 [[#172](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/172)]
+- chore(deps): update renovate/renovate docker tag to v42 [[#176](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/176)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.18.0 [[#175](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/175)]
+- chore(deps): update module github.com/docker/docker to v28.5.2+incompatible [[#174](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/174)]
+- chore(deps): update golang to v1.25.4 [[#173](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/173)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.2.2 [[#171](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/171)]
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.11.0 [[#170](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/170)]
+- chore(deps): update golang to v1.25.3 [[#168](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/168)]
+- chore(deps): update python docker tag to v3.14.0 [[#165](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/165)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.17.0 [[#167](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/167)]
+- chore(deps): update golang to v1.25.2 [[#164](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/164)]
+- chore(deps): update module github.com/docker/docker to v28.5.1+incompatible [[#166](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/166)]
+- chore(deps): update module github.com/docker/docker to v28.5.0+incompatible [[#162](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/162)]
+
 ## [0.6.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.1) - 2025-10-01
 
 ### ❤️ Thanks to all contributors! ❤️
