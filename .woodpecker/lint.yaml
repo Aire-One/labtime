@@ -40,7 +40,7 @@ steps:
     depends_on: []
 
   yamllint:
-    image: python:3.14.1-alpine3.22
+    image: python:3.14.2-alpine3.22
     commands:
       - pip install yamllint
       - yamllint --strict .
