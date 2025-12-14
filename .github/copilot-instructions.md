@@ -69,7 +69,8 @@ New monitors are registered in `internal/apps/labtime/monitors.go`:
     - HTTP: Uses `URL` as default name
     - TLS: Uses `Domain` as default name
     - Docker: Uses `ContainerName` as default name
-- **Pattern for new monitors:** Check if field is empty/zero value, then assign default
+- **Pattern for new monitors:** Check if field is empty/zero value, then assign
+  default
 - DTOs use `omitempty` tags for optional fields with defaults
 
 ### Configuration
