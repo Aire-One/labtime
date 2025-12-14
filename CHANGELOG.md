@@ -1,14 +1,18 @@
 # Changelog
 
-## [0.6.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.3) - 2025-12-10
+## [0.6.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.3) - 2025-12-14
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate-bot
+@Aire-One, @renovate-bot
 
 ### 📦️ Dependency
 
 - chore(deps): update module golang.org/x/sync to v0.19.0 [[#197](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/197)]
+
+### Misc
+
+- fix: markdownlint errors [[#200](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/200)]
 
 ## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-12-09
 
