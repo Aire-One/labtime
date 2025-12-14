@@ -11,11 +11,11 @@ var ErrYAMLDecode = errors.New("error decoding YAML file")
 
 type YamlConfig struct {
 	// List of targets to ping.
-	HTTPStatusCode []HTTPMonitorDTO `yaml:"http_status_code" json:"http_status_code"`
+	HTTPStatusCode []HTTPMonitorDTO `yaml:"http_status_code" json:"http_status_code,omitempty"`
 	// List of TLS targets to monitor.
-	TLSMonitors []TLSMonitorDTO `yaml:"tls_monitors" json:"tls_monitors"`
+	TLSMonitors []TLSMonitorDTO `yaml:"tls_monitors" json:"tls_monitors,omitempty"`
 	// List of Docker containers to monitor.
-	DockerMonitors []DockerMonitorDTO `yaml:"docker_monitors" json:"docker_monitors"`
+	DockerMonitors []DockerMonitorDTO `yaml:"docker_monitors" json:"docker_monitors,omitempty"`
 }
 
 func NewYamlConfig(r io.Reader) (*YamlConfig, error) {
