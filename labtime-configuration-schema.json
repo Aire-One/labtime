@@ -82,12 +82,7 @@
         }
       },
       "additionalProperties": false,
-      "type": "object",
-      "required": [
-        "http_status_code",
-        "tls_monitors",
-        "docker_monitors"
-      ]
+      "type": "object"
     }
   }
 }
