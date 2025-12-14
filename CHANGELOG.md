@@ -1,10 +1,14 @@
 # Changelog
 
-## [0.6.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.3) - 2025-12-14
+## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-14
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @Aire-One, @renovate-bot
+
+### 📈 Enhancement
+
+- feat: make YAML config fields optional [[#201](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/201)]
 
 ### 📦️ Dependency
 
