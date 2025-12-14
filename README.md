@@ -15,7 +15,8 @@ health checks to integrate with Infrastructure as Code driven homelabs.
   methods
 - **TLS Certificate Monitoring**: Monitor SSL/TLS certificate expiration dates
 - **Docker Container Monitoring**: Track container status
-- **Dynamic Docker Monitoring**: Automatically monitor containers with specific labels
+- **Dynamic Docker Monitoring**: Automatically monitor containers with specific
+  labels
 - **Prometheus Integration**: Export metrics for monitoring dashboards
 - **Configurable Intervals**: Set custom check intervals per monitor
 - **Distroless and Rootless Container**: Secure, minimal container image
