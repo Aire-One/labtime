@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-15
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### 📈 Enhancement
+
+- feat: make YAML config fields optional [[#201](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/201)]
+
+### 📦️ Dependency
+
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.12.0 [[#183](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/183)]
+- chore(deps): update golangci-lint to v2.7.2 [[#193](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/193)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.0 [[#199](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/199)]
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.20.0 [[#194](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/194)]
+- chore(deps): update module golang.org/x/sync to v0.19.0 [[#197](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/197)]
+
+### Misc
+
+- fix: markdownlint errors [[#200](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/200)]
+
 ## [0.6.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.6.2) - 2025-12-09
 
 ### ❤️ Thanks to all contributors! ❤️
