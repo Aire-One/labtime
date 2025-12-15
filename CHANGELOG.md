@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-14
+## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-15
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -12,6 +12,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.20.0 [[#194](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/194)]
 - chore(deps): update module golang.org/x/sync to v0.19.0 [[#197](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/197)]
 
 ### Misc
