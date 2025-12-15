@@ -12,6 +12,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update golangci-lint to v2.7.2 [[#193](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/193)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.0 [[#199](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/199)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.20.0 [[#194](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/194)]
 - chore(deps): update module golang.org/x/sync to v0.19.0 [[#197](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/197)]
