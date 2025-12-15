@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	aireoneHttp "aireone.xyz/labtime/internal/http"
+	"aireone.xyz/labtime/internal/middlewares"
 	"aireone.xyz/labtime/internal/yamlconfig"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
@@ -49,7 +49,7 @@ func (h HTTPMonitorFactory) CreateMonitor(target HTTPTarget, collector *promethe
 		Logger:                logger,
 		SiteStatusCodeMonitor: collector,
 		Client: &http.Client{
-			Transport: aireoneHttp.NewLoggerMiddleware(logger, http.DefaultTransport),
+			Transport: middlewares.NewLoggerMiddleware(logger, http.DefaultTransport),
 		},
 	}
 }
