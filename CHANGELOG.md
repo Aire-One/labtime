@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.3 [[#202](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/202)]
 - chore(deps): update actions/attest-build-provenance action to v3.1.0 [[#203](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/203)]
 
 ## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-15
