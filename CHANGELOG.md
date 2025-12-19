@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.1) - 2025-12-19
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update actions/attest-build-provenance action to v3.1.0 [[#203](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/203)]
+
 ## [0.7.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.0) - 2025-12-15
 
 ### ❤️ Thanks to all contributors! ❤️
