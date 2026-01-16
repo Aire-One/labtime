@@ -3,7 +3,7 @@ when:
   event: pull_request
 
 variables:
-  - &golang golang:1.25.5
+  - &golang golang:1.25.6
 
 steps:
   labtime:
