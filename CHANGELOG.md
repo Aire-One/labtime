@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update actions/attest-build-provenance action to v3.2.0 [[#213](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/213)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.6.2 [[#214](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/214)]
 - chore(deps): update actions/checkout action to v6.0.2 [[#212](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/212)]
 - chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.14.0 [[#211](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/211)]
