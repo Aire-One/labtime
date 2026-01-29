@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.5 [[#215](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/215)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.1 [[#216](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/216)]
 - chore(deps): update actions/attest-build-provenance action to v3.2.0 [[#213](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/213)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.6.2 [[#214](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/214)]
