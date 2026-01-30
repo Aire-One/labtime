@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.2) - 2026-01-29
+## [0.7.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.2) - 2026-01-30
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update renovate/renovate docker tag to v43 [[#218](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/218)]
 - chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.5 [[#215](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/215)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.1 [[#216](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/216)]
 - chore(deps): update actions/attest-build-provenance action to v3.2.0 [[#213](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/213)]
