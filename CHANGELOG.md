@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update docker/login-action action to v3.7.0 [[#217](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/217)]
 - chore(deps): update renovate/renovate docker tag to v43 [[#218](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/218)]
 - chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.5 [[#215](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/215)]
 - chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.1 [[#216](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/216)]
