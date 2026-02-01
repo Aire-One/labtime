@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.7.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.2) - 2026-02-01
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update woodpeckerci/woodpecker-cli docker tag to v3.13.0 [[#209](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/209)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.6 [[#219](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/219)]
+- chore(deps): update docker/login-action action to v3.7.0 [[#217](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/217)]
+- chore(deps): update renovate/renovate docker tag to v43 [[#218](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/218)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.5 [[#215](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/215)]
+- chore(deps): update module github.com/go-co-op/gocron/v2 to v2.19.1 [[#216](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/216)]
+- chore(deps): update actions/attest-build-provenance action to v3.2.0 [[#213](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/213)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.6.2 [[#214](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/214)]
+- chore(deps): update actions/checkout action to v6.0.2 [[#212](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/212)]
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.14.0 [[#211](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/211)]
+- chore(deps): update golang to v1.25.6 [[#210](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/210)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.4 [[#208](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/208)]
+- chore(deps): update golangci-lint to v2.8.0 [[#206](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/206)]
+
 ## [0.7.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.1) - 2025-12-21
 
 ### ❤️ Thanks to all contributors! ❤️
