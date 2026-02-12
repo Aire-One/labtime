@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update docker/build-push-action action to v6.19.1 [[#225](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/225)]
 - chore(deps): update golang to v1.26.0 [[#223](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/223)]
 - chore(deps): update golangci-lint to v2.9.0 [[#224](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/224)]
 - chore(deps): update python docker tag to v3.14.3 [[#221](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/221)]
