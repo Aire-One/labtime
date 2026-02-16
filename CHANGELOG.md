@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-02-13
+## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-02-16
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.21.0 [[#228](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/228)]
 - chore(deps): update docker/build-push-action action to v6.19.2 [[#226](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/226)]
 
 ## [0.7.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.3) - 2026-02-12
