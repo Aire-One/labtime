@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.16.0 [[#230](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/230)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.7.0 [[#231](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/231)]
 - chore(deps): update golangci-lint to v2.10.1 [[#229](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/229)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.21.0 [[#228](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/228)]
