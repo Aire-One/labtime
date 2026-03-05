@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-02-24
+## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-03-05
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.16.1 [[#233](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/233)]
 - chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.16.0 [[#230](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/230)]
 - chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.7.0 [[#231](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/231)]
 - chore(deps): update golangci-lint to v2.10.1 [[#229](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/229)]
