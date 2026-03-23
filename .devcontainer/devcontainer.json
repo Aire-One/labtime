@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.26.1",
-      "golangciLintVersion": "2.11.3"
+      "golangciLintVersion": "2.11.4"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2.16.1": {},
     "ghcr.io/devcontainers-extra/features/yamllint:2": {},
