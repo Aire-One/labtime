@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-03-25
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.22.0 [[#243](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/243)]
+
 ## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-03-25
 
 ### ❤️ Thanks to all contributors! ❤️
