@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-03-25
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- chore(deps): update golangci-lint to v2.11.4 [[#242](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/242)]
+- chore(deps): update mcr.microsoft.com/devcontainers/base docker tag to v2.1.7 [[#241](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/241)]
+- chore(deps): update golangci-lint to v2.11.3 [[#240](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/240)]
+- chore(deps): update module golang.org/x/sync to v0.20.0 [[#239](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/239)]
+- chore(deps): update golangci-lint to v2.11.2 [[#238](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/238)]
+- chore(deps): update golang to v1.26.1 [[#237](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/237)]
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.16.1 [[#233](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/233)]
+- chore(deps): update ghcr.io/devcontainers/features/docker-in-docker docker tag to v2.16.0 [[#230](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/230)]
+- chore(deps): update ghcr.io/streetsidesoftware/cspell docker tag to v9.7.0 [[#231](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/231)]
+- chore(deps): update golangci-lint to v2.10.1 [[#229](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/229)]
+- chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.21.0 [[#228](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/228)]
+- chore(deps): update docker/build-push-action action to v6.19.2 [[#226](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/226)]
+
 ## [0.7.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.3) - 2026-02-12
 
 ### ❤️ Thanks to all contributors! ❤️
