@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-03-26
+## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-06
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v9.8.0 [[#245](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/245)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.22.0 [[#243](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/243)]
 
 ## [0.7.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.4) - 2026-03-25
