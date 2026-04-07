@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-06
+## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-07
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update module github.com/go-co-op/gocron/v2 to v2.20.0 [[#246](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/246)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v9.8.0 [[#245](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/245)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.22.0 [[#243](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/243)]
 
