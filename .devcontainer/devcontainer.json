@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:2.1.7-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.26.1",
+      "version": "1.26.2",
       "golangciLintVersion": "2.11.4"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2.16.1": {},
