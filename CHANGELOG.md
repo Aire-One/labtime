@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10 [[#248](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/248)]
 - Update module github.com/go-co-op/gocron/v2 to v2.20.0 [[#246](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/246)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v9.8.0 [[#245](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/245)]
 - chore(deps): update davidanson/markdownlint-cli2 docker tag to v0.22.0 [[#243](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/243)]
