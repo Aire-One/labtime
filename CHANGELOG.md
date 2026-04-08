@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.26.2 [[#247](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/247)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v10 [[#248](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/248)]
 - Update module github.com/go-co-op/gocron/v2 to v2.20.0 [[#246](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/246)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v9.8.0 [[#245](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/245)]
