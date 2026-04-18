@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/metadata-action action to v6 [[#236](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/236)]
 - Update docker/build-push-action action to v7 [[#235](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/235)]
 
 ## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-17
