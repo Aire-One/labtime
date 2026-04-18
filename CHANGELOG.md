@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.6) - 2026-04-18
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update actions/attest-build-provenance action to v4 [[#232](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/232)]
+- Update docker/login-action action to v4 [[#234](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/234)]
+- Update docker/metadata-action action to v6 [[#236](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/236)]
+- Update docker/build-push-action action to v7 [[#235](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/235)]
+
 ## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-17
 
 ### ❤️ Thanks to all contributors! ❤️
