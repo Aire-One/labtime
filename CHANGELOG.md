@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.6) - 2026-04-18
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update docker/build-push-action action to v7 [[#235](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/235)]
+
 ## [0.7.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.5) - 2026-04-17
 
 ### ❤️ Thanks to all contributors! ❤️
