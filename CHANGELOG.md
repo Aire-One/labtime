@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-04-21
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.8 [[#254](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/254)]
+
 ## [0.7.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.6) - 2026-04-18
 
 ### ❤️ Thanks to all contributors! ❤️
