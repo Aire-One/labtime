@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-04-23
+## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-04-24
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update module github.com/invopop/jsonschema to v0.14.0 [[#258](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/258)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.22.1 [[#257](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/257)]
 - Update module github.com/go-co-op/gocron/v2 to v2.21.1 [[#256](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/256)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.8 [[#254](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/254)]
