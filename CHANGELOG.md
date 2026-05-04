@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update woodpeckerci/plugin-docker-buildx Docker tag to v6.1.0 [[#261](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/261)]
 - Update golangci-lint to v2.12.1 [[#260](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/260)]
 - Update module github.com/fsnotify/fsnotify to v1.10.0 [[#259](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/259)]
 - Update module github.com/invopop/jsonschema to v0.14.0 [[#258](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/258)]
