@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-04-30
+## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-05-04
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golangci-lint to v2.12.1 [[#260](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/260)]
 - Update module github.com/fsnotify/fsnotify to v1.10.0 [[#259](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/259)]
 - Update module github.com/invopop/jsonschema to v0.14.0 [[#258](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/258)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.22.1 [[#257](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/257)]
