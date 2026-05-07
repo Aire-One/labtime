@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.8](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.8) - 2026-05-05
+## [0.7.8](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.8) - 2026-05-07
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golangci-lint to v2.12.2 [[#265](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/265)]
 - Update module github.com/fsnotify/fsnotify to v1.10.1 [[#263](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/263)]
 
 ## [0.7.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.7) - 2026-05-04
