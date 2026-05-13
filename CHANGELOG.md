@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.9](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.9) - 2026-05-13
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update module github.com/go-co-op/gocron/v2 to v2.21.2 [[#267](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/267)]
+
 ## [0.7.8](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.8) - 2026-05-08
 
 ### ❤️ Thanks to all contributors! ❤️
