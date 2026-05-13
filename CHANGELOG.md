@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.14.1 [[#262](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/262)]
 - Update python Docker tag to v3.14.5 [[#268](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/268)]
 - Update module github.com/go-co-op/gocron/v2 to v2.21.2 [[#267](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/267)]
 
