@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update python Docker tag to v3.14.5 [[#268](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/268)]
 - Update module github.com/go-co-op/gocron/v2 to v2.21.2 [[#267](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/267)]
 
 ## [0.7.8](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.8) - 2026-05-08
