@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.9 [[#271](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/271)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v3 [[#272](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/272)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v2.17.0 [[#270](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/270)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.14.1 [[#262](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/262)]
