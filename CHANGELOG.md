@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.8.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.0) - 2026-05-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One
+
+### 📈 Enhancement
+
+- fix #253:  Migrate from `actions/attest-build-provenance` to `actions/attest` [[#278](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/278)]
+- chore(devcontainer): add devcontainer-lock.json [[#276](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/276)]
+- Fix #249: Warning in CI docker dryrun job [[#275](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/275)]
+
 ## [0.7.9](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.9) - 2026-05-22
 
 ### ❤️ Thanks to all contributors! ❤️
