@@ -1,7 +1,7 @@
 BINARY_NAME=labtime
 
 .PHONY: all
-all: lint cspell yamllint markdownlint tidy-check test deadcode generate build build-generator
+all: lint cspell yamllint markdownlint tidy-check test deadcode generate build build-generator build-docker
 
 .PHONY: clean
 clean:
@@ -47,6 +47,10 @@ build:
 .PHONY: build-generator
 build-generator:
 	go build -o build/$(BINARY_NAME)-generator cmd/generator/main.go
+
+.PHONY: build-docker
+build-docker:
+	docker build --tag $(BINARY_NAME):dev .
 
 .PHONY: dev
 dev:
