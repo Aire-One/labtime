@@ -1,9 +1,10 @@
-.vscode
-.woodpecker
+# Ignore all files by default, explicitly include only necessary files
+*
 
-build
-
-configs
-
-.*
-renovate.json
+!/cmd
+!/internal
+!/CHANGELOG.md
+!/go.mod
+!/go.sum
+!/LICENSE
+!/README.md
