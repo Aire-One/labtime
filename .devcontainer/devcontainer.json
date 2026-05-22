@@ -17,7 +17,8 @@
         "EditorConfig.EditorConfig",
         "DavidAnson.vscode-markdownlint",
         "redhat.vscode-yaml",
-        "MermaidChart.vscode-mermaid-chart"
+        "MermaidChart.vscode-mermaid-chart",
+        "github.vscode-github-actions"
       ]
     }
   },
