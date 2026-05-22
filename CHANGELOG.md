@@ -8,6 +8,7 @@
 
 ### 📈 Enhancement
 
+- fix #253:  Migrate from `actions/attest-build-provenance` to `actions/attest` [[#278](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/278)]
 - chore(devcontainer): add devcontainer-lock.json [[#276](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/276)]
 - Fix #249: Warning in CI docker dryrun job [[#275](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/275)]
 
