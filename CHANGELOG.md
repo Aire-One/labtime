@@ -8,6 +8,7 @@
 
 ### 📈 Enhancement
 
+- chore(devcontainer): add devcontainer-lock.json [[#276](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/276)]
 - Fix #249: Warning in CI docker dryrun job [[#275](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/275)]
 
 ## [0.7.9](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.9) - 2026-05-22
