@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.9](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.9) - 2026-05-21
+## [0.7.9](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.7.9) - 2026-05-22
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/build-push-action action to v7.2.0 [[#274](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/274)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v3.0.1 [[#273](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/273)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.9 [[#271](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/271)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v3 [[#272](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/272)]
