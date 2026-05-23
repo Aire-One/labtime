@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.1) - 2026-05-23
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update docker/login-action action to v4.2.0 [[#279](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/279)]
+
 ## [0.8.0](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.0) - 2026-05-22
 
 ### ❤️ Thanks to all contributors! ❤️
