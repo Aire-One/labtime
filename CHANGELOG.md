@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-06-17
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.10 [[#286](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/286)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.0.1 [[#287](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/287)]
+
 ## [0.8.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.1) - 2026-06-09
 
 ### ❤️ Thanks to all contributors! ❤️
