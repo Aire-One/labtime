@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-06-17
+## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-06-20
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### 📦️ Dependency
 
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v3.1.0 [[#289](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/289)]
+- Update actions/checkout action to v7 [[#290](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/290)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.10 [[#286](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/286)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.0.1 [[#287](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/287)]
 
