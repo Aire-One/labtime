@@ -4,7 +4,7 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate-bot
+@Aire-One, @renovate-bot
 
 ### 📦️ Dependency
 
@@ -19,6 +19,10 @@
 - Update actions/checkout action to v7 [[#290](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/290)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.10 [[#286](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/286)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.0.1 [[#287](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/287)]
+
+### Misc
+
+- chore(devcontainer): update devcontainer-lock.json [[#298](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/298)]
 
 ## [0.8.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.1) - 2026-06-09
 
