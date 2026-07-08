@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-07-04
+## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-07-08
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.26.5 [[#302](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/302)]
+- Update woodpeckerci/plugin-docker-buildx Docker tag to v6.1.1 [[#303](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/303)]
 - Update docker/metadata-action action to v6.2.0 [[#301](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/301)]
 - Update docker/login-action action to v4.4.0 [[#300](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/300)]
 - Update docker/login-action action to v4.3.0 [[#297](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/297)]
