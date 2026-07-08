@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-07-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### 📦️ Dependency
+
+- Update golang to v1.26.5 [[#302](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/302)]
+- Update woodpeckerci/plugin-docker-buildx Docker tag to v6.1.1 [[#303](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/303)]
+- Update docker/metadata-action action to v6.2.0 [[#301](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/301)]
+- Update docker/login-action action to v4.4.0 [[#300](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/300)]
+- Update docker/login-action action to v4.3.0 [[#297](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/297)]
+- Update docker/build-push-action action to v7.3.0 [[#296](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/296)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.11 [[#294](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/294)]
+- Update davidanson/markdownlint-cli2 Docker tag to v0.23.0 [[#295](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/295)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4 [[#291](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/291)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.16.0 [[#293](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/293)]
+- Update actions/attest action to v4.1.1 [[#292](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/292)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v3.1.0 [[#289](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/289)]
+- Update actions/checkout action to v7 [[#290](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/290)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.10 [[#286](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/286)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.0.1 [[#287](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/287)]
+
+### Misc
+
+- chore(devcontainer): update devcontainer-lock.json [[#298](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/298)]
+
 ## [0.8.1](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.1) - 2026-06-09
 
 ### ❤️ Thanks to all contributors! ❤️
