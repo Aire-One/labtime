@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-09
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-10
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update module github.com/go-co-op/gocron/v2 to v2.22.0 [[#306](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/306)]
 - Update module golang.org/x/sync to v0.22.0 [[#304](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/304)]
 
 ## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-07-08
