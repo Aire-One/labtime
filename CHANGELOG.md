@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update actions/checkout action to v7.0.1 [[#309](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/309)]
 - Update module github.com/prometheus/client_golang to v1.24.0 [[#310](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/310)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.23.1 [[#308](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/308)]
 - Update actions/attest action to v4.2.0 [[#307](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/307)]
