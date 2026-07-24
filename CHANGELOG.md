@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-21
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-24
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/login-action action to v4.5.0 [[#311](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/311)]
 - Update actions/checkout action to v7.0.1 [[#309](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/309)]
 - Update module github.com/prometheus/client_golang to v1.24.0 [[#310](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/310)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.23.1 [[#308](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/308)]
