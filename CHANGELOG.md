@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/login-action action to v4.5.1 [[#312](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/312)]
 - Update module github.com/prometheus/client_golang to v1.24.1 [[#313](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/313)]
 - Update docker/login-action action to v4.5.0 [[#311](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/311)]
 - Update actions/checkout action to v7.0.1 [[#309](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/309)]
