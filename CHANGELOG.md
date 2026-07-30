@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/login-action action to v4.6.0 [[#317](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/317)]
 - Update actions/attest action to v4.2.1 [[#316](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/316)]
 - Update docker/login-action action to v4.5.2 [[#315](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/315)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.23.2 [[#314](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/314)]
