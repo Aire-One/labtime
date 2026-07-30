@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-29
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-30
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update actions/attest action to v4.2.1 [[#316](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/316)]
 - Update docker/login-action action to v4.5.2 [[#315](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/315)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.23.2 [[#314](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/314)]
 - Update docker/login-action action to v4.5.1 [[#312](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/312)]
