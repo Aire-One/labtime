@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-30
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-07-31
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update ghcr.io/hadolint/hadolint Docker tag to v2.15.0 [[#318](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/318)]
 - Update docker/login-action action to v4.6.0 [[#317](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/317)]
 - Update actions/attest action to v4.2.1 [[#316](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/316)]
 - Update docker/login-action action to v4.5.2 [[#315](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/315)]
