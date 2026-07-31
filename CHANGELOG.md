@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update renovate/renovate Docker tag to v44 [[#319](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/319)]
 - Update ghcr.io/hadolint/hadolint Docker tag to v2.15.0 [[#318](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/318)]
 - Update docker/login-action action to v4.6.0 [[#317](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/317)]
 - Update actions/attest action to v4.2.1 [[#316](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/316)]
