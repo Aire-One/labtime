@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-08-05
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-08-06
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,8 @@
 
 ### 📦️ Dependency
 
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.13 [[#321](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/321)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.17.0 [[#322](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/322)]
 - Update actions/attest action to v4.2.2 [[#323](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/323)]
 - Update ghcr.io/hadolint/hadolint Docker tag to v2.15.1 [[#320](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/320)]
 - Update renovate/renovate Docker tag to v44 [[#319](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/319)]
