@@ -21,11 +21,5 @@
         "github.vscode-github-actions"
       ]
     }
-  },
-  "runArgs": [
-    "--userns=keep-id"
-  ],
-  "containerEnv": {
-    "HOME": "/home/vscode"
   }
 }
