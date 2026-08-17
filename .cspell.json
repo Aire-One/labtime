@@ -37,6 +37,7 @@
     "IPROVIDER",
     "ITARGET",
     "labtime",
+    "moby",
     "monitorconfig",
     "noctx",
     "nonroot",
@@ -47,6 +48,7 @@
     "sigchan",
     "tenv",
     "testutil",
+    "trixie",
     "userns",
     "woodpeckerci",
     "Wrapf"
