@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-08-14
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update golang to v1.26.6 [[#324](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/324)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.13 [[#321](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/321)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.17.0 [[#322](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/322)]
+- Update actions/attest action to v4.2.2 [[#323](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/323)]
+- Update ghcr.io/hadolint/hadolint Docker tag to v2.15.1 [[#320](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/320)]
+- Update renovate/renovate Docker tag to v44 [[#319](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/319)]
+- Update ghcr.io/hadolint/hadolint Docker tag to v2.15.0 [[#318](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/318)]
+- Update docker/login-action action to v4.6.0 [[#317](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/317)]
+- Update actions/attest action to v4.2.1 [[#316](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/316)]
+- Update docker/login-action action to v4.5.2 [[#315](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/315)]
+- Update davidanson/markdownlint-cli2 Docker tag to v0.23.2 [[#314](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/314)]
+- Update docker/login-action action to v4.5.1 [[#312](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/312)]
+- Update module github.com/prometheus/client_golang to v1.24.1 [[#313](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/313)]
+- Update docker/login-action action to v4.5.0 [[#311](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/311)]
+- Update actions/checkout action to v7.0.1 [[#309](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/309)]
+- Update module github.com/prometheus/client_golang to v1.24.0 [[#310](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/310)]
+- Update davidanson/markdownlint-cli2 Docker tag to v0.23.1 [[#308](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/308)]
+- Update actions/attest action to v4.2.0 [[#307](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/307)]
+- Update module github.com/go-co-op/gocron/v2 to v2.22.0 [[#306](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/306)]
+- Update module golang.org/x/sync to v0.22.0 [[#304](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/304)]
+
 ## [0.8.2](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.2) - 2026-07-08
 
 ### ❤️ Thanks to all contributors! ❤️
