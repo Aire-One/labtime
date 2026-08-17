@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.4) - 2026-08-17
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One
+
+### Misc
+
+- Update devcontainer 20260817 [[#325](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/325)]
+
 ## [0.8.3](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.3) - 2026-08-14
 
 ### ❤️ Thanks to all contributors! ❤️
