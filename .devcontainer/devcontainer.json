@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:2.1.13-trixie",
   "features": {
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.26.6",
+      "version": "1.27.0",
       "golangciLintVersion": "2.13.0"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:4.0.0": {
