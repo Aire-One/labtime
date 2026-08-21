@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.4) - 2026-08-20
+## [0.8.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.4) - 2026-08-21
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.27.0 [[#327](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/327)]
 - Update golangci-lint to v2.13.0 [[#328](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/328)]
 
 ### Misc
