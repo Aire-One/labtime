@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.5) - 2026-08-25
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.18.0 [[#330](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/330)]
+
 ## [0.8.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.4) - 2026-08-22
 
 ### ❤️ Thanks to all contributors! ❤️
