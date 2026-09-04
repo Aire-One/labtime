@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.5) - 2026-09-03
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update golang to v1.27.1 [[#336](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/336)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.0 [[#333](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/333)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.1.15 [[#332](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/332)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.1.1 [[#335](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/335)]
+- Update golangci-lint to v2.13.2 [[#334](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/334)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.18.0 [[#330](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/330)]
+
 ## [0.8.4](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.4) - 2026-08-22
 
 ### ❤️ Thanks to all contributors! ❤️
