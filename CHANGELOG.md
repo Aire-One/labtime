@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-09-05
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.2.2 [[#337](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/337)]
+
 ## [0.8.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.5) - 2026-09-03
 
 ### ❤️ Thanks to all contributors! ❤️
