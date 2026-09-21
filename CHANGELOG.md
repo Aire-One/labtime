@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-09-16
+## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-09-21
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update davidanson/markdownlint-cli2 Docker tag to v0.23.3 [[#344](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/344)]
 - Update docker/build-push-action action to v7.4.0 [[#342](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/342)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.1 [[#341](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/341)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.18.1 [[#340](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/340)]
