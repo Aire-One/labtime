@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-09-25
+## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-09-26
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update woodpeckerci/plugin-docker-buildx Docker tag to v6.1.2 [[#345](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/345)]
 - Update golangci-lint to v2.14.0 [[#346](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/346)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.1 [[#343](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/343)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.23.3 [[#344](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/344)]
