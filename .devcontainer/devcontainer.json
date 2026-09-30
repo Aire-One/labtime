@@ -6,7 +6,7 @@
       "version": "1.27.1",
       "golangciLintVersion": "2.14.0"
     },
-    "ghcr.io/devcontainers/features/docker-in-docker:4.1.1": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4.1.2": {
       "moby": false
     },
     "ghcr.io/devcontainers-extra/features/yamllint:2": {},
