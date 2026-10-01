@@ -26,7 +26,7 @@ markdownlint:
 
 .PHONY: cspell
 cspell:
-	docker run -it --rm -v ./:/workdir ghcr.io/streetsidesoftware/cspell:10.2.2 lint /workdir
+	docker run -it --rm -v ./:/workdir ghcr.io/streetsidesoftware/cspell:10.3.6 lint /workdir
 
 .PHONY: test
 test:
