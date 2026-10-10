@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.27.2 [[#351](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/351)]
 - Update module golang.org/x/sync to v0.24.0 [[#354](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/354)]
 - Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.3 [[#349](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/349)]
 - Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.3.6 [[#348](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/348)]
