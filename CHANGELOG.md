@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-18
+## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-21
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.27.3 [[#356](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/356)]
 - Update module github.com/prometheus/client_golang to v1.25.0 [[#353](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/353)]
 - Update golangci-lint to v2.15.0 [[#355](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/355)]
 - Update golang to v1.27.2 [[#351](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/351)]
