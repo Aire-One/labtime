@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-21
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate-bot
+
+### 📦️ Dependency
+
+- Update golang to v1.27.3 [[#356](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/356)]
+- Update module github.com/prometheus/client_golang to v1.25.0 [[#353](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/353)]
+- Update golangci-lint to v2.15.0 [[#355](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/355)]
+- Update golang to v1.27.2 [[#351](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/351)]
+- Update module golang.org/x/sync to v0.24.0 [[#354](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/354)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.3 [[#349](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/349)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.3.6 [[#348](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/348)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.2 [[#347](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/347)]
+- Update woodpeckerci/plugin-docker-buildx Docker tag to v6.1.2 [[#345](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/345)]
+- Update golangci-lint to v2.14.0 [[#346](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/346)]
+- Update ghcr.io/devcontainers/features/docker-in-docker Docker tag to v4.1.1 [[#343](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/343)]
+- Update davidanson/markdownlint-cli2 Docker tag to v0.23.3 [[#344](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/344)]
+- Update docker/build-push-action action to v7.4.0 [[#342](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/342)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.1 [[#341](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/341)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.18.1 [[#340](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/340)]
+- Update module golang.org/x/sync to v0.23.0 [[#339](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/339)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.2.2 [[#337](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/337)]
+
 ## [0.8.5](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.5) - 2026-09-03
 
 ### ❤️ Thanks to all contributors! ❤️
