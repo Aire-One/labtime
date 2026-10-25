@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.4.0 [[#360](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/360)]
 - Update docker/login-action action to v4.7.0 [[#359](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/359)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.19.0 [[#350](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/350)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.24.0 [[#357](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/357)]
