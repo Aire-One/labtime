@@ -4,7 +4,7 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate-bot
+@Aire-One, @renovate-bot
 
 ### 📦️ Dependency
 
@@ -13,6 +13,10 @@
 - Update docker/login-action action to v4.7.0 [[#359](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/359)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.19.0 [[#350](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/350)]
 - Update davidanson/markdownlint-cli2 Docker tag to v0.24.0 [[#357](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/357)]
+
+### Misc
+
+- chore(devcontainer): update features and lock [[#361](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/361)]
 
 ## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-21
 
