@@ -1,6 +1,6 @@
 {
   "name": "Labtime Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/base:2.2.3-trixie",
+  "image": "mcr.microsoft.com/devcontainers/base:2.2.5-trixie",
   "features": {
     "ghcr.io/devcontainers/features/go:1.4.0": {
       "version": "1.27.3",
