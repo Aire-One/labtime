@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.7) - 2026-11-05
+## [0.8.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.7) - 2026-11-06
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update docker/login-action action to v4.8.0 [[#366](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/366)]
 - Update ghcr.io/devcontainers/features/go Docker tag to v1.4.1 [[#365](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/365)]
 - Update module github.com/go-co-op/gocron/v2 to v2.23.0 [[#362](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/362)]
 - Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.3 [[#352](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/352)]
