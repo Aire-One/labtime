@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.20.1 [[#364](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/364)]
 - Update module golang.org/x/sync to v0.25.0 [[#368](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/368)]
 - Update module github.com/go-co-op/gocron/v2 to v2.23.1 [[#367](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/367)]
 - Update docker/login-action action to v4.8.0 [[#366](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/366)]
