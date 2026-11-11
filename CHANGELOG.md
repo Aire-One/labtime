@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.5 [[#363](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/363)]
 - Update golang to v1.27.4 [[#369](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/369)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.20.1 [[#364](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/364)]
 - Update module golang.org/x/sync to v0.25.0 [[#368](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/368)]
