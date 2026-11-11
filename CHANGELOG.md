@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.8.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.7) - 2026-11-11
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Aire-One, @renovate-bot
+
+### 📦️ Dependency
+
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.5 [[#363](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/363)]
+- Update golang to v1.27.4 [[#369](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/369)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.20.1 [[#364](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/364)]
+- Update module golang.org/x/sync to v0.25.0 [[#368](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/368)]
+- Update module github.com/go-co-op/gocron/v2 to v2.23.1 [[#367](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/367)]
+- Update docker/login-action action to v4.8.0 [[#366](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/366)]
+- Update ghcr.io/devcontainers/features/go Docker tag to v1.4.1 [[#365](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/365)]
+- Update module github.com/go-co-op/gocron/v2 to v2.23.0 [[#362](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/362)]
+- Update mcr.microsoft.com/devcontainers/base Docker tag to v2.2.3 [[#352](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/352)]
+- Update ghcr.io/streetsidesoftware/cspell Docker tag to v10.4.0 [[#360](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/360)]
+- Update docker/login-action action to v4.7.0 [[#359](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/359)]
+- Update woodpeckerci/woodpecker-cli Docker tag to v3.19.0 [[#350](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/350)]
+- Update davidanson/markdownlint-cli2 Docker tag to v0.24.0 [[#357](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/357)]
+
+### Misc
+
+- chore/update-devcontainer-111126 [[#370](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/370)]
+- chore(devcontainer): update features and lock [[#361](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/361)]
+
 ## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-21
 
 ### ❤️ Thanks to all contributors! ❤️
