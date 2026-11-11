@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.7) - 2026-11-10
+## [0.8.7](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.7) - 2026-11-11
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 📦️ Dependency
 
+- Update golang to v1.27.4 [[#369](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/369)]
 - Update woodpeckerci/woodpecker-cli Docker tag to v3.20.1 [[#364](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/364)]
 - Update module golang.org/x/sync to v0.25.0 [[#368](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/368)]
 - Update module github.com/go-co-op/gocron/v2 to v2.23.1 [[#367](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/367)]
