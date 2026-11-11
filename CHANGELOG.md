@@ -24,6 +24,7 @@
 
 ### Misc
 
+- chore/update-devcontainer-111126 [[#370](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/370)]
 - chore(devcontainer): update features and lock [[#361](https://forgejo.aireone.xyz/Aire-One/labtime/pulls/361)]
 
 ## [0.8.6](https://forgejo.aireone.xyz/Aire-One/labtime/releases/tag/v0.8.6) - 2026-10-21
