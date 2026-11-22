@@ -1,5 +1,10 @@
 {
   "features": {
+    "ghcr.io/devcontainers-extra/features/markdownlint-cli2:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/devcontainers-extra/features/markdownlint-cli2@sha256:6e420b26373f1d9bbcd8930d792e5656d9e624495868e775967fe7c3e29de90b",
+      "integrity": "sha256:6e420b26373f1d9bbcd8930d792e5656d9e624495868e775967fe7c3e29de90b"
+    },
     "ghcr.io/devcontainers-extra/features/yamllint:2": {
       "version": "2.0.18",
       "resolved": "ghcr.io/devcontainers-extra/features/yamllint@sha256:c3ed260f8e4f026d2ae93ae61581d9a8c28d64950a4e801ac33b968566e6c16e",
@@ -14,6 +19,11 @@
       "version": "1.4.1",
       "resolved": "ghcr.io/devcontainers/features/go@sha256:2f2ed290df9a5f1841340b14cb8a287cf0574a816967dd84dcfe42fdd97b897e",
       "integrity": "sha256:2f2ed290df9a5f1841340b14cb8a287cf0574a816967dd84dcfe42fdd97b897e"
+    },
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "2.1.2",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:20ac718cc67e7999a9d3fbb8387f1a3a5d53ecbd41fe7c075ebadb8e9b431b17",
+      "integrity": "sha256:20ac718cc67e7999a9d3fbb8387f1a3a5d53ecbd41fe7c075ebadb8e9b431b17"
     }
   }
 }
